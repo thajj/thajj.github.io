@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Toufic Hajj's Portfolio
 
-## Getting Started
+Welcome to the repository of my personal portfolio website. This project showcases my skills, experiences, and projects in the field of AI, Blockchain, and Cloud Technologies.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Responsive design for optimal viewing on all devices
+- Dark/Light mode toggle for user preference
+- Smooth scrolling and animations using Framer Motion
+- Dynamic content rendering from JSON data
+- Sections for About, Experience, Projects, Skills, and Contact
+- Integration with social media profiles
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- React Typed
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗 Project Structure
 
-## Learn More
+- `components/`: Reusable React components
+- `data/`: JSON files containing portfolio data
+- `pages/`: Next.js pages
+- `public/`: Static assets
+- `styles/`: Global styles and Tailwind configuration
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Customization
 
-## Deploy on Vercel
+To customize the content of the portfolio, edit the JSON files in the `data/` directory.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/portfolio/issues).
+
+## 📄 License
+
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+
+## 📞 Contact
+
+Toufic Hajj - [LinkedIn](https://www.linkedin.com/in/toufic-hajj) - [Email](mailto:your.email@example.com)
+
+Project Link: [https://github.com/thajj/portfolio](https://github.com/thajj/portfolio)
