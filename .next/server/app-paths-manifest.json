@@ -1,5 +1,13 @@
 {
-  "/about/page": "app/about/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js"
+  "/blog/page": "app/blog/page.js",
+  "/about/page": "app/about/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/test/page": "app/test/page.js",
+  "/work/page": "app/work/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/work/[slug]/page": "app/work/[slug]/page.js"
 }

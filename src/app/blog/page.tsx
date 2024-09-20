@@ -3,7 +3,7 @@ import { Mailchimp } from "@/components";
 import { Posts } from "./components/Posts";
 
 import { blog, newsletter, person } from "@/resources";
-import { baseURL, mailchimp } from "@/resources";
+import { baseURL } from "@/resources";
 
 export function generateMetadata() {
   const title = blog.title;

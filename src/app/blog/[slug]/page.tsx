@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "@/app/components/mdx";
+import { CustomMDX } from "@/components/mdx";
 import { formatDate, getPosts } from "@/app/utils";
 import {
   Avatar,
@@ -9,7 +9,7 @@ import {
   Text,
 } from "@/components/once-ui/components";
 
-import { person, baseURL } from "@/app/resources";
+import { person, baseURL } from "@/resources";
 
 interface BlogParams {
   params: {
