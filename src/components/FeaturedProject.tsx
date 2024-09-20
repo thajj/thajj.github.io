@@ -618,57 +618,57 @@ const Icons = {
   ),
 };
 
-const FeaturedProjects = ({ projects }) => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {projects.map((project, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          viewport={{ once: true }}
-        >
-          <MotionCard
-            className="h-full flex flex-col"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 10,
-            }}
-          >
-            <CardContent className="p-6 flex-grow">
-              <h3 className="text-xl font-semibold mb-3">{project.name}</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                {project.description}
-              </p>
-              <div className="mb-6 flex flex-wrap gap-2">
-                {project.technologies.map((tech, i) => (
-                  <Badge key={i} variant="secondary">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-              <motion.a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium flex items-center transition-colors duration-200 mt-auto"
-                whileHover={{ x: 5 }}
-              >
-                View Project <ExternalLinkIcon className="ml-1 h-4 w-4" />
-              </motion.a>
-            </CardContent>
-          </MotionCard>
-        </motion.div>
-      ))}
-    </div>
-  );
-};
+// const FeaturedProjects = ({ projects }) => {
+//   return (
+//     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+//       {projects.map((project, index) => (
+//         <motion.div
+//           key={index}
+//           initial={{ opacity: 0, y: 50 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.5, delay: index * 0.1 }}
+//           viewport={{ once: true }}
+//         >
+//           <MotionCard
+//             className="h-full flex flex-col"
+//             whileHover={{
+//               scale: 1.05,
+//               boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
+//             }}
+//             transition={{
+//               type: "spring",
+//               stiffness: 400,
+//               damping: 10,
+//             }}
+//           >
+//             <CardContent className="p-6 flex-grow">
+//               <h3 className="text-xl font-semibold mb-3">{project.name}</h3>
+//               <p className="text-gray-700 dark:text-gray-300 mb-4">
+//                 {project.description}
+//               </p>
+//               <div className="mb-6 flex flex-wrap gap-2">
+//                 {project.technologies.map((tech, i) => (
+//                   <Badge key={i} variant="secondary">
+//                     {tech}
+//                   </Badge>
+//                 ))}
+//               </div>
+//               <motion.a
+//                 href={project.link}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium flex items-center transition-colors duration-200 mt-auto"
+//                 whileHover={{ x: 5 }}
+//               >
+//                 View Project <ExternalLinkIcon className="ml-1 h-4 w-4" />
+//               </motion.a>
+//             </CardContent>
+//           </MotionCard>
+//         </motion.div>
+//       ))}
+//     </div>
+//   );
+// };
 
 const files = [
   {

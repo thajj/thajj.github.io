@@ -42,7 +42,7 @@ function FancyCursor() {
     return () => {
       window.removeEventListener("mousemove", moveCursor);
     };
-  }, []);
+  }, [cursorControls, cursorX, cursorY, followerControls]);
 
   return (
     <>

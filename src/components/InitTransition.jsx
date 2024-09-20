@@ -2,7 +2,7 @@
 import useWindowSize from "@/hooks/useWindowSize";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 const blackBox = {
   initial: {
@@ -48,7 +48,7 @@ const text = {
 
 // const InitialTransition = ({ onComplete }) => {
 const InitialTransition = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const { width, height } = useWindowSize();
 
   // Scroll user to top to avoid showing the footer

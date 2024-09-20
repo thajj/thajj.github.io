@@ -9,7 +9,6 @@ import styles from "./Header.module.scss";
 import { routes, display } from "../resources";
 import { person, home, about, blog, work, gallery } from "../resources";
 
-import { motion } from "framer-motion";
 import { ModeToggle } from "./mode-toggle";
 import { Separator } from "./ui/separator";
 
