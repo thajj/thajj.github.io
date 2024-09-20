@@ -2,7 +2,7 @@
 
 import Masonry from "react-masonry-css";
 import { SmartImage } from "@/components/once-ui/components";
-import { gallery } from "@/app/resources";
+import { gallery } from "@/resources";
 import styles from "@/app/gallery/Gallery.module.scss";
 
 export default function MasonryGrid() {

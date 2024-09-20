@@ -1,4 +1,4 @@
-import { formatDate, getPosts } from "@/app/utils";
+import { formatDate, getPosts } from "../../utils";
 import {
   Flex,
   Grid,
@@ -14,7 +14,7 @@ interface PostsProps {
 }
 
 export function Posts({ range, columns = "1" }: PostsProps) {
-  let allBlogs = getPosts(["src", "app", "blog", "posts"]);
+  const allBlogs = getPosts(["app", "blog", "posts"]);
 
   const sortedBlogs = allBlogs.sort((a, b) => {
     return (

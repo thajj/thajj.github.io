@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "@/app/components/mdx";
-import { formatDate, getPosts } from "@/app/utils";
+import { CustomMDX } from "@/components/mdx";
+import { formatDate, getPosts } from "../../utils";
 import {
   AvatarGroup,
   Button,
@@ -9,7 +9,7 @@ import {
   SmartImage,
   Text,
 } from "@/components/once-ui/components";
-import { baseURL, person } from "@/app/resources";
+import { baseURL, person } from "@/resources";
 
 interface WorkParams {
   params: {
@@ -18,7 +18,7 @@ interface WorkParams {
 }
 
 export async function generateStaticParams() {
-  const posts = getPosts(["src", "app", "work", "projects"]);
+  const posts = getPosts(["app", "work", "projects"]);
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: WorkParams) {
-  const post = getPosts(["src", "app", "work", "projects"]).find(
+  const post = getPosts(["app", "work", "projects"]).find(
     (post) => post.slug === params.slug
   );
 
@@ -73,7 +73,7 @@ export function generateMetadata({ params }: WorkParams) {
 }
 
 export default function Project({ params }: WorkParams) {
-  const post = getPosts(["src", "app", "work", "projects"]).find(
+  const post = getPosts(["app", "work", "projects"]).find(
     (post) => post.slug === params.slug
   );
 

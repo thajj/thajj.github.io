@@ -8,9 +8,9 @@ import {
   SmartImage,
   Tag,
   Text,
-} from "@/components/once-ui/components";
-import { person, about, social, baseURL } from "@/app/resources";
-import TableOfContents from "@/app/about/components/TableOfContents";
+} from "../../components/once-ui/components";
+import { person, about, social, baseURL } from "../../resources";
+import TableOfContents from "./components/TableOfContents";
 import styles from "@/app/about/about.module.scss";
 
 export function generateMetadata() {
@@ -172,9 +172,12 @@ export default function About() {
                 />
               </Flex>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
+            <h1
+              className={"text-center align-self-center"}
+              // variant="display-strong-xl"
+            >
               {person.name}
-            </Heading>
+            </h1>
             <Text
               className={styles.textAlign}
               variant="display-default-xs"

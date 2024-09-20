@@ -2,10 +2,10 @@ import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
-import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
-import Marquee from "@/components/magicui/marquee";
-import { Flex } from "@/components/once-ui/components";
+import { Calendar } from "../../components/ui/calendar";
+import { BentoCard, BentoGrid } from "../../components/magicui/bento-grid";
+import Marquee from "../../components/magicui/marquee";
+import { Flex } from "../../components/once-ui/components";
 
 const files = [
   {

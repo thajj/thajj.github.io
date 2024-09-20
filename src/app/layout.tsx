@@ -5,8 +5,8 @@ import "./globals.css";
 import classNames from "classnames";
 
 import { Flex, Background } from "@/components/once-ui/components";
-import { Footer, Header, RouteGuard } from "@/app/components";
-import { baseURL, effects, home, person, style } from "@/app/resources";
+import { Footer, Header, RouteGuard } from "@/components";
+import { baseURL, effects, home, person, style } from "@/resources";
 
 import { Inter } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
@@ -16,6 +16,7 @@ import Head from "next/head";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
+  favicon
   title: home.title,
   description: home.description,
   openGraph: {
@@ -73,7 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <Head>
-        <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex
         as="html"

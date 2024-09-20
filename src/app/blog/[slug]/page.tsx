@@ -18,7 +18,7 @@ interface BlogParams {
 }
 
 export async function generateStaticParams() {
-  let posts = getPosts(["src", "app", "blog", "posts"]);
+  const posts = getPosts(["app", "blog", "posts"]);
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -26,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: BlogParams) {
-  let post = getPosts(["src", "app", "blog", "posts"]).find(
+  const post = getPosts(["src", "app", "blog", "posts"]).find(
     (post) => post.slug === params.slug
   );
 
@@ -34,13 +34,13 @@ export function generateMetadata({ params }: BlogParams) {
     return;
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image
+  const ogImage = image
     ? `https://${baseURL}${image}`
     : `https://${baseURL}/og?title=${title}`;
 
@@ -69,7 +69,7 @@ export function generateMetadata({ params }: BlogParams) {
 }
 
 export default function Blog({ params }: BlogParams) {
-  let post = getPosts(["src", "app", "blog", "posts"]).find(
+  const post = getPosts(["src", "app", "blog", "posts"]).find(
     (post) => post.slug === params.slug
   );
 

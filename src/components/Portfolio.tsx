@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import Header from "@/components/Header";
-import MainContent from "@/components/MainContent";
-import Footer from "@/components/Footer";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
+import Header from "./Header";
+import MainContent from "./MainContent";
+import ScrollToTopButton from "./ScrollToTopButton";
+import { Footer } from "./Footer";
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false);

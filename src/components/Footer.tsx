@@ -1,58 +1,45 @@
-import { motion } from "framer-motion";
-import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
-import portfolioData from "@/data/portfolio-data.json";
+import { Flex, IconButton, Text } from "./once-ui/components";
+import { person, social } from "../resources";
 
-const Footer = () => {
-  const { socialLinks } = portfolioData;
+export const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
-    <motion.footer
-      className="bg-gray-900 text-white py-12"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
+    <Flex
+      as="footer"
+      position="relative"
+      fillWidth
+      padding="8"
+      justifyContent="center"
     >
-      <div className="container mx-auto px-4 text-center">
-        <p className="mb-6">
-          © {new Date().getFullYear()} Toufic Hajj. All rights reserved.
-        </p>
-        <div className="flex justify-center space-x-6">
-          <motion.a
-            href="https://www.linkedin.com/in/toufic-hajj"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="hover:text-blue-400 transition-colors duration-200"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <LinkedinIcon className="h-6 w-6" />
-          </motion.a>
-          <motion.a
-            href={socialLinks.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="hover:text-gray-400 transition-colors duration-200"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <GithubIcon className="h-6 w-6" />
-          </motion.a>
-          <motion.a
-            href={`mailto:${socialLinks.email}`}
-            aria-label="Email"
-            className="hover:text-blue-400 transition-colors duration-200"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <MailIcon className="h-6 w-6" />
-          </motion.a>
-        </div>
-      </div>
-    </motion.footer>
+      <Flex
+        fillWidth
+        maxWidth="m"
+        paddingY="8"
+        paddingX="16"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Text variant="body-default-s" onBackground="neutral-strong">
+          <Text onBackground="neutral-weak">© {currentYear} /</Text>
+          <Text paddingX="4">{person.name}</Text>
+        </Text>
+        <Flex gap="16">
+          {social.map(
+            (item) =>
+              item.link && (
+                <IconButton
+                  key={item.name}
+                  href={item.link}
+                  icon={item.icon}
+                  tooltip={item.name}
+                  size="s"
+                  variant="ghost"
+                />
+              )
+          )}
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };
-
-export default Footer;
