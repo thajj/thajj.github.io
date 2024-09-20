@@ -16,7 +16,6 @@ import Head from "next/head";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
-  favicon
   title: home.title,
   description: home.description,
   openGraph: {
