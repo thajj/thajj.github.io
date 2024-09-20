@@ -1,0 +1,54 @@
+{
+  "site": {
+    "title": "Toufic Hajj | Full Stack Engineer",
+    "description": "Toufic Hajj | Full Stack Engineer"
+  },
+  "designation": "Full Stack Engineer",
+  "firstName": "Toufic",
+  "lastName": "Hajj",
+  "hello": "Hi 👋, I'm",
+  "overview": [
+    "Experienced full-stack engineer with a rich history of 15+ years specializing in crafting scalable, innovative applications that span various sectors, including smart cities, museums, B2B, and public organizations.",
+    "While my technical toolkit is diverse, I've developed a strong affinity for React and its intricate ecosystem. My services encompass web, mobile, and desktop development, coupled with seamless API integration. I excel in resolving bugs and troubleshooting existing applications.",
+    "Notable for my exceptional problem-solving skills and a track record of leading dynamic teams of 10+, I've successfully orchestrated the entire software development life cycle. This encompasses everything from requirement gathering to design, development, rigorous testing, and smooth deployment. My unwavering commitment to continuous learning ensures I remain on the cutting edge of industry trends and best practices."
+  ],
+  "overview-services": [
+    {
+      "icon": "farocket",
+      "title": "Frontend Expert",
+      "subtitle": "Crafted for Excellence"
+    },
+    {
+      "icon": "farocket",
+      "title": "Optimize & Debug",
+      "subtitle": "Ensuring Smooth Performance"
+    },
+    {
+      "icon": "farocket",
+      "title": "Project Leadership",
+      "subtitle": "Excellence from Start to Finish"
+    }
+  ],
+  "portfolio": [
+    "Designed and developed a trading toolkit application that effectively removes guesswork from trading decisions. Ensure native support with Electron."
+  ],
+  "social-links": [
+    {
+      "name": "mail",
+      "url": "mailto: contact@toufichajj.dev"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/toufic-hajj/"
+    },
+    {
+      "name": "github",
+      "url": "https://github.com/thajj"
+    },
+    {
+      "name": "stackoverflow",
+      "url": "https://stackoverflow.com/users/13420318/thajj"
+    }
+  ],
+  "copyrights": "Copyright © 2024 - All right reserved."
+}

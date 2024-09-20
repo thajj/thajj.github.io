@@ -1,0 +1,206 @@
+{
+  "experienceLength": "10+ Years of Experience",
+  "experience": [
+    {
+      "companyName": "Freelancer",
+      "designation": "Full-Stack Developer",
+      "fromDate": "Jan 2022",
+      "toDate": "Current",
+      "description": [],
+      "skills": [
+        "JavaScript",
+        "ReactJS",
+        "Node.JS",
+        "Express",
+        "Electron",
+        "WebSocket",
+        "TypeScript",
+        "MongoDB",
+        "Firebase",
+        "Tailwind UI"
+      ]
+    },
+    {
+      "companyName": "InMedia Technologies",
+      "designation": "VP of RESEARCH AND DEVELOPMENT",
+      "fromDate": "Sept 2017",
+      "toDate": "Feb 2020",
+      "description": [
+        "Led and managed the software development team using agile methodologies and best practices.",
+        "Developed and put into action a software development strategy and roadmap, optimizing project timelines and resource allocation.",
+        "Guaranteed the software products' quality, performance, and security.",
+        "Offered technical expertise for evaluating tender opportunities.",
+        "Ensured functional consistency and prioritized user ergonomics and client requirements."
+      ],
+      "skills": [
+        "Scrum",
+        "Code reviews",
+        "Pair programming",
+        "Mentoring",
+        "NodeJS",
+        "ReactJS",
+        "Storybook",
+        "Python",
+        "Microservice architecture",
+        "Cloud computing"
+      ]
+    },
+    {
+      "companyName": "InMedia Technologies",
+      "designation": "DIRECTOR OF RESEARCH AND DEVELOPMENT",
+      "fromDate": "Feb 2011",
+      "toDate": "Sept 2017",
+      "description": [
+        "Conducted ongoing research to keep the application current and competitive.",
+        "Designed an intuitive mobile-first Single Page Application (SPA) using ReactJS, Redux, and Material-UI for an enhanced user experience.",
+        "Collaborated in a focused team to implement updates and successfully launched a major release for a diverse clientele.",
+        "Led system modifications to transition to a microservices architecture, including components like search engines, user repositories, databases, and event booking services.",
+        "Initiated the development of \"inMedia,\" expanding into new sectors and forming \"inMedia Technologies.\"",
+        "Ensured application quality, performance, security, and scalability through testing, code reviews, and continuous integration and deployment tools."
+      ],
+      "skills": [
+        "React",
+        "Redux",
+        "React-Router",
+        "GraphQL",
+        "TypeScript",
+        "JavaScript ES6",
+        "HTML5",
+        "CSS",
+        "REST API",
+        "LDAP",
+        "NodeJS, ExpressJS",
+        "Webpack",
+        "Babel",
+        "Docker",
+        "React Native",
+        "Flutter",
+        "Wowza streaming engine",
+        "Firebase Cloud Functions",
+        "Material-UI",
+        "Microservice"
+      ]
+    },
+    {
+      "companyName": "Bibliomondo",
+      "designation": "Lead developer",
+      "fromDate": "Mar 2010",
+      "toDate": "Feb 201",
+      "description": [
+        "Led code reviews, testing, debugging, and web applications deployment.",
+        "Designed and implemented new REST Services, orchestrated the migration of the front-end Java stack from JSP to JSF, and spearheaded the transition to a service-oriented architecture, enhancing system scalability and performance.",
+        "Maintained codebase integrity, reduced technical debt, and improved code quality, resulting in increased code maintainability and fewer post-release issues.",
+        "Worked on a new prototype for a new tech stack.",
+        "Drove the creation of the admin dashboard for the platform and crafted user profile screens for the catalog module, enhancing the user experience and functionality of the product."
+      ],
+      "skills": [
+        "Maven",
+        "Java JS/JSF",
+        "XHTML",
+        "JavaScript",
+        "CSS",
+        "jQuery",
+        "Spring",
+        "Rest API",
+        "SOA",
+        "PostgreSQL",
+        "Apache CouchDB",
+        "Apache SolR",
+        "Bootstrap"
+      ]
+    },
+    {
+      "companyName": "Bibliomondo",
+      "designation": "Analyst Programmer",
+      "fromDate": "2009",
+      "toDate": "2010",
+      "description": [
+        "Developed prototypes and promptly resolved issues.",
+        "Led the implementation of Jenkins and Selenium, automating deployment in both development and QA environments.",
+        "Coached the QA team in integrating Selenium, raising quality assurance standards.",
+        "Implemented an alert system for real-time communication and incident management using email and voice messages with Asterisk.",
+        "Introduced Jenkins and Selenium for nightly builds and automatic deployment in DEV and QA environments."
+      ],
+      "skills": [
+        "Java (JSP, Spring)",
+        "XHTML",
+        "JAVASCRIPT",
+        "CSS",
+        "EJB",
+        "MySQL",
+        "Maven",
+        "Jenkins",
+        "Apache Tomcat",
+        "Nagios",
+        "Asterisk",
+        "Subversion"
+      ]
+    },
+    {
+      "companyName": "FREELANCER",
+      "designation": "Freelancer",
+      "fromDate": "2008",
+      "toDate": "2009",
+      "description": [
+        "Built and managed websites and web applications for clients.",
+        "Achieved a 5/5 rating on Freelancer.com after successfully completing over thirty projects."
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "jQuery",
+        "PHP",
+        "MySQL"
+      ]
+    },
+    {
+      "companyName": "Netcom Canada Inc.",
+      "designation": "Analyst Programmer",
+      "fromDate": "2005",
+      "toDate": "2006",
+      "description": [
+        "Evaluated and maintained existing software code.",
+        "Led a successful transition, migrating the backend from VB6 to C#.NET and modernizing the UI from Classic ASP to ASP.NET.",
+        "Developed new software features.",
+        "Installed and configured the company's internal network infrastructure, including Active Directory, Exchange, and Group Policy Objects."
+      ],
+      "skills": [
+        "VB6",
+        "C#",
+        "ASP 3",
+        "ASP.NET",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MS SQL Server",
+        "GPO"
+      ]
+    }
+  ],
+  "education": [],
+  "skills": [
+    "ReactJS",
+    "Javascript",
+    "Java",
+    "Marketing",
+    "Digital Design",
+    "Social Media",
+    "Time Management",
+    "Communication",
+    "Problem-Solving",
+    "Social Networking",
+    "Flexibility"
+  ],
+  "softSkills": [
+    "Marketing",
+    "Digital Design",
+    "Social Media",
+    "Time Management",
+    "Communicatioʒ",
+    "Problem-Solving",
+    "Social Networking",
+    "Flexibility"
+  ],
+  "language": []
+}

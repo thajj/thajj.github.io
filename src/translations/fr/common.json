@@ -1,0 +1,16 @@
+{
+  "site": {
+    "title": "Toufic Hajj | Full Stack Developer",
+    "description": "Toufic Hajj's Resume | Senior Full Stack Engineer"
+  },
+  "siteTitle": "Toufic Hajj | Full Stack Developer",
+  "siteDesc": "Toufic Hajj's Resume | Senior Full Stack Engineer",
+  "designation": "Ingénieur Full Stack",
+  "fullName": "Toufic Hajj",
+  "hello": "Salut 👋, Je suis",
+  "overview": [
+    "Ingénieur full-stack expérimenté avec plus de 15 ans d'expertise dédiée à la conception et au développement d'applications évolutives et innovantes pour des projets de taille moyenne à grande en divers secteurs, notamment les villes intelligentes, les musées, les entreprises B2B et les organisations publiques.",
+    "Reconnu pour ses compétences exceptionnelles en résolution de problèmes et son bilan en tant que leader d'une équipe de plus de 10 personnes, j'ai réussi à gérer l'ensemble du cycle de développement logiciel, de la collecte des exigences à la conception, en passant par le développement, les tests et le déploiement. Mon engagement envers l'apprentissage continu me maintient à la pointe des tendances de l'industrie et des meilleures pratiques."
+  ],
+  "copyrights": "© 2024 Tous droits réservés."
+}
