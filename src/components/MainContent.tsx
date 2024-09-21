@@ -13,7 +13,7 @@ import BentoDemo from "./FeaturedProject";
 
 const MotionCard = motion(Card);
 
-const MainContent = ({ activeSection, setActiveSection }) => {
+const MainContent = () => {
   const { sections, experiences, projects, skills, socialLinks } =
     portfolioData;
 
@@ -97,7 +97,7 @@ const MainContent = ({ activeSection, setActiveSection }) => {
             As a seasoned Full Stack Developer with over a decade of experience,
             I specialize in crafting innovative solutions at the intersection of
             AI, blockchain, and cloud technologies. My passion lies in pushing
-            the boundaries of what's possible in software development,
+            the boundaries of what&apos;s possible in software development,
             consistently delivering high-performance, scalable applications that
             drive business growth and technological advancement.
           </motion.p>
@@ -347,7 +347,7 @@ const MainContent = ({ activeSection, setActiveSection }) => {
             {section === "about" && (
               <div className="max-w-3xl mx-auto text-center">
                 <p className="text-lg mb-4">
-                  I'm a passionate full-stack developer with expertise in
+                  I&apos;m a passionate full-stack developer with expertise in
                   building scalable web applications and exploring cutting-edge
                   technologies.
                 </p>
@@ -449,8 +449,8 @@ const MainContent = ({ activeSection, setActiveSection }) => {
             {section === "contact" && (
               <div className="max-w-lg mx-auto text-center">
                 <p className="mb-4">
-                  I'm always open to new opportunities and collaborations. Feel
-                  free to reach out!
+                  I&apos;m always open to new opportunities and collaborations.
+                  Feel free to reach out!
                 </p>
                 <div className="flex justify-center space-x-4">
                   <Button

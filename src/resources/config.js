@@ -8,8 +8,8 @@ const routes = {
   "/projects": true,
   "/skills": true,
   "/contact": true,
-  //   "/blog": true,
-  //   "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
   "/test": true,
 };
 

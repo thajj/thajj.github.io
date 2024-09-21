@@ -1,6 +1,5 @@
 "use client";
 
-import Iphone15Pro from "./magicui/iphone-15-pro";
 import {
   AvatarGroup,
   Flex,

@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "./ui/card";
-import { Badge } from "./ui/badge";
-import { ExternalLinkIcon } from "lucide-react";
+import { Card } from "./ui/card";
 
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
