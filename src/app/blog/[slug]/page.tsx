@@ -18,7 +18,7 @@ interface BlogParams {
 }
 
 export async function generateStaticParams() {
-  const posts = getPosts(["app", "blog", "posts"]);
+  const posts = getPosts(["src", "app", "blog", "posts"]);
 
   return posts.map((post) => ({
     slug: post.slug,

@@ -6,7 +6,7 @@ import { Button, Flex, Heading, Input, Text } from "./once-ui/components";
 import { Background } from "./once-ui/components/Background";
 import { useState } from "react";
 
-function debounce<T extends (...args: unknown[]) => void>(
+function debounce<T extends (...args: any[]) => void>(
   func: T,
   delay: number
 ): T {
@@ -20,7 +20,7 @@ function debounce<T extends (...args: unknown[]) => void>(
 export const Mailchimp = () => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
-  // const [touched, setTouched] = useState<boolean>(false); // Removed unused state
+  const [touched, setTouched] = useState<boolean>(false);
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -45,7 +45,7 @@ export const Mailchimp = () => {
   const debouncedHandleChange = debounce(handleChange, 2000);
 
   const handleBlur = () => {
-    // setTouched(true); // Removed unused state update
+    setTouched(true);
     if (!validateEmail(email)) {
       setError("Please enter a valid email address.");
     }

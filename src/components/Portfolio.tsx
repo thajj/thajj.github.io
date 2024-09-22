@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Header from "./Header";
 import MainContent from "./MainContent";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { Footer } from "./Footer";
@@ -34,13 +33,9 @@ export default function Portfolio() {
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900 min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-300">
-      <Header
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-      />
       <MainContent
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
+      // activeSection={activeSection}
+      // setActiveSection={setActiveSection}
       />
       <Footer />
       <ScrollToTopButton />

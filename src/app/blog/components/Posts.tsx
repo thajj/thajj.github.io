@@ -14,7 +14,7 @@ interface PostsProps {
 }
 
 export function Posts({ range, columns = "1" }: PostsProps) {
-  const allBlogs = getPosts(["app", "blog", "posts"]);
+  const allBlogs = getPosts(["src", "app", "blog", "posts"]);
 
   const sortedBlogs = allBlogs.sort((a, b) => {
     return (

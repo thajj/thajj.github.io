@@ -1,13 +1,13 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+// import LanguageDetector from 'i18next-browser-languagedetector';
 
-import { initReactI18next } from 'react-i18next';
+import { initReactI18next } from "react-i18next";
 
-import en from './en/common.json';
-import en_resume from './en/resume.json';
+import en from "./en/common.json";
+import en_resume from "./en/resume.json";
 
-import fr from './fr/common.json';
-import fr_resume from './fr/resume.json';
+import fr from "./fr/common.json";
+import fr_resume from "./fr/resume.json";
 
 const resources = {
   en: { common: en, resume: en_resume },
@@ -15,8 +15,8 @@ const resources = {
 };
 
 const options = {
-  order: ['localstorage', 'querystring', 'navigator'],
-  lookupQuerystring: 'lng',
+  order: ["localstorage", "querystring", "navigator"],
+  lookupQuerystring: "lng",
 };
 
 i18n
@@ -26,7 +26,7 @@ i18n
 
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
-  .use(LanguageDetector)
+  // .use(LanguageDetector)
 
   // pass the i18n instance to react-i18next.
   .use(initReactI18next)
@@ -40,13 +40,13 @@ i18n
     // if you see an error like: "Argument of type 'DefaultTFuncReturn' is not assignable to parameter of type xyz"
     // set returnNull to false (and also in the i18next.d.ts options)
     // returnNull: false,
-    defaultNS: 'common',
-    fallbackLng: 'en',
-    supportedLngs: ['en', 'fr'],
+    defaultNS: "common",
+    fallbackLng: "en",
+    supportedLngs: ["en", "fr"],
     interpolation: {
       escapeValue: false,
     },
-    
+
     debug: true,
   });
 
