@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { setTheme as updateConfigTheme } from "@/resources/config";
+import { toggleTheme, setTheme as updateConfigTheme } from "@/resources/config";
 
 export const ModeToggle = React.forwardRef<
   HTMLButtonElement,
@@ -28,7 +28,8 @@ export const ModeToggle = React.forwardRef<
       size="icon"
       className={cn("px-2", className)}
       aria-label="Toggle theme"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      // onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => toggleTheme()}
       {...props}
     >
       <SunIcon className="size-[1.2rem] text-neutral-800 dark:hidden dark:text-neutral-200" />

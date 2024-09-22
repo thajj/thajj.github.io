@@ -162,7 +162,7 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: `Full Stack Developer and Team Captain`,
-  subline: `Hi, I'm Toufic 👋, a passionate <InlineCode>DEVELOPER</InlineCode> who loves turning complex problems into elegant solutions and <InlineCode>LEADING TEAMS</InlineCode> to achieve greatness.`,
+  subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">DEVELOPER</code> who loves turning complex problems into elegant solutions and <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">LEADING TEAMS</code> to achieve greatness.`,
 };
 
 const about: About = {

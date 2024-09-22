@@ -172,10 +172,7 @@ export default function About() {
                 />
               </Flex>
             )}
-            <h1
-              className={"text-center align-self-center"}
-              // variant="display-strong-xl"
-            >
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
               {person.name}
             </h1>
             <Text

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./globals.css";
 import {
   Heading,
   Flex,
@@ -13,6 +13,8 @@ import { Projects } from "./work/components/Projects";
 import { about, baseURL, home, newsletter, person, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/app/blog/components/Posts";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import { renderJSX } from "@/resources/content";
 
 export function generateMetadata() {
   const title = home.title;
@@ -78,6 +80,7 @@ export default function Home() {
       <Flex fillWidth direction="column" paddingY="l" gap="m">
         <Flex direction="column" fillWidth maxWidth="s" gap="m">
           <RevealFx translateY="4">
+            {home.headline}
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
@@ -88,7 +91,7 @@ export default function Home() {
               onBackground="neutral-weak"
               variant="body-default-l"
             >
-              {home.subline}
+              {renderJSX(home.subline)}
             </Text>
           </RevealFx>
           <RevealFx translateY="12" delay={0.4}>
@@ -113,7 +116,7 @@ export default function Home() {
           </RevealFx>
         </Flex>
       </Flex>
-      <RevealFx translateY="16" delay={0.6}>
+      {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
       {routes["/blog"] && (
@@ -121,8 +124,8 @@ export default function Home() {
           <Posts range={[1, 2]} columns="2" />
         </Flex>
       )}
-      <Projects range={[2]} />
-      {newsletter.display && <Mailchimp />}
+      <Projects range={[2]} /> */}
+      {/* {newsletter.display && <Mailchimp />} */}
     </Flex>
   );
 }

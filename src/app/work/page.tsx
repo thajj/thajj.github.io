@@ -2,6 +2,7 @@ import { getPosts } from "@/app/utils";
 import { Flex } from "@/components/once-ui/components";
 import { Projects } from "@/app/work/components/Projects";
 import { baseURL, person, work } from "@/resources";
+import { Timeline } from "@/components/ui/timeline";
 
 export function generateMetadata() {
   const title = work.title;
@@ -34,6 +35,13 @@ export function generateMetadata() {
 
 export default function Work() {
   const allProjects = getPosts(["src", "app", "work", "projects"]);
+  allProjects.map((project) => {
+    console.log(project.metadata.publishedAt);
+  });
+  const timelineData = allProjects.map((project) => ({
+    title: new Date(project.metadata.publishedAt).getFullYear().toString(),
+    content: <Projects projects={[project]} />,
+  }));
 
   return (
     <Flex fillWidth maxWidth="m" direction="column">
@@ -62,7 +70,7 @@ export default function Work() {
           }),
         }}
       />
-      <Projects />
+      <Timeline data={timelineData} />
     </Flex>
   );
 }
