@@ -1,4 +1,3 @@
-import React from "react";
 import "./globals.css";
 import {
   Heading,
@@ -8,12 +7,8 @@ import {
   Avatar,
   RevealFx,
 } from "../components/once-ui/components";
-import { Projects } from "./work/components/Projects";
 
-import { about, baseURL, home, newsletter, person, routes } from "@/resources";
-import { Mailchimp } from "@/components";
-import { Posts } from "@/app/blog/components/Posts";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import { about, baseURL, home, person } from "@/resources";
 import { renderJSX } from "@/resources/content";
 
 export function generateMetadata() {
