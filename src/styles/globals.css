@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius-xs: 0.25rem;
+  --radius-xs-nest-4: 0.375rem;
+  --radius-xs-nest-8: 0.5rem;
+
+  --radius-s: 0.5rem;
+  --radius-s-nest-4: 0.75rem;
+  --radius-s-nest-8: 1rem;
+
+  --radius-m: 0.75rem;
+  --radius-m-nest-4: 1rem;
+  --radius-m-nest-8: 1.25rem;
+
+  --radius-l: 1rem;
+  --radius-l-nest-4: 1.25rem;
+  --radius-l-nest-8: 1.75rem;
+
+  --radius-xl: 1.25rem;
+  --radius-xl-nest-4: 1.5rem;
+  --radius-xl-nest-8: 1.875rem;
+
+  --radius-999: 999rem;
+}
+/****************************/
+/*           RADIUS         */
+/****************************/
+
+.radius-xl {
+  border-radius: var(--radius-xl);
+}
+
+.radius-xl-4 {
+  border-radius: var(--radius-xl-nest-4);
+}
+
+.radius-xl-8 {
+  border-radius: var(--radius-xl-nest-8);
+}
+
+.radius-l {
+  border-radius: var(--radius-l);
+}
+
+.radius-l-4 {
+  border-radius: var(--radius-l-nest-4);
+}
+
+.radius-l-8 {
+  border-radius: var(--radius-l-nest-8);
+}
+
+.radius-m {
+  border-radius: var(--radius-m);
+}
+
+.radius-m-4 {
+  border-radius: var(--radius-m-nest-4);
+}
+
+.radius-m-8 {
+  border-radius: var(--radius-m-nest-8);
+}
+
+.radius-s {
+  border-radius: var(--radius-s);
+}
+
+.radius-s-4 {
+  border-radius: var(--radius-s-nest-4);
+}
+
+.radius-s-8 {
+  border-radius: var(--radius-s-nest-8);
+}
+
+.radius-xs {
+  border-radius: var(--radius-xs);
+}
+
+.radius-xs-4 {
+  border-radius: var(--radius-xs-nest-4);
+}
+
+.radius-xs-8 {
+  border-radius: var(--radius-xs-nest-8);
+}
+
+.radius-full {
+  border-radius: var(--radius-999);
+}
+
+/****************************/
+/*           STYLE          */
+/****************************/
+
+.border-solid-1 {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.border-solid-2 {
+  border-style: solid;
+  border-width: 2px;
+}
+
+/****************************/
+/*           COLOR          */
+/****************************/
+
+/* PAGE */
+.surface-border {
+  border-color: var(--surface-border);
+}
+
+/* NEUTRAL */
+.neutral-border-weak {
+  border-color: var(--neutral-border-weak);
+}
+
+.neutral-border-medium {
+  border-color: var(--neutral-border-medium);
+}
+
+.neutral-border-strong {
+  border-color: var(--neutral-border-strong);
+}
+
+/* BRAND */
+.brand-border-weak {
+  border-color: var(--brand-border-weak);
+}
+
+.brand-border-medium {
+  border-color: var(--brand-border-medium);
+}
+
+.brand-border-strong {
+  border-color: var(--brand-border-strong);
+}
+
+/* ACCENT */
+.accent-border-weak {
+  border-color: var(--accent-border-weak);
+}
+
+.accent-border-medium {
+  border-color: var(--accent-border-medium);
+}
+
+.accent-border-strong {
+  border-color: var(--accent-border-strong);
+}
+
+/* INFO */
+.info-border-weak {
+  border-color: var(--info-border-weak);
+}
+
+.info-border-medium {
+  border-color: var(--info-border-medium);
+}
+
+.info-border-strong {
+  border-color: var(--info-border-strong);
+}
+
+/* DANGER */
+.danger-border-weak {
+  border-color: var(--danger-border-weak);
+}
+
+.danger-border-medium {
+  border-color: var(--danger-border-medium);
+}
+
+.danger-border-strong {
+  border-color: var(--danger-border-strong);
+}
+
+/* WARNING */
+.warning-border-weak {
+  border-color: var(--warning-border-weak);
+}
+
+.warning-border-medium {
+  border-color: var(--warning-border-medium);
+}
+
+.warning-border-strong {
+  border-color: var(--warning-border-strong);
+}
+
+/* SUCCESS */
+.success-border-weak {
+  border-color: var(--success-border-weak);
+}
+
+.success-border-medium {
+  border-color: var(--success-border-medium);
+}
+
+.success-border-strong {
+  border-color: var(--success-border-strong);
+}
+/* 
+html {
+  background-color: #000000;
+}
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-size: 15px;
+  font-family: "Montserrat";
+  line-height: 1.65em;
+  overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(112, 0, 255, 0.05);
+  cursor: none !important;
+}
+
+a,
+input[type="checkbox"] {
+  cursor: none !important;
+}
+
+.fancy-cursor {
+  border-radius: 100%;
+  background-color: white;
+  mix-blend-mode: difference;
+}
+
+.cursorFollower {
+  border-radius: 100%;
+  left: -0.8rem;
+  top: -0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.027);
+}
+
+::selection {
+  color: #ff5368;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #eee;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.skills-info.skills-second-style {
+  margin-bottom: 30px;
+}
+.skills-info.skills-second-style h4 {
+  font-size: 13px;
+  line-height: 1.1em;
+  position: relative;
+  float: left;
+  margin: 0 0 4px;
+}
+.skills-second-style .skill-container {
+  position: relative;
+  display: inline-block;
+  background-color: #333;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 6px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+.skills-second-style .skill-container:before {
+  content: "";
+  position: absolute;
+  background-color: #56b887;
+}
+.skills-second-style .skill-value {
+  font-size: 11px;
+  line-height: 1.1em;
+  position: relative;
+  float: right;
+  margin: 0 0 4px;
+  color: #969798;
+}
+.skills-second-style .skill-percentage {
+  background-color: #56b887;
+  -moz-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  border-radius: 9px;
+  height: 6px;
+  padding: 0;
+}
+.skills-second-style .skill-container.skill-1 .skill-percentage {
+  width: 95%;
+}
+.skills-second-style .skill-container.skill-2 .skill-percentage {
+  width: 65%;
+}
+.skills-second-style .skill-container.skill-3 .skill-percentage {
+  width: 80%;
+}
+.skills-second-style .skill-container.skill-4 .skill-percentage {
+  width: 90%;
+}
+.skills-second-style .skill-container.skill-5 .skill-percentage {
+  width: 95%;
+}
+.skills-second-style .skill-container.skill-6 .skill-percentage {
+  width: 85%;
+}
+.skills-second-style .skill-container.skill-7 .skill-percentage {
+  width: 100%;
+}
+.skills-second-style .skill-container.skill-8 .skill-percentage {
+  width: 75%;
+}
+.skills-second-style .skill-container.skill-9 .skill-percentage {
+  width: 90%;
+}
+.tech-stack {
+  list-style: none;
+}
+.tech-stack li {
+  display: inline-block;
+  background-color: #56b887;
+  border-radius: 25px;
+  color: #fff;
+  padding: 1px 12px;
+  margin: 3px 0;
+  font-size: 13px;
+} */

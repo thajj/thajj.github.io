@@ -1,19 +1,19 @@
-import "@/components/once-ui/styles/index.scss";
+import "@/styles/main.scss";
 import "@/components/once-ui/tokens/index.scss";
-import "./globals.css";
+import "@/styles/globals.css";
 
 import classNames from "classnames";
 
 import { Flex, Background } from "@/components/once-ui/components";
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, home, person, style } from "@/resources";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 import { Inter } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
 
 import { Metadata } from "next";
 import Head from "next/head";
-import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
@@ -72,64 +72,58 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Head>
-            <link rel="icon" href="/favicon.ico" />
-          </Head>
+    <Flex
+      as="html"
+      lang="en"
+      background="page"
+      data-neutral={style.neutral}
+      data-brand={style.brand}
+      data-accent={style.accent}
+      data-solid={style.solid}
+      data-solid-style={style.solidStyle}
+      data-theme={style.theme}
+      data-border={style.border}
+      data-surface={style.surface}
+      data-transition={style.transition}
+      className={classNames(
+        primary.variable,
+        secondary ? secondary.variable : "",
+        tertiary ? tertiary.variable : "",
+        code.variable
+      )}
+      suppressHydrationWarning
+    >
+      <Flex
+        style={{ minHeight: "100vh" }}
+        as="body"
+        fillWidth
+        margin="0"
+        padding="0"
+        direction="column"
+      >
+        <ThemeProvider>
+          <Background
+            gradient={effects.gradient}
+            dots={effects.dots}
+            lines={effects.lines}
+          />
+          <Flex fillWidth minHeight="16"></Flex>
+          <Header />
           <Flex
-            as="html"
-            lang="en"
-            background="page"
-            data-neutral={style.neutral}
-            data-brand={style.brand}
-            data-accent={style.accent}
-            data-solid={style.solid}
-            data-solid-style={style.solidStyle}
-            data-theme={style.theme}
-            data-border={style.border}
-            data-surface={style.surface}
-            data-transition={style.transition}
-            className={classNames(
-              primary.variable,
-              secondary ? secondary.variable : "",
-              tertiary ? tertiary.variable : "",
-              code.variable
-            )}
+            zIndex={0}
+            fillWidth
+            paddingY="l"
+            paddingX="l"
+            justifyContent="center"
+            flex={1}
           >
-            <Flex
-              style={{ minHeight: "100vh" }}
-              as="body"
-              fillWidth
-              margin="0"
-              padding="0"
-              direction="column"
-            >
-              <Background
-                gradient={effects.gradient}
-                dots={effects.dots}
-                lines={effects.lines}
-              />
-              <Flex fillWidth minHeight="16"></Flex>
-              <Header />
-              <Flex
-                zIndex={0}
-                fillWidth
-                paddingY="l"
-                paddingX="l"
-                justifyContent="center"
-                flex={1}
-              >
-                <Flex justifyContent="center" fillWidth minHeight="0">
-                  <RouteGuard>{children}</RouteGuard>
-                </Flex>
-              </Flex>
-              <Footer />
+            <Flex justifyContent="center" fillWidth minHeight="0">
+              <RouteGuard>{children}</RouteGuard>
             </Flex>
           </Flex>
+          <Footer />
         </ThemeProvider>
-      </body>
-    </html>
+      </Flex>
+    </Flex>
   );
 }

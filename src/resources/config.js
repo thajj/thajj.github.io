@@ -49,16 +49,15 @@ function setTheme(theme) {
   // Sync with Magic UI
   if (typeof window !== "undefined") {
     document.documentElement.setAttribute("data-theme", theme);
-    1;
     localStorage.setItem("theme", theme);
   }
 }
 
 const style = {
-  theme: "dark", // dark | light
-  neutral: "slate", // sand | gray | slate
-  brand: "moss", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  theme: "light", // dark | light
+  neutral: "sand", // sand | gray | slate
+  brand: "yellow", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
   solidStyle: "plastic", // flat | plastic
   border: "playful", // rounded | playful | conservative

@@ -4,7 +4,7 @@ const config = {
     [
       "@csstools/postcss-global-data",
       {
-        files: ["src/components/once-ui/styles/breakpoints.scss"],
+        files: ["src/styles/breakpoints.scss"],
       },
     ],
     "tailwindcss", // Add Tailwind CSS plugin

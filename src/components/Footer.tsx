@@ -9,20 +9,20 @@ export const Footer = () => {
       as="footer"
       position="relative"
       fillWidth
-      padding="8"
+      padding="4"
       justifyContent="center"
     >
       <Flex
         fillWidth
         maxWidth="m"
-        paddingY="8"
+        paddingY="4"
         paddingX="16"
         justifyContent="space-between"
         alignItems="center"
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">© {currentYear} /</Text>
-          <Text paddingX="4">{person.name}</Text>
+          <Text onBackground="neutral-weak">© {currentYear} / </Text>
+          <Text>{person.name}</Text>
         </Text>
         <Flex gap="16">
           {social.map(
