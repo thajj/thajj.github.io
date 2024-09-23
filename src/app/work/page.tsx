@@ -35,12 +35,11 @@ export function generateMetadata() {
 
 export default function Work() {
   const allProjects = getPosts(["src", "app", "work", "projects"]);
-  allProjects.map((project) => {
-    console.log(project.metadata.publishedAt);
-  });
-  const timelineData = allProjects.map((project) => ({
+
+  const timelineData = allProjects.map((project, index) => ({
     title: new Date(project.metadata.publishedAt).getFullYear().toString(),
-    content: <Projects projects={[project]} />,
+    // content: <Projects projects={[project]} />,
+    content: <Projects range={[index]} />,
   }));
 
   return (

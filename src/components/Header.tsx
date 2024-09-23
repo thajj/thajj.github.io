@@ -75,7 +75,7 @@ export const Header = () => {
         borderStyle="solid-1"
         radius="m-4"
         shadow="l"
-        padding="1"
+        padding="4"
         justifyContent="center"
       >
         <Flex gap="4" textVariant="body-default-s">
@@ -136,6 +136,7 @@ export const Header = () => {
           )}
         </Flex>
         <Flex>
+          <Separator orientation="vertical" className="h-full py-2" />
           <ModeToggle className="rounded-full" />
         </Flex>
       </Flex>

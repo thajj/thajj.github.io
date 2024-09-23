@@ -1,6 +1,6 @@
+import "@/styles/globals.css";
 import "@/styles/main.scss";
 import "@/components/once-ui/tokens/index.scss";
-import "@/styles/globals.css";
 
 import classNames from "classnames";
 
@@ -8,6 +8,7 @@ import { Flex, Background } from "@/components/once-ui/components";
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, home, person, style } from "@/resources";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import BetaBadge from "@/components/BetaBadge";
 
 import { Inter } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           />
           <Flex fillWidth minHeight="16"></Flex>
           <Header />
+          <BetaBadge />
           <Flex
             zIndex={0}
             fillWidth
