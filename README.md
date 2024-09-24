@@ -49,6 +49,6 @@ This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 ## 📞 Contact
 
-Toufic Hajj - [LinkedIn](https://www.linkedin.com/in/toufic-hajj) - [Email](mailto:your.email@example.com)
+Toufic Hajj - [LinkedIn](https://www.linkedin.com/in/toufic-hajj)
 
-Project Link: [https://github.com/thajj/portfolio](https://github.com/thajj/portfolio)
+Project Link: [https://toufichajj.dev](https://toufichajj.dev)
