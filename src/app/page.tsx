@@ -101,8 +101,8 @@ export default function Home() {
                     Full Stack Developer
                   </Highlight>
                 </RevealFx>{" "}
-                who loves turning complex challenges into seamless solutions{" "}
-                {/* and{" "}
+                who loves turning complex challenges into seamless solutions.
+                {/* and{" "}.
                 <RevealFx delay={0.2}>
                   <Highlight className="text-black dark:text-white">
                     LEADING TEAMS
