@@ -212,9 +212,10 @@ const about: About = {
         timeframe: "October 2024 - Present",
         role: "Full Stack Developer",
         achievements: [
-          `Led independent software development initiatives, designing and developing a comprehensive trading toolkit using React 16.8+ with React Hooks and Isomorphic App capabilities, integrated natively with Electron.`,
-          `Completed multiple projects on Upwork leveraging the React ecosystem with a strong focus on component-based architecture and micro front-end design, utilizing React Hooks, Context API, and accessibility-enhancing libraries such as React Aria.`,
-          `Enhanced the quality of French language model outputs by refining reward models in Reinforcement Learning from Human Feedback (RLHF).`,
+          `Develop sophisticated applications to process large volumes of real-time data for internal and external users.`,
+          `Design and develop web applications that enhance CWP Energy Solutions' capabilities, including data visualization tools for clients and asset managers, as well as trading interfaces for executing transactions across various electricity markets.`,
+          `Create a client portal to automate billing and provide analytical reporting.`,
+          `Stay ahead of technological advancements by continuously researching and testing more efficient technologies.`,
         ],
         images: [],
       },
