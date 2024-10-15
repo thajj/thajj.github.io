@@ -22,7 +22,9 @@ export function Projects({ projects, range }: ProjectsProps) {
           description={post.metadata.summary}
           content={post.content}
           avatars={
-            post.metadata.team?.map((member) => ({ src: member.avatar })) || []
+            post.metadata.team?.map((member: { avatar: any }) => ({
+              src: member.avatar,
+            })) || []
           }
         />
       ))}

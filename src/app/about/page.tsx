@@ -42,6 +42,32 @@ export function generateMetadata() {
   };
 }
 
+// Add this function to group consecutive work experiences by company
+function groupWorkExperiences(experiences: any[]) {
+  return experiences.reduce((acc, exp, index, array) => {
+    if (index === 0 || exp.company !== array[index - 1].company) {
+      // New company or first experience
+      acc.push(exp);
+    } else {
+      // Same company as previous, check if there's any other company in between
+      const prevDifferentCompanyIndex = array
+        .slice(0, index)
+        .findLastIndex((e) => e.company !== exp.company);
+      if (
+        prevDifferentCompanyIndex === -1 ||
+        prevDifferentCompanyIndex === index - 1
+      ) {
+        // No other company in between, update the existing entry
+        acc[acc.length - 1] = exp;
+      } else {
+        // There was another company in between, add as a new entry
+        acc.push(exp);
+      }
+    }
+    return acc;
+  }, []);
+}
+
 const structure = [
   {
     title: about.intro.title,
@@ -52,6 +78,9 @@ const structure = [
     title: about.work.title,
     display: about.work.display,
     items: about.work.experiences.map((experience) => experience.company),
+    // items: groupWorkExperiences(about.work.experiences).map(
+    //   (experience: { company: any }) => experience.company
+    // ),
   },
   {
     title: about.studies.title,
