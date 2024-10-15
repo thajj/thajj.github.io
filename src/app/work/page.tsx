@@ -36,11 +36,30 @@ export function generateMetadata() {
 export default function Work() {
   const allProjects = getPosts(["src", "app", "work", "projects"]);
 
-  const timelineData = allProjects.map((project, index) => ({
-    title: new Date(project.metadata.publishedAt).getFullYear().toString(),
-    // content: <Projects projects={[project]} />,
-    content: <Projects range={[index]} />,
-  }));
+  const sortedProjects = allProjects.sort((a, b) => {
+    return (
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
+    );
+  });
+
+  const projectsByYear = sortedProjects.reduce((acc, project) => {
+    const year = new Date(project.metadata.publishedAt)
+      .getFullYear()
+      .toString();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(project);
+    return acc;
+  }, {} as Record<string, typeof allProjects>);
+
+  const timelineData = Object.entries(projectsByYear)
+    .map(([year, projects]) => ({
+      title: year,
+      content: <Projects projects={projects} range={[0, 1]} />,
+    }))
+    .reverse();
 
   return (
     <Flex fillWidth maxWidth="m" direction="column">
@@ -59,7 +78,7 @@ export default function Work() {
               "@type": "Person",
               name: person.name,
             },
-            hasPart: allProjects.map((project) => ({
+            hasPart: sortedProjects.map((project) => ({
               "@type": "CreativeWork",
               headline: project.metadata.title,
               description: project.metadata.summary,

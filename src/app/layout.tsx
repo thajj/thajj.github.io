@@ -5,7 +5,7 @@ import "@/components/once-ui/tokens/index.scss";
 import classNames from "classnames";
 
 import { Flex, Background } from "@/components/once-ui/components";
-import { Footer, Header, RouteGuard } from "@/components";
+
 import { baseURL, effects, home, person, style } from "@/resources";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import BetaBadge from "@/components/BetaBadge";
@@ -15,6 +15,10 @@ import { Source_Code_Pro } from "next/font/google";
 
 import { Metadata } from "next";
 import Head from "next/head";
+import { Header } from "@/components/Header";
+import { RouteGuard } from "@/components/RouteGuard";
+import { Footer } from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
@@ -103,6 +107,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         direction="column"
       >
         <ThemeProvider>
+          <GoogleAnalytics />
           <Background
             gradient={effects.gradient}
             dots={effects.dots}

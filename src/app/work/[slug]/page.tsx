@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getPosts } from "../../utils";
 import {
-  AvatarGroup,
   Button,
   Flex,
   Heading,
@@ -144,9 +143,9 @@ export default function Project({ params }: WorkParams) {
         direction="column"
       >
         <Flex gap="12" marginBottom="24" alignItems="center">
-          {post.metadata.team && (
+          {/* {post.metadata.team && (
             <AvatarGroup reverseOrder avatars={avatars} size="m" />
-          )}
+          )} */}
           <Text variant="body-default-s" onBackground="neutral-weak">
             {formatDate(post.metadata.publishedAt)}
           </Text>

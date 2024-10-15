@@ -70,22 +70,12 @@ const display = {
   time: false,
 };
 
-const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
-  effects: {
-    gradient: true,
-    dots: false,
-    lines: true,
-  },
-};
-
 export {
   routes,
   protectedRoutes,
   effects,
   style,
   display,
-  mailchimp,
   baseURL,
   toggleTheme,
   setTheme,

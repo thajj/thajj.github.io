@@ -1,24 +1,15 @@
 import { Flex } from "@/components/once-ui/components";
-import { ProjectCard } from "@/components";
-import { getPosts } from "@/app/utils";
+import { ProjectCard } from "@/components/ProjectCard";
 
 interface ProjectsProps {
+  projects: any[];
   range?: [number, number?];
 }
 
-export function Projects({ range }: ProjectsProps) {
-  const allProjects = getPosts(["src", "app", "work", "projects"]);
-
-  const sortedProjects = allProjects.sort((a, b) => {
-    return (
-      new Date(b.metadata.publishedAt).getTime() -
-      new Date(a.metadata.publishedAt).getTime()
-    );
-  });
-
+export function Projects({ projects, range }: ProjectsProps) {
   const displayedProjects = range
-    ? sortedProjects.slice(range[0] - 1, range[1] ?? sortedProjects.length)
-    : sortedProjects;
+    ? projects.slice(range[0], range[1] ?? projects.length)
+    : projects;
 
   return (
     <Flex fillWidth gap="l" marginBottom="40" paddingX="l" direction="column">

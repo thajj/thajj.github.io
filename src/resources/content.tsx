@@ -10,12 +10,6 @@ type Person = {
   languages: string[];
 };
 
-type Newsletter = {
-  display: boolean;
-  title: string;
-  description: string;
-};
-
 type SocialLink = {
   name: string;
   icon: string;
@@ -126,12 +120,6 @@ const person: Person = {
   languages: ["Français", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter: Newsletter = {
-  display: false,
-  title: `Subscribe to ${person.firstName}'s Newsletter`,
-  description: `I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.`,
-};
-
 const social: SocialLink[] = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
@@ -161,8 +149,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: `Full Stack Developer and Team Captain`,
-  subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">DEVELOPER</code> who loves turning complex problems into elegant solutions and <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">LEADING TEAMS</code> to achieve greatness.`,
+  headline: `Tech Enthusiast and Problem Solver`,
+  // subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex problems into elegant solutions and <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">LEADING TEAMS</code> to achieve greatness.`,
+  subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex challenges into seamless solutions.`,
 };
 
 const about: About = {
@@ -218,9 +207,21 @@ const about: About = {
       //   images: [],
       // },
       {
+        company: "CWP Energy Trading",
+        location: "Montreal, QC",
+        timeframe: "October 2024 - Present",
+        role: "Full Stack Developer",
+        achievements: [
+          `Led independent software development initiatives, designing and developing a comprehensive trading toolkit using React 16.8+ with React Hooks and Isomorphic App capabilities, integrated natively with Electron.`,
+          `Completed multiple projects on Upwork leveraging the React ecosystem with a strong focus on component-based architecture and micro front-end design, utilizing React Hooks, Context API, and accessibility-enhancing libraries such as React Aria.`,
+          `Enhanced the quality of French language model outputs by refining reward models in Reinforcement Learning from Human Feedback (RLHF).`,
+        ],
+        images: [],
+      },
+      {
         company: "Self-Employed",
         location: "Laval, QC",
-        timeframe: "June 2020 - Present",
+        timeframe: "June 2020 - September 2024",
         role: "Independent Software Developer",
         achievements: [
           `Led independent software development initiatives, designing and developing a comprehensive trading toolkit using React 16.8+ with React Hooks and Isomorphic App capabilities, integrated natively with Electron.`,
@@ -483,14 +484,4 @@ const renderJSX = (str: string) => {
   return <span dangerouslySetInnerHTML={{ __html: str }} />;
 };
 
-export {
-  person,
-  social,
-  newsletter,
-  home,
-  about,
-  blog,
-  work,
-  gallery,
-  renderJSX,
-};
+export { person, social, home, about, blog, work, gallery, renderJSX };

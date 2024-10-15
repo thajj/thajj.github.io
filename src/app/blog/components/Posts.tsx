@@ -1,4 +1,4 @@
-import { formatDate, getPosts } from "../../utils";
+import { formatDate } from "../../utils";
 import {
   Flex,
   Grid,
@@ -9,26 +9,19 @@ import {
 import styles from "@/app/blog/components/Posts.module.scss";
 
 interface PostsProps {
-  range?: [number] | [number, number];
+  blogs: {
+    slug: string;
+    metadata: {
+      title: string;
+      publishedAt: string;
+    };
+  }[];
+  range?: [number, number];
   columns?: "1" | "2" | "3";
 }
 
-export function Posts({ range, columns = "1" }: PostsProps) {
-  const allBlogs = getPosts(["src", "app", "blog", "posts"]);
-
-  const sortedBlogs = allBlogs.sort((a, b) => {
-    return (
-      new Date(b.metadata.publishedAt).getTime() -
-      new Date(a.metadata.publishedAt).getTime()
-    );
-  });
-
-  const displayedBlogs = range
-    ? sortedBlogs.slice(
-        range[0] - 1,
-        range.length === 2 ? range[1] : sortedBlogs.length
-      )
-    : sortedBlogs;
+export function Posts({ blogs, range, columns = "1" }: PostsProps) {
+  const displayedBlogs = range ? blogs.slice(range[0], range[1]) : blogs;
 
   return (
     <>

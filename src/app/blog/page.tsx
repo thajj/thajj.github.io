@@ -1,8 +1,8 @@
 import { Flex, Heading } from "@/components/once-ui/components";
-import { Mailchimp } from "@/components";
 import { Posts } from "./components/Posts";
+import { getPosts } from "@/app/utils";
 
-import { blog, newsletter, person } from "@/resources";
+import { blog, person } from "@/resources";
 import { baseURL } from "@/resources";
 
 export function generateMetadata() {
@@ -35,6 +35,15 @@ export function generateMetadata() {
 }
 
 export default function Blog() {
+  const allBlogs = getPosts(["src", "app", "blog", "posts"]);
+
+  const sortedBlogs = allBlogs.sort((a, b) => {
+    return (
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
+    );
+  });
+
   return (
     <Flex fillWidth maxWidth="s" direction="column">
       <script
@@ -63,10 +72,9 @@ export default function Blog() {
         {blog.title}
       </Heading>
       <Flex fillWidth flex={1}>
-        <Posts range={[1, 3]} />
-        <Posts range={[4]} columns="2" />
+        <Posts blogs={sortedBlogs} range={[0, 3]} />
+        <Posts blogs={sortedBlogs} range={[3, 5]} columns="2" />
       </Flex>
-      {newsletter.display && <Mailchimp />}
     </Flex>
   );
 }

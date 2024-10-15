@@ -4,16 +4,6 @@ export {
   effects,
   style,
   display,
-  mailchimp,
   baseURL,
 } from "./config";
-export {
-  person,
-  social,
-  newsletter,
-  home,
-  about,
-  blog,
-  work,
-  gallery,
-} from "./content";
+export { person, social, home, about, blog, work, gallery } from "./content";

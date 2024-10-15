@@ -98,16 +98,17 @@ export default function Home() {
                 Hi, I&apos;m Toufic 👋, a passionate{" "}
                 <RevealFx delay={0.1}>
                   <Highlight className="text-black dark:text-white">
-                    DEVELOPER
+                    Full Stack Developer
                   </Highlight>
                 </RevealFx>{" "}
-                who loves turning complex problems into elegant solutions and{" "}
+                who loves turning complex challenges into seamless solutions{" "}
+                {/* and{" "}
                 <RevealFx delay={0.2}>
                   <Highlight className="text-black dark:text-white">
                     LEADING TEAMS
                   </Highlight>
                 </RevealFx>{" "}
-                to achieve greatness.
+                to achieve greatness. */}
               </p>
               {/* {renderJSX(home.subline)} */}
               {/* </Text> */}
