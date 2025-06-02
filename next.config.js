@@ -1,9 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
-    domains: ["aceternity.com"],
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'aceternity.com',
+      },
+    ],
   },
-  // You can add other Next.js configurations here if needed
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
