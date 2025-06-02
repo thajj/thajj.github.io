@@ -11,10 +11,6 @@ const nextConfig = {
     ],
   },
   trailingSlash: true,
-  // Disable server-side features that aren't compatible with static export
-  experimental: {
-    appDir: true,
-  },
 };
 
 module.exports = nextConfig;
