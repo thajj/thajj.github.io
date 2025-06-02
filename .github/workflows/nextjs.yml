@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-          name: nextjs-site
+          name: github-pages
 
   # Deployment job
   deploy:
