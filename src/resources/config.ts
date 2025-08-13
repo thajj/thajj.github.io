@@ -4,7 +4,6 @@ const routes = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": false,
 };
 
 // Enable password protection on selected routes
@@ -20,15 +19,15 @@ const effects = {
 };
 
 const style = {
-  theme: "light" as "light" | "dark",
-  neutral: "sand",
-  brand: "yellow",
-  accent: "indigo",
-  solid: "contrast",
-  solidStyle: "plastic",
-  border: "playful",
-  surface: "translucent",
-  transition: "all",
+  theme: "light", // dark | light
+  neutral: "sand", // sand | gray | slate
+  brand: "yellow", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  solid: "contrast", // color | contrast
+  solidStyle: "plastic", // flat | plastic
+  border: "playful", // rounded | playful | conservative
+  surface: "translucent", // filled | translucent
+  transition: "all", // all | micro | macro
 };
 
 const display = {

@@ -85,27 +85,10 @@ type About = {
   };
 };
 
-type Blog = {
-  label: string;
-  title: string;
-  description: string;
-};
-
 type Work = {
   label: string;
   title: string;
   description: string;
-};
-
-type Gallery = {
-  label: string;
-  title: string;
-  description: string;
-  images: {
-    src: string;
-    alt: string;
-    orientation: string;
-  }[];
 };
 
 const person: Person = {
@@ -147,10 +130,10 @@ const social: SocialLink[] = [
 
 const home: Home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: `Tech Enthusiast and Problem Solver`,
-  // subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex problems into elegant solutions and <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">LEADING TEAMS</code> to achieve greatness.`,
+  title: `${person.name} - ${person.role}`,
+  description: `Portfolio of ${person.name}, a ${person.role} with 10+ years building scalable enterprise solutions`,
+  headline: `Engineering Excellence at Scale`,
+  // subline: `Transforming complex business challenges into elegant technical solutions`,
   subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex challenges into seamless solutions.`,
 };
 
@@ -163,7 +146,7 @@ const about: About = {
     subItems: true,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
     display: true,
@@ -386,103 +369,14 @@ const about: About = {
   },
 };
 
-const blog: Blog = {
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
-};
-
 const work: Work = {
   label: "Work",
   title: "My projects",
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
-};
-
-const gallery: Gallery = {
-  label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
-  images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-  ],
 };
 
 const renderJSX = (str: string) => {
   return <span dangerouslySetInnerHTML={{ __html: str }} />;
 };
 
-export { person, social, home, about, blog, work, gallery, renderJSX };
+export { person, social, home, about, work, renderJSX };
