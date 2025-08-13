@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write . --ignore-path .prettierignore",
+    "format:check": "prettier --check . --ignore-path .prettierignore"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.1",
@@ -62,8 +64,10 @@
     "postcss-custom-media": "^10.0.7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^16.1.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "sass": "^1.79.3",
     "tailwindcss": "^3.4.12",
-    "typescript": "^5"
+    "typescript": "^5.9.2"
   }
 }
