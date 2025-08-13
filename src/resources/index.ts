@@ -1,9 +1,2 @@
-export {
-  routes,
-  protectedRoutes,
-  effects,
-  style,
-  display,
-  baseURL,
-} from "./config";
-export { person, social, home, about, blog, work, gallery } from "./content";
+export { routes, protectedRoutes, effects, style, display, baseURL } from "./config";
+export { person, social, home, about, blog, work } from "./content";
