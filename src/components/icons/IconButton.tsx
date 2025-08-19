@@ -31,13 +31,7 @@ const IconButton: React.FC<IconButtonProps> = ({ href, name }) => {
       // title={name}
       href={href}
       target="_blank"
-      className="link-effect btn btn-ghost btn-circle hover:btn-outline btn-accent p-0
-      block
-      inline-flex
-      items-center
-      justify-center
-    
-    "
+      className="link-effect btn btn-ghost btn-circle hover:btn-outline btn-accent block inline-flex items-center justify-center p-0"
       rel="noreferrer"
     >
       <Icon name={name} />

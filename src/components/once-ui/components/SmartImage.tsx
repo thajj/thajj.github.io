@@ -88,11 +88,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
           height: aspectRatio ? undefined : height ? `${height}rem` : "100%",
           aspectRatio,
           cursor: enlarge ? "pointer" : "default",
-          borderRadius: isEnlarged
-            ? "0"
-            : radius
-            ? `var(--radius-${radius})`
-            : undefined,
+          borderRadius: isEnlarged ? "0" : radius ? `var(--radius-${radius})` : undefined,
           ...calculateTransform(),
           ...style,
         }}
@@ -167,14 +163,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                 }}
               />
             ) : (
-              <Image
-                {...props}
-                src={src}
-                alt={alt}
-                fill
-                sizes="90vw"
-                style={{ objectFit: "contain" }}
-              />
+              <Image {...props} src={src} alt={alt} fill sizes="90vw" style={{ objectFit: "contain" }} />
             )}
           </Flex>
         </Flex>
