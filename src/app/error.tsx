@@ -3,7 +3,7 @@
 import { Flex, Heading, Text, Button } from "@/components/once-ui/components";
 
 export default function Error({
-  error,
+  error: _error,
   reset,
 }: {
   error: Error & { digest?: string };

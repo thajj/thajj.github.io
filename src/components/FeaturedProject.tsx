@@ -111,7 +111,7 @@ function AnimatedListDemo({ className }: { className?: string }) {
     </div>
   );
 }
-const MotionCard = motion(Card);
+const _MotionCard = motion(Card);
 const Circle = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }

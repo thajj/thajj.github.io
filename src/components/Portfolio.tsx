@@ -6,7 +6,7 @@ import { Footer } from "./Footer";
 
 export default function Portfolio() {
   const [mounted, setMounted] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [_activeSection, setActiveSection] = useState("");
 
   useEffect(() => setMounted(true), []);
 
