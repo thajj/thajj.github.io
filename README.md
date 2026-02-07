@@ -35,14 +35,6 @@ Welcome to the repository of my personal portfolio website. This project showcas
 3. Run the development server: `npm run dev`
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 📝 Customization
-
-To customize the content of the portfolio, edit the JSON files in the `data/` directory.
-
-## 📄 License
-
-This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
-
 ## 📞 Contact
 
 Toufic Hajj - [LinkedIn](https://www.linkedin.com/in/toufic-hajj)
