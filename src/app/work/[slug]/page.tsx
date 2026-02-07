@@ -9,6 +9,7 @@ import {
   Text,
 } from "@/components/once-ui/components";
 import { baseURL, person } from "@/resources";
+import { AnalyticsTracker } from "@/components/AnalyticsTracker";
 
 interface WorkParams {
   params: {
@@ -80,11 +81,6 @@ export default function Project({ params }: WorkParams) {
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
-
   return (
     <Flex
       as="section"
@@ -94,13 +90,14 @@ export default function Project({ params }: WorkParams) {
       alignItems="center"
       gap="l"
     >
+      <AnalyticsTracker type="project" title={post.metadata.title} slug={post.slug} />
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "BlogPosting",
+            "@type": "CreativeWork",
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -131,7 +128,7 @@ export default function Project({ params }: WorkParams) {
         <SmartImage
           aspectRatio="16 / 9"
           radius="m"
-          alt="image"
+          alt={post.metadata.title}
           src={post.metadata.images[0]}
         />
       )}
@@ -143,9 +140,6 @@ export default function Project({ params }: WorkParams) {
         direction="column"
       >
         <Flex gap="12" marginBottom="24" alignItems="center">
-          {/* {post.metadata.team && (
-            <AvatarGroup reverseOrder avatars={avatars} size="m" />
-          )} */}
           <Text variant="body-default-s" onBackground="neutral-weak">
             {formatDate(post.metadata.publishedAt)}
           </Text>

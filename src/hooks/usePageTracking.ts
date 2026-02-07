@@ -1,13 +1,23 @@
-// import * as React from "react";
-// import { useLocation } from "react-router-dom";
+"use client";
 
-// export const usePageTracking = () => {
-//   const location = useLocation();
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
-//   React.useEffect(() => {
-//     // track pageview with gtag / react-ga / react-ga4, for example:
-//     // window.gtag("event", "page_view", {
-//     //   page_path: location.pathname + location.search,
-//     // });
-//   }, [location]);
-// };
+export const usePageTracking = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
+      const url =
+        pathname +
+        (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+
+      // Send pageview event to Google Analytics
+      window.gtag("event", "page_view", {
+        page_path: url,
+        page_title: document.title,
+      });
+    }
+  }, [pathname, searchParams]);
+};

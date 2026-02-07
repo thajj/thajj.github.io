@@ -1,17 +1,13 @@
-import { motion } from "framer-motion";
 import {
   Heading,
   Flex,
-  Text,
   Button,
   Avatar,
   RevealFx,
 } from "../components/once-ui/components";
 
 import { about, baseURL, home, person } from "@/resources";
-import { renderJSX } from "@/resources/content";
-import { HeroParallax } from "@/components/ui/hero-parallax";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { Highlight } from "@/components/ui/hero-highlight";
 
 export function generateMetadata() {
   const title = home.title;
@@ -55,25 +51,18 @@ export default function Home() {
             name: home.title,
             description: home.description,
             url: `https://${baseURL}`,
-            image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
+            image: `https://${baseURL}/og?title=${encodeURIComponent(home.title)}`,
             publisher: {
               "@type": "Person",
               name: person.name,
               image: {
                 "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
+                url: `https://${baseURL}${person.avatar}`,
               },
             },
           }),
         }}
       />
-      {/* <Flex
-      maxWidth="m"
-      fillWidth
-      gap="xl"
-      direction="column"
-      alignItems="center"
-    ></Flex> */}
       <Flex
         fillWidth
         direction="column"
@@ -88,30 +77,16 @@ export default function Home() {
             </Heading>
           </RevealFx>
           <RevealFx translateY="8" delay={0.2}>
-            {/* <Text
-              wrap="balance"
-              onBackground="neutral-weak"
-              variant="body-default-l"
-            > */}
             <div className="text-muted-foreground font-mono text-xl leading-relaxed">
               <p>
-                Hi, I&apos;m Toufic 👋, a passionate{" "}
+                Hi, I&apos;m Toufic, a passionate{" "}
                 <RevealFx delay={0.1}>
                   <Highlight className="text-black dark:text-white">
                     Full Stack Developer
                   </Highlight>
                 </RevealFx>{" "}
                 who loves turning complex challenges into seamless solutions.
-                {/* and{" "}.
-                <RevealFx delay={0.2}>
-                  <Highlight className="text-black dark:text-white">
-                    LEADING TEAMS
-                  </Highlight>
-                </RevealFx>{" "}
-                to achieve greatness. */}
               </p>
-              {/* {renderJSX(home.subline)} */}
-              {/* </Text> */}
             </div>
           </RevealFx>
           <RevealFx translateY="12" delay={0.4}>
@@ -136,16 +111,6 @@ export default function Home() {
           </RevealFx>
         </Flex>
       </Flex>
-      {/* <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
-      </RevealFx>
-      {routes["/blog"] && (
-        <Flex fillWidth paddingX="20">
-          <Posts range={[1, 2]} columns="2" />
-        </Flex>
-      )}
-      <Projects range={[2]} /> */}
-      {/* {newsletter.display && <Mailchimp />} */}
     </>
   );
 }

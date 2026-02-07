@@ -39,10 +39,6 @@ Welcome to the repository of my personal portfolio website. This project showcas
 
 To customize the content of the portfolio, edit the JSON files in the `data/` directory.
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/portfolio/issues).
-
 ## 📄 License
 
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.

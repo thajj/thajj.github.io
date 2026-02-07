@@ -1,17 +1,17 @@
-import {
-  Avatar,
-  Button,
-  Flex,
-  Heading,
-  Icon,
-  IconButton,
-  SmartImage,
-  Tag,
-  Text,
-} from "../../components/once-ui/components";
-import { person, about, social, baseURL } from "../../resources";
-import TableOfContents from "./components/TableOfContents";
 import styles from "@/app/about/about.module.scss";
+import { Flex } from "@/components/Flex";
+import {
+  Button,
+  Heading,
+  SmartImage,
+  Text,
+} from "@/components/once-ui/components";
+import { Avatar } from "@/components/once-ui/components/Avatar";
+import { Icon } from "@/components/once-ui/components/Icon";
+import { IconButton } from "@/components/once-ui/components/IconButton";
+import { Tag } from "@/components/once-ui/components/Tag";
+import { about, baseURL, person, social } from "../../resources";
+import TableOfContents from "./components/TableOfContents";
 
 export function generateMetadata() {
   const title = about.title;
@@ -25,7 +25,7 @@ export function generateMetadata() {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/blog`,
+      url: `https://${baseURL}/about`,
       images: [
         {
           url: ogImage,
@@ -42,14 +42,11 @@ export function generateMetadata() {
   };
 }
 
-// Add this function to group consecutive work experiences by company
 function groupWorkExperiences(experiences: any[]) {
   return experiences.reduce((acc, exp, index, array) => {
     if (index === 0 || exp.company !== array[index - 1].company) {
-      // New company or first experience
       acc.push(exp);
     } else {
-      // Same company as previous, check if there's any other company in between
       const prevDifferentCompanyIndex = array
         .slice(0, index)
         .findLastIndex((e) => e.company !== exp.company);
@@ -77,10 +74,9 @@ const structure = [
   {
     title: about.work.title,
     display: about.work.display,
-    items: about.work.experiences.map((experience) => experience.company),
-    // items: groupWorkExperiences(about.work.experiences).map(
-    //   (experience: { company: any }) => experience.company
-    // ),
+    items: groupWorkExperiences(about.work.experiences).map(
+      (experience: { company: any }) => experience.company
+    ),
   },
   {
     title: about.studies.title,
@@ -108,7 +104,7 @@ export default function About() {
             jobTitle: person.role,
             description: about.intro.description,
             url: `https://${baseURL}/about`,
-            image: `${baseURL}/images/${person.avatar}`,
+            image: `https://${baseURL}/images/${person.avatar}`,
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:")) // Filter out empty links and email links
               .map((item) => item.link),

@@ -1,6 +1,5 @@
 export {
   routes,
-  protectedRoutes,
   effects,
   style,
   display,

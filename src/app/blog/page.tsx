@@ -56,13 +56,13 @@ export default function Blog() {
             headline: blog.title,
             description: blog.description,
             url: `https://${baseURL}/blog`,
-            image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
+            image: `https://${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
             author: {
               "@type": "Person",
               name: person.name,
               image: {
                 "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
+                url: `https://${baseURL}${person.avatar}`,
               },
             },
           }),

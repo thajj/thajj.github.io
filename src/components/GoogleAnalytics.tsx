@@ -1,22 +1,13 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { usePageTracking } from "@/hooks/usePageTracking";
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export default function GoogleAnalytics() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    if (pathname && GA_MEASUREMENT_ID) {
-      (window as any).gtag("config", GA_MEASUREMENT_ID, {
-        page_path: pathname + (searchParams ? searchParams.toString() : ""),
-      });
-    }
-  }, [pathname, searchParams]);
+  // Initialize page tracking
+  usePageTracking();
 
   if (!GA_MEASUREMENT_ID) {
     return null;
@@ -38,6 +29,7 @@ export default function GoogleAnalytics() {
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
+              send_page_view: false // Disable automatic page views as we'll handle them manually
             });
           `,
         }}

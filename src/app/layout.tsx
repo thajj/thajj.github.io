@@ -8,13 +8,11 @@ import { Flex, Background } from "@/components/once-ui/components";
 
 import { baseURL, effects, home, person, style } from "@/resources";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import BetaBadge from "@/components/BetaBadge";
 
 import { Inter } from "next/font/google";
 import { Source_Code_Pro } from "next/font/google";
 
 import { Metadata } from "next";
-import Head from "next/head";
 import { Header } from "@/components/Header";
 import { RouteGuard } from "@/components/RouteGuard";
 import { Footer } from "@/components/Footer";
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${person.firstName}'s Portfolio`,
     description: "Portfolio website showcasing my work.",
-    url: baseURL,
+    url: `https://${baseURL}`,
     siteName: `${person.firstName}'s Portfolio`,
     locale: "en_CA",
     type: "website",
@@ -55,15 +53,8 @@ type FontConfig = {
   variable: string;
 };
 
-/*
-	Replace with code for secondary and tertiary fonts
-	from https://once-ui.com/customize
-*/
 const secondary: FontConfig | undefined = undefined;
 const tertiary: FontConfig | undefined = undefined;
-
-/*
- */
 
 const code = Source_Code_Pro({
   variable: "--font-code",
@@ -115,7 +106,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           />
           <Flex fillWidth minHeight="16"></Flex>
           <Header />
-          <BetaBadge />
           <Flex
             zIndex={0}
             fillWidth

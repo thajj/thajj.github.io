@@ -10,6 +10,7 @@ import {
 } from "@/components/once-ui/components";
 
 import { person, baseURL } from "@/resources";
+import { AnalyticsTracker } from "@/components/AnalyticsTracker";
 
 interface BlogParams {
   params: {
@@ -68,7 +69,7 @@ export function generateMetadata({ params }: BlogParams) {
   };
 }
 
-export default function Blog({ params }: BlogParams) {
+export default function BlogPost({ params }: BlogParams) {
   const post = getPosts(["src", "app", "blog", "posts"]).find(
     (post) => post.slug === params.slug
   );
@@ -79,6 +80,7 @@ export default function Blog({ params }: BlogParams) {
 
   return (
     <Flex as="section" fillWidth maxWidth="xs" direction="column" gap="m">
+      <AnalyticsTracker type="blog" title={post.metadata.title} slug={post.slug} />
       <script
         type="application/ld+json"
         suppressHydrationWarning

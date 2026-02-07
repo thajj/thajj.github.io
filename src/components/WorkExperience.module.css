@@ -1,0 +1,52 @@
+.workExperience {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.company {
+  display: flex;
+  flex-direction: column;
+}
+
+.companyHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.companyLogo {
+  border-radius: 50%;
+}
+
+.roles {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.roles::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #e0e0e0;
+}
+
+.role {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.roleBullet {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #0077b5;
+  border: 2px solid #fff;
+}
