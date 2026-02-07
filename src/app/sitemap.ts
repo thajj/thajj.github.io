@@ -1,7 +1,7 @@
 import { getPosts } from "./utils";
 import { baseURL } from "../resources";
 
-export default async function sitemap() {
+export default function sitemap() {
   const blogs = getPosts(["src", "app", "blog", "posts"]).map((post) => ({
     url: `https://${baseURL}/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,

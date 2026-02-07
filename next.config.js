@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
-    remotePatterns: [],
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'aceternity.com',
+      },
+    ],
   },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
