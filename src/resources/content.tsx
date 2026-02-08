@@ -22,6 +22,8 @@ type Home = {
   description: string;
   headline: string;
   subline: string;
+  valueProposition?: string;
+  featuredProjectSlugs?: string[];
 };
 
 type About = {
@@ -108,6 +110,12 @@ type Gallery = {
   }[];
 };
 
+type Contact = {
+  label: string;
+  title: string;
+  description: string;
+};
+
 const person: Person = {
   firstName: "Toufic",
   lastName: "Hajj",
@@ -150,8 +158,9 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: `Tech Enthusiast and Problem Solver`,
-  // subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex problems into elegant solutions and <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">LEADING TEAMS</code> to achieve greatness.`,
   subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex challenges into seamless solutions.`,
+  valueProposition: "I design and build scalable applications, lead teams through the full software lifecycle, and deliver high-quality software that meets business goals. Full stack development, cloud, and Agile are my daily focus.",
+  featuredProjectSlugs: ["open-trivia", "stonkify", "portfolio"],
 };
 
 const about: About = {
@@ -398,86 +407,34 @@ const work: Work = {
   label: "Work",
   title: "My projects",
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+};
+
+const contact: Contact = {
+  label: "Contact",
+  title: "Get in touch",
+  description: `Reach out to ${person.name} for collaboration or inquiries.`,
 };
 
 const gallery: Gallery = {
   label: "Gallery",
   title: "My photo gallery",
   description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
+  // Images from https://pexels.com — use descriptive alt text for accessibility
   images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
+    { src: "/images/gallery/img-01.jpg", alt: "Gallery photo 1, vertical format", orientation: "vertical" },
+    { src: "/images/gallery/img-02.jpg", alt: "Gallery photo 2, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-03.jpg", alt: "Gallery photo 3, vertical format", orientation: "vertical" },
+    { src: "/images/gallery/img-04.jpg", alt: "Gallery photo 4, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-05.jpg", alt: "Gallery photo 5, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-06.jpg", alt: "Gallery photo 6, vertical format", orientation: "vertical" },
+    { src: "/images/gallery/img-07.jpg", alt: "Gallery photo 7, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-08.jpg", alt: "Gallery photo 8, vertical format", orientation: "vertical" },
+    { src: "/images/gallery/img-09.jpg", alt: "Gallery photo 9, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-10.jpg", alt: "Gallery photo 10, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-11.jpg", alt: "Gallery photo 11, vertical format", orientation: "vertical" },
+    { src: "/images/gallery/img-12.jpg", alt: "Gallery photo 12, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-13.jpg", alt: "Gallery photo 13, landscape", orientation: "horizontal" },
+    { src: "/images/gallery/img-14.jpg", alt: "Gallery photo 14, landscape", orientation: "horizontal" },
   ],
 };
 
@@ -485,4 +442,4 @@ const renderJSX = (str: string) => {
   return <span dangerouslySetInnerHTML={{ __html: str }} />;
 };
 
-export { person, social, home, about, blog, work, gallery, renderJSX };
+export { person, social, home, about, blog, work, contact, gallery, renderJSX };

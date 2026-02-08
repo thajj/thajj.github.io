@@ -17,6 +17,7 @@ import { Header } from "@/components/Header";
 import { RouteGuard } from "@/components/RouteGuard";
 import { Footer } from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
@@ -99,6 +100,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider>
           <GoogleAnalytics />
+          <a
+            href="#main"
+            className="absolute left-4 -top-full z-[100] rounded bg-background px-4 py-2 shadow-md outline-none transition-[top] duration-150 focus:top-4 focus:ring-2 focus:ring-ring"
+          >
+            Skip to main content
+          </a>
           <Background
             gradient={effects.gradient}
             dots={effects.dots}
@@ -107,6 +114,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Flex fillWidth minHeight="16"></Flex>
           <Header />
           <Flex
+            id="main"
             zIndex={0}
             fillWidth
             paddingY="l"
@@ -119,6 +127,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </Flex>
           </Flex>
           <Footer />
+          <ScrollToTopButton />
         </ThemeProvider>
       </Flex>
     </Flex>

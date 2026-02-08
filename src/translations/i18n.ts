@@ -1,3 +1,8 @@
+/**
+ * i18n is configured but not currently used by the app.
+ * All UI content comes from src/resources/content.tsx (English).
+ * To enable EN/FR: wrap the app with I18nextProvider and use useTranslation() for strings.
+ */
 import i18n from "i18next";
 // import LanguageDetector from 'i18next-browser-languagedetector';
 

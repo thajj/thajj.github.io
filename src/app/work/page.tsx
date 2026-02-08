@@ -1,8 +1,7 @@
 import { getPosts } from "@/app/utils";
 import { Flex } from "@/components/once-ui/components";
-import { Projects } from "@/app/work/components/Projects";
+import { WorkPageContent } from "@/app/work/components/WorkPageContent";
 import { baseURL, person, work } from "@/resources";
-import { Timeline } from "@/components/ui/timeline";
 
 export function generateMetadata() {
   const title = work.title;
@@ -43,24 +42,6 @@ export default function Work() {
     );
   });
 
-  const projectsByYear = sortedProjects.reduce((acc, project) => {
-    const year = new Date(project.metadata.publishedAt)
-      .getFullYear()
-      .toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(project);
-    return acc;
-  }, {} as Record<string, typeof allProjects>);
-
-  const timelineData = Object.entries(projectsByYear)
-    .map(([year, projects]) => ({
-      title: year,
-      content: <Projects projects={projects} range={[0, 1]} />,
-    }))
-    .reverse();
-
   return (
     <Flex fillWidth maxWidth="m" direction="column">
       <script
@@ -88,7 +69,7 @@ export default function Work() {
           }),
         }}
       />
-      <Timeline data={timelineData} />
+      <WorkPageContent sortedProjects={sortedProjects} />
     </Flex>
   );
 }

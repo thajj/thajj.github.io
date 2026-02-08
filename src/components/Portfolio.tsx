@@ -1,4 +1,10 @@
 "use client";
+
+/**
+ * Legacy alternate layout — not used by the app router.
+ * The live site uses src/app layout and page routes (Home, About, Work, etc.).
+ * Content is sourced from src/resources/content.tsx and MDX in src/app.
+ */
 import { useState, useEffect } from "react";
 import MainContent from "./MainContent";
 import ScrollToTopButton from "./ScrollToTopButton";

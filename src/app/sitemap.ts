@@ -1,10 +1,14 @@
 import { getPosts } from "./utils";
-import { baseURL } from "../resources";
+import { baseURL, routes } from "../resources";
 
 export default function sitemap() {
-  const blogs = getPosts(["src", "app", "blog", "posts"]).map((post) => ({
-    url: `https://${baseURL}/blog/${post.slug}`,
-    lastModified: post.metadata.publishedAt,
+  const staticPaths = ["", "/about", "/work", "/contact"];
+  if (routes["/blog"]) staticPaths.push("/blog");
+  if (routes["/gallery"]) staticPaths.push("/gallery");
+
+  const staticRoutes = staticPaths.map((route) => ({
+    url: `https://${baseURL}${route}`,
+    lastModified: new Date().toISOString().split("T")[0],
   }));
 
   const works = getPosts(["src", "app", "work", "projects"]).map((post) => ({
@@ -12,10 +16,12 @@ export default function sitemap() {
     lastModified: post.metadata.publishedAt,
   }));
 
-  const routes = ["", "/about", "/blog", "/work", "/gallery"].map((route) => ({
-    url: `https://${baseURL}${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
-  }));
+  const blogs = routes["/blog"]
+    ? getPosts(["src", "app", "blog", "posts"]).map((post) => ({
+        url: `https://${baseURL}/blog/${post.slug}`,
+        lastModified: post.metadata.publishedAt,
+      }))
+    : [];
 
-  return [...routes, ...blogs, ...works];
+  return [...staticRoutes, ...works, ...blogs];
 }

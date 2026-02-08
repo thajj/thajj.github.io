@@ -7,7 +7,7 @@ import { Flex, ToggleButton } from "./once-ui/components";
 import styles from "./Header.module.scss";
 
 import { routes, display } from "../resources";
-import { person, home, about, blog, work, gallery } from "../resources";
+import { person, home, about, blog, work, contact, gallery } from "../resources";
 
 import { ModeToggle } from "./mode-toggle";
 import { Separator } from "./ui/separator";
@@ -109,6 +109,17 @@ export const Header = () => {
             >
               <Flex paddingX="2" hide="s">
                 {work.label}
+              </Flex>
+            </ToggleButton>
+          )}
+          {routes["/contact"] && (
+            <ToggleButton
+              prefixIcon="email"
+              href="/contact"
+              selected={pathname === "/contact"}
+            >
+              <Flex paddingX="2" hide="s">
+                {contact.label}
               </Flex>
             </ToggleButton>
           )}

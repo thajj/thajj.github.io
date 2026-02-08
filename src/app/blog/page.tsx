@@ -72,8 +72,7 @@ export default function Blog() {
         {blog.title}
       </Heading>
       <Flex fillWidth flex={1}>
-        <Posts blogs={sortedBlogs} range={[0, 3]} />
-        <Posts blogs={sortedBlogs} range={[3, 5]} columns="2" />
+        <Posts blogs={sortedBlogs} columns="2" />
       </Flex>
     </Flex>
   );

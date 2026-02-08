@@ -24,7 +24,14 @@ export const Footer = () => {
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
         </Text>
-        <Flex gap="16">
+        <Flex gap="16" alignItems="center">
+          <Text
+            variant="label-default-s"
+            onBackground="neutral-weak"
+            style={{ marginRight: "var(--static-space-8)" }}
+          >
+            Contact
+          </Text>
           {social.map(
             (item) =>
               item.link && (
@@ -32,7 +39,7 @@ export const Footer = () => {
                   key={item.name}
                   href={item.link}
                   icon={item.icon}
-                  tooltip={item.name}
+                  tooltip={item.name === "Email" ? "Contact / Email" : item.name}
                   size="s"
                   variant="ghost"
                 />

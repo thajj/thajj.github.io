@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { routes } from "../resources";
 import { Flex } from "./once-ui/components";
+import { NotFoundContent } from "./NotFoundContent";
 
 interface RouteGuardProps {
   children: React.ReactNode;
@@ -27,7 +28,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
         return routes[normalized as keyof typeof routes];
       }
 
-      const dynamicRoutes = ["/blog", "/work"] as const;
+      const dynamicRoutes = ["/blog", "/work", "/gallery"] as const;
       for (const route of dynamicRoutes) {
         if (normalized.startsWith(route) && routes[route]) {
           return true;
@@ -41,10 +42,12 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     setLoading(false);
   }, [pathname]);
 
-  if (loading || !isRouteEnabled) {
-    return (
-      <Flex fillWidth paddingY="128" justifyContent="center" />
-    );
+  if (loading) {
+    return <Flex fillWidth paddingY="128" justifyContent="center" />;
+  }
+
+  if (!isRouteEnabled) {
+    return <NotFoundContent />;
   }
 
   return <>{children}</>;
