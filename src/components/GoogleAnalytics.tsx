@@ -26,10 +26,13 @@ export default function GoogleAnalytics() {
           __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
             gtag('js', new Date());
+            var debugMode = window.location.search.indexOf('debug_ga=1') !== -1;
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
-              send_page_view: false // Disable automatic page views as we'll handle them manually
+              send_page_view: false,
+              debug_mode: debugMode
             });
           `,
         }}
