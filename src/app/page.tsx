@@ -47,7 +47,7 @@ export default function Home() {
   const featuredSlugs = home.featuredProjectSlugs ?? [];
   const featuredProjects = featuredSlugs
     .map((slug) => allProjects.find((p) => p.slug === slug))
-    .filter(Boolean)
+    .filter((p): p is NonNullable<typeof p> => p != null)
     .slice(0, 3);
 
   return (

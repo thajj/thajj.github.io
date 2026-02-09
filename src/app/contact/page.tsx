@@ -1,5 +1,5 @@
 import { Flex, Heading, Text, Button } from "@/components/once-ui/components";
-import { about, baseURL, contact, person, social } from "@/resources";
+import { about, baseURL, contact, social } from "@/resources";
 
 export function generateMetadata() {
   const title = contact.title;
