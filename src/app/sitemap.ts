@@ -2,7 +2,7 @@ import { getPosts } from "./utils";
 import { baseURL, routes } from "../resources";
 
 export default function sitemap() {
-  const staticPaths = ["", "/about", "/work", "/contact"];
+  const staticPaths = ["", "/about", "/work"];
   if (routes["/blog"]) staticPaths.push("/blog");
   if (routes["/gallery"]) staticPaths.push("/gallery");
 

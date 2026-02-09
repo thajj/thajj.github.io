@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { routes } from "../resources";
 import { Flex } from "./once-ui/components";
 import { NotFoundContent } from "./NotFoundContent";
+import { PageTransitionLayout } from "./PageTransitionLayout";
 
 interface RouteGuardProps {
   children: React.ReactNode;
@@ -50,7 +51,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     return <NotFoundContent />;
   }
 
-  return <>{children}</>;
+  return <PageTransitionLayout>{children}</PageTransitionLayout>;
 };
 
 export { RouteGuard };
