@@ -1,74 +1,72 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-
-const DEFAULT_DURATION = 0.28;
-const REDUCED_DURATION = 0.01;
-
-const variants = {
-  initial: (reducedMotion: boolean) => ({
-    opacity: 0,
-    y: reducedMotion ? 0 : 10,
-  }),
-  animate: (reducedMotion: boolean) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: reducedMotion ? REDUCED_DURATION : DEFAULT_DURATION,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  }),
-  exit: (reducedMotion: boolean) => ({
-    opacity: 0,
-    y: reducedMotion ? 0 : -6,
-    transition: {
-      duration: reducedMotion ? REDUCED_DURATION : DEFAULT_DURATION * 0.9,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
-  }),
-};
+import { useEffect, useRef, useState, ReactNode, useCallback } from "react";
 
 function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mq.matches);
-    const handler = () => setPrefersReducedMotion(mq.matches);
+    setReduced(mq.matches);
+    const handler = () => setReduced(mq.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
   }, []);
 
-  return prefersReducedMotion;
+  return reduced;
 }
 
 interface PageTransitionLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function PageTransitionLayout({ children }: PageTransitionLayoutProps) {
   const pathname = usePathname();
   const reducedMotion = usePrefersReducedMotion();
+  const isFirstMount = useRef(true);
+  const prevPathRef = useRef(pathname);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const triggerEnter = useCallback(() => {
+    setIsVisible(false);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setIsVisible(true);
+      });
+    });
+  }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+
+    if (pathname !== prevPathRef.current) {
+      prevPathRef.current = pathname;
+      window.scrollTo(0, 0);
+      triggerEnter();
+    }
+  }, [pathname, triggerEnter]);
+
+  const duration = reducedMotion ? 0.01 : 0.32;
+  const y = reducedMotion ? 0 : 10;
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        custom={reducedMotion}
-        variants={variants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        style={{ width: "100%", minHeight: "min-content" }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : `translateY(${y}px)`,
+        transition: isVisible
+          ? `opacity ${duration}s cubic-bezier(0.22, 1, 0.36, 1), transform ${duration}s cubic-bezier(0.22, 1, 0.36, 1)`
+          : "none",
+      }}
+    >
+      {children}
+    </div>
   );
 }
