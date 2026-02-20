@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { routes } from "../resources";
 import { NotFoundContent } from "./NotFoundContent";
-import { PageTransitionLayout } from "./PageTransitionLayout";
 
 interface RouteGuardProps {
   children: React.ReactNode;
@@ -36,7 +35,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
     return <NotFoundContent />;
   }
 
-  return <PageTransitionLayout>{children}</PageTransitionLayout>;
+  return <>{children}</>;
 };
 
 export { RouteGuard };

@@ -3,6 +3,28 @@
 import { useState, useEffect } from "react";
 import { ArrowUpIcon } from "lucide-react";
 
+const SCROLL_DURATION_MS = 600;
+
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function animatedScrollTo(targetY: number) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  const startTime = performance.now();
+
+  function step(currentTime: number) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / SCROLL_DURATION_MS, 1);
+    const eased = easeInOutCubic(progress);
+    window.scrollTo(0, startY + distance * eased);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
 const ScrollToTopButton = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -16,10 +38,7 @@ const ScrollToTopButton = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    animatedScrollTo(0);
   };
 
   return (

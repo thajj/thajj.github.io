@@ -10,6 +10,7 @@ import {
 } from "@/components/once-ui/components";
 import { baseURL, person } from "@/resources";
 import { AnalyticsTracker } from "@/components/AnalyticsTracker";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 interface WorkParams {
   params: {
@@ -113,17 +114,19 @@ export default function Project({ params }: WorkParams) {
           }),
         }}
       />
-      <Flex fillWidth maxWidth="xs" gap="16" direction="column">
-        <Button
-          href="/work"
-          variant="tertiary"
-          size="s"
-          prefixIcon="chevronLeft"
-        >
-          Projects
-        </Button>
-        <Heading variant="display-strong-s">{post.metadata.title}</Heading>
-      </Flex>
+      <ScrollReveal delay={0}>
+        <Flex fillWidth maxWidth="xs" gap="16" direction="column">
+          <Button
+            href="/work"
+            variant="tertiary"
+            size="s"
+            prefixIcon="chevronLeft"
+          >
+            Projects
+          </Button>
+          <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        </Flex>
+      </ScrollReveal>
       {post.metadata.images.length > 0 && (
         <SmartImage
           aspectRatio="16 / 9"
@@ -132,20 +135,22 @@ export default function Project({ params }: WorkParams) {
           src={post.metadata.images[0]}
         />
       )}
-      <Flex
-        style={{ margin: "auto" }}
-        as="article"
-        maxWidth="xs"
-        fillWidth
-        direction="column"
-      >
-        <Flex gap="12" marginBottom="24" alignItems="center">
-          <Text variant="body-default-s" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt)}
-          </Text>
+      <ScrollReveal delay={0.2}>
+        <Flex
+          style={{ margin: "auto" }}
+          as="article"
+          maxWidth="xs"
+          fillWidth
+          direction="column"
+        >
+          <Flex gap="12" marginBottom="24" alignItems="center">
+            <Text variant="body-default-s" onBackground="neutral-weak">
+              {formatDate(post.metadata.publishedAt)}
+            </Text>
+          </Flex>
+          <CustomMDX source={post.content} />
         </Flex>
-        <CustomMDX source={post.content} />
-      </Flex>
+      </ScrollReveal>
     </Flex>
   );
 }

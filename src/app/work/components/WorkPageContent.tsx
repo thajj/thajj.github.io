@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Flex, Tag, Text } from "@/components/once-ui/components";
 import { Projects } from "@/app/work/components/Projects";
 import { Timeline } from "@/components/ui/timeline";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 type Project = {
   slug: string;
@@ -36,7 +37,7 @@ export function WorkPageContent({ sortedProjects }: WorkPageContentProps) {
   const filteredProjects = useMemo(() => {
     if (!selectedTag) return sortedProjects;
     return sortedProjects.filter(
-      (p) => p.metadata.tags && p.metadata.tags.includes(selectedTag)
+      (p) => p.metadata.tags && p.metadata.tags.includes(selectedTag),
     );
   }, [sortedProjects, selectedTag]);
 
@@ -60,56 +61,54 @@ export function WorkPageContent({ sortedProjects }: WorkPageContentProps) {
           content: <Projects projects={projects} />,
         }))
         .reverse(),
-    [projectsByYear]
+    [projectsByYear],
   );
 
   return (
     <Flex fillWidth maxWidth="m" direction="column" gap="l">
       {allTags.length > 0 && (
-        <Flex direction="column" gap="s" paddingX="l">
-          <Text variant="body-default-s" onBackground="neutral-weak">
-            Filter by tag
-          </Text>
-          <Flex gap="s" wrap>
-            <Tag
-              size="m"
-              role="button"
-              tabIndex={0}
-              style={{ cursor: "pointer" }}
-              className={
-                selectedTag === null
-                  ? "ring-2 ring-offset-2 ring-neutral-strong"
-                  : ""
-              }
-              onClick={() => setSelectedTag(null)}
-              onKeyDown={(e) =>
-                e.key === "Enter" && setSelectedTag(null)
-              }
-            >
-              All
-            </Tag>
-            {allTags.map((tag) => (
+        <ScrollReveal y={16}>
+          <Flex direction="column" gap="s" paddingX="l">
+            <Text variant="body-default-s" onBackground="neutral-weak">
+              Filter by tag
+            </Text>
+            <Flex gap="s" wrap>
               <Tag
-                key={tag}
                 size="m"
                 role="button"
                 tabIndex={0}
                 style={{ cursor: "pointer" }}
                 className={
-                  selectedTag === tag
+                  selectedTag === null
                     ? "ring-2 ring-offset-2 ring-neutral-strong"
                     : ""
                 }
-                onClick={() => setSelectedTag(tag)}
-                onKeyDown={(e) =>
-                  e.key === "Enter" && setSelectedTag(tag)
-                }
+                onClick={() => setSelectedTag(null)}
+                onKeyDown={(e) => e.key === "Enter" && setSelectedTag(null)}
               >
-                {tag}
+                All
               </Tag>
-            ))}
+              {allTags.map((tag) => (
+                <Tag
+                  key={tag}
+                  size="m"
+                  role="button"
+                  tabIndex={0}
+                  style={{ cursor: "pointer" }}
+                  className={
+                    selectedTag === tag
+                      ? "ring-2 ring-offset-2 ring-neutral-strong"
+                      : ""
+                  }
+                  onClick={() => setSelectedTag(tag)}
+                  onKeyDown={(e) => e.key === "Enter" && setSelectedTag(tag)}
+                >
+                  {tag}
+                </Tag>
+              ))}
+            </Flex>
           </Flex>
-        </Flex>
+        </ScrollReveal>
       )}
       {timelineData.length > 0 ? (
         <Timeline data={timelineData} />

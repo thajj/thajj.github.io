@@ -6,6 +6,33 @@
     }
 }
 
+.tocItem {
+    transition: color var(--transition-duration-micro-medium) var(--transition-timing-function),
+                transform var(--transition-duration-micro-medium) var(--transition-timing-function);
+}
+
+.tocItemActive {
+    .tocLine {
+        width: 24px;
+        background: var(--color-accent-strong);
+    }
+    .tocText {
+        color: var(--color-accent-strong);
+        font-weight: 600;
+    }
+}
+
+.tocSubItemActive {
+    .tocLine {
+        width: 12px;
+        background: var(--color-accent-medium);
+    }
+    .tocText {
+        color: var(--color-accent-medium);
+        font-weight: 600;
+    }
+}
+
 @media (--s) {
     .textAlign {
         text-align: center;

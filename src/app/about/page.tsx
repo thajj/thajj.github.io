@@ -10,6 +10,7 @@ import { Avatar } from "@/components/once-ui/components/Avatar";
 import { Icon } from "@/components/once-ui/components/Icon";
 import { IconButton } from "@/components/once-ui/components/IconButton";
 import { Tag } from "@/components/once-ui/components/Tag";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { about, baseURL, person, social } from "../../resources";
 import TableOfContents from "./components/TableOfContents";
 
@@ -74,8 +75,12 @@ const structure = [
   {
     title: about.work.title,
     display: about.work.display,
-    items: groupWorkExperiences(about.work.experiences).map(
-      (experience: { company: any }) => experience.company
+    items: Array.from<string>(
+      new Set(
+        groupWorkExperiences(about.work.experiences).map(
+          (experience: { company: any }) => experience.company
+        )
+      )
     ),
   },
   {
@@ -129,30 +134,32 @@ export default function About() {
       )}
       <Flex fillWidth mobileDirection="column" justifyContent="center">
         {about.avatar.display && (
-          <Flex
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
-            direction="column"
-            alignItems="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" alignItems="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
-                  <Tag key={index} size="l">
-                    {language}
-                  </Tag>
-                ))}
+          <ScrollReveal delay={0.1}>
+            <Flex
+              minWidth="160"
+              paddingX="l"
+              paddingBottom="xl"
+              gap="m"
+              flex={3}
+              direction="column"
+              alignItems="center"
+            >
+              <Avatar src={person.avatar} size="xl" />
+              <Flex gap="8" alignItems="center">
+                <Icon onBackground="accent-weak" name="globe" />
+                {person.location}
               </Flex>
-            )}
-          </Flex>
+              {person.languages.length > 0 && (
+                <Flex wrap gap="8">
+                  {person.languages.map((language, index) => (
+                    <Tag key={index} size="l">
+                      {language}
+                    </Tag>
+                  ))}
+                </Flex>
+              )}
+            </Flex>
+          </ScrollReveal>
         )}
         <Flex
           className={styles.blockAlign}
@@ -161,196 +168,213 @@ export default function About() {
           maxWidth={40}
           direction="column"
         >
-          <Flex
-            id={about.intro.title}
-            fillWidth
-            minHeight="160"
-            direction="column"
-            justifyContent="center"
-            marginBottom="32"
-          >
-            {about.calendar.display && (
-              <Flex
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                  border: "1px solid var(--brand-alpha-medium)",
-                  width: "fit-content",
-                }}
-                alpha="brand-weak"
-                radius="full"
-                fillWidth
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                alignItems="center"
-              >
-                <Flex paddingLeft="12">
-                  <Icon name="calendar" onBackground="brand-weak" />
-                </Flex>
-                <Flex paddingX="8">Schedule a call</Flex>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="tertiary"
-                  icon="chevronRight"
-                />
-              </Flex>
-            )}
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              {person.name}
-            </h1>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
+          <ScrollReveal delay={0}>
+            <Flex
+              id={about.intro.title}
+              fillWidth
+              minHeight="160"
+              direction="column"
+              justifyContent="center"
+              marginBottom="32"
             >
-              {person.role}
-            </Text>
-            {social.length > 0 && (
-              <Flex
-                className={styles.blockAlign}
-                paddingTop="20"
-                paddingBottom="8"
-                gap="8"
-                wrap
+              {about.calendar.display && (
+                <Flex
+                  className={styles.blockAlign}
+                  style={{
+                    backdropFilter: "blur(var(--static-space-1))",
+                    border: "1px solid var(--brand-alpha-medium)",
+                    width: "fit-content",
+                  }}
+                  alpha="brand-weak"
+                  radius="full"
+                  fillWidth
+                  padding="4"
+                  gap="8"
+                  marginBottom="m"
+                  alignItems="center"
+                >
+                  <Flex paddingLeft="12">
+                    <Icon name="calendar" onBackground="brand-weak" />
+                  </Flex>
+                  <Flex paddingX="8">Schedule a call</Flex>
+                  <IconButton
+                    href={about.calendar.link}
+                    data-border="rounded"
+                    variant="tertiary"
+                    icon="chevronRight"
+                  />
+                </Flex>
+              )}
+              <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+                {person.name}
+              </h1>
+              <Text
+                className={styles.textAlign}
+                variant="display-default-xs"
+                onBackground="neutral-weak"
               >
-                {social.map(
-                  (item) =>
-                    item.link && (
-                      <Button
-                        key={item.name}
-                        href={item.link}
-                        prefixIcon={item.icon}
-                        label={item.name}
-                        size="s"
-                        variant="tertiary"
-                      />
-                    )
-                )}
-              </Flex>
-            )}
-          </Flex>
+                {person.role}
+              </Text>
+              {social.length > 0 && (
+                <Flex
+                  className={styles.blockAlign}
+                  paddingTop="20"
+                  paddingBottom="8"
+                  gap="8"
+                  wrap
+                >
+                  {social.map(
+                    (item) =>
+                      item.link && (
+                        <Button
+                          key={item.name}
+                          href={item.link}
+                          prefixIcon={item.icon}
+                          label={item.name}
+                          size="s"
+                          variant="tertiary"
+                        />
+                      )
+                  )}
+                </Flex>
+              )}
+            </Flex>
+          </ScrollReveal>
 
           {about.intro.display && (
-            <Flex
-              direction="column"
-              textVariant="body-default-l"
-              fillWidth
-              gap="m"
-              marginBottom="xl"
-            >
-              {about.intro.description}
-            </Flex>
+            <ScrollReveal delay={0.15}>
+              <Flex
+                direction="column"
+                textVariant="body-default-l"
+                fillWidth
+                gap="m"
+                marginBottom="xl"
+              >
+                {about.intro.description}
+              </Flex>
+            </ScrollReveal>
           )}
 
           {about.work.display && (
             <>
-              <Heading
-                as="h2"
-                id={about.work.title}
-                variant="display-strong-s"
-                marginBottom="m"
-              >
-                {about.work.title}
-              </Heading>
+              <ScrollReveal>
+                <Heading
+                  as="h2"
+                  id={about.work.title}
+                  variant="display-strong-s"
+                  marginBottom="m"
+                >
+                  {about.work.title}
+                </Heading>
+              </ScrollReveal>
               <Flex direction="column" fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Flex
+                {about.work.experiences.map((experience, index) => {
+                  const isFirstOfCompany =
+                    index === 0 ||
+                    about.work.experiences[index - 1].company !== experience.company;
+                  const blockId = isFirstOfCompany
+                    ? experience.company
+                    : `${experience.company}-${index}`;
+                  return (
+                  <ScrollReveal
                     key={`${experience.company}-${experience.role}-${index}`}
-                    fillWidth
-                    direction="column"
+                    delay={index * 0.06}
                   >
-                    <Flex
-                      fillWidth
-                      justifyContent="space-between"
-                      alignItems="flex-end"
-                      marginBottom="4"
-                    >
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text
-                        variant="heading-default-xs"
-                        onBackground="neutral-weak"
+                    <Flex fillWidth direction="column">
+                      <Flex
+                        fillWidth
+                        justifyContent="space-between"
+                        alignItems="flex-end"
+                        marginBottom="4"
                       >
-                        {experience.timeframe}
-                      </Text>
-                    </Flex>
-                    <Text
-                      variant="body-default-s"
-                      onBackground="brand-weak"
-                      marginBottom="m"
-                    >
-                      {experience.role}
-                    </Text>
-                    <Flex as="ul" direction="column" gap="16">
-                      {experience.achievements.map((achievement, index) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={`${experience.company}-${index}`}
-                        >
-                          {achievement}
+                        <Text id={blockId} variant="heading-strong-l">
+                          {experience.company}
                         </Text>
-                      ))}
-                    </Flex>
-                    {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
-                        {experience.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            borderStyle="solid-1"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
+                        <Text
+                          variant="heading-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {experience.timeframe}
+                        </Text>
+                      </Flex>
+                      <Text
+                        variant="body-default-s"
+                        onBackground="brand-weak"
+                        marginBottom="m"
+                      >
+                        {experience.role}
+                      </Text>
+                      <Flex as="ul" direction="column" gap="16">
+                        {experience.achievements.map((achievement, i) => (
+                          <Text
+                            as="li"
+                            variant="body-default-m"
+                            key={`${experience.company}-${i}`}
                           >
-                            <SmartImage
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Flex>
+                            {achievement}
+                          </Text>
                         ))}
                       </Flex>
-                    )}
-                  </Flex>
-                ))}
+                      {experience.images.length > 0 && (
+                        <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
+                          {experience.images.map((image, i) => (
+                            <Flex
+                              key={i}
+                              border="neutral-medium"
+                              borderStyle="solid-1"
+                              radius="m"
+                              minWidth={image.width}
+                              height={image.height}
+                            >
+                              <SmartImage
+                                enlarge
+                                radius="m"
+                                sizes={image.width.toString()}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Flex>
+                          ))}
+                        </Flex>
+                      )}
+                    </Flex>
+                  </ScrollReveal>
+                  );
+                })}
               </Flex>
             </>
           )}
 
           {about.studies.display && (
             <>
-              <Heading
-                as="h2"
-                id={about.studies.title}
-                variant="display-strong-s"
-                marginBottom="m"
-              >
-                {about.studies.title}
-              </Heading>
+              <ScrollReveal>
+                <Heading
+                  as="h2"
+                  id={about.studies.title}
+                  variant="display-strong-s"
+                  marginBottom="m"
+                >
+                  {about.studies.title}
+                </Heading>
+              </ScrollReveal>
               <Flex direction="column" fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
-                  <Flex
+                  <ScrollReveal
                     key={`${institution.name}-${index}`}
-                    fillWidth
-                    gap="4"
-                    direction="column"
+                    delay={index * 0.08}
                   >
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text
-                      variant="heading-default-xs"
-                      onBackground="neutral-weak"
-                    >
-                      {institution.description}
-                    </Text>
-                  </Flex>
+                    <Flex fillWidth gap="4" direction="column">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text
+                        variant="heading-default-xs"
+                        onBackground="neutral-weak"
+                      >
+                        {institution.description}
+                      </Text>
+                    </Flex>
+                  </ScrollReveal>
                 ))}
               </Flex>
             </>
@@ -358,49 +382,51 @@ export default function About() {
 
           {about.technical.display && (
             <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="40"
-              >
-                {about.technical.title}
-              </Heading>
+              <ScrollReveal>
+                <Heading
+                  as="h2"
+                  id={about.technical.title}
+                  variant="display-strong-s"
+                  marginBottom="40"
+                >
+                  {about.technical.title}
+                </Heading>
+              </ScrollReveal>
               <Flex direction="column" fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
-                  <Flex
-                    key={`${skill}-${index}`}
-                    fillWidth
-                    gap="4"
-                    direction="column"
+                  <ScrollReveal
+                    key={`${skill.title}-${index}`}
+                    delay={index * 0.08}
                   >
-                    <Text variant="heading-strong-l">{skill.title}</Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            borderStyle="solid-1"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <SmartImage
-                              enlarge
+                    <Flex fillWidth gap="4" direction="column">
+                      <Text variant="heading-strong-l">{skill.title}</Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak">
+                        {skill.description}
+                      </Text>
+                      {skill.images.length > 0 && (
+                        <Flex fillWidth paddingTop="m" gap="12" wrap>
+                          {skill.images.map((image, i) => (
+                            <Flex
+                              key={i}
+                              border="neutral-medium"
+                              borderStyle="solid-1"
                               radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
-                  </Flex>
+                              minWidth={image.width}
+                              height={image.height}
+                            >
+                              <SmartImage
+                                enlarge
+                                radius="m"
+                                sizes={image.width.toString()}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Flex>
+                          ))}
+                        </Flex>
+                      )}
+                    </Flex>
+                  </ScrollReveal>
                 ))}
               </Flex>
             </>
