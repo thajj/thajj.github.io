@@ -15,7 +15,8 @@ interface AnalyticsEvent {
 export const trackEvent = ({ eventName, properties = {} }: AnalyticsEvent) => {
   if (
     process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID &&
-    typeof window !== "undefined"
+    typeof window !== "undefined" &&
+    typeof window.gtag === "function"
   ) {
     window.gtag("event", eventName, {
       ...properties,
