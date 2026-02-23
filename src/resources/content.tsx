@@ -319,8 +319,8 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "Full Stack Software Developer",
-        description: `In progress`,
+        name: "Associate Cloud Engineer",
+        description: `Google Cloud`,
       },
       {
         name: "IBM Professional Certificate",
