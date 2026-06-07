@@ -182,6 +182,7 @@ export default function Home() {
                             aspectRatio="16 / 9"
                             radius="m"
                             style={{ maxHeight: 160 }}
+                            objectFit={project.slug === "open-trivia" || project.slug === "chalons" || project.slug === "banq" ? "contain" : "cover"}
                           />
                         )}
                         <Heading as="h3" variant="heading-strong-m">

@@ -82,6 +82,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             alt={title}
             aspectRatio="16 / 9"
             src={images[activeIndex]}
+            objectFit={href.includes("open-trivia") || href.includes("chalons") || href.includes("banq") ? "contain" : "cover"}
             style={{
               border: "1px solid var(--neutral-alpha-weak)",
               ...(images.length > 1 && {

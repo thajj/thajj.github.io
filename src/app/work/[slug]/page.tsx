@@ -133,6 +133,7 @@ export default function Project({ params }: WorkParams) {
           radius="m"
           alt={post.metadata.title}
           src={post.metadata.images[0]}
+          objectFit={params.slug === "open-trivia" || params.slug === "chalons" || params.slug === "banq" ? "contain" : "cover"}
         />
       )}
       <ScrollReveal delay={0.2}>
