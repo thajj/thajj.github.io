@@ -90,10 +90,10 @@ export default function Home() {
           <RevealFx translateY="8" delay={0.2}>
             <div className="text-muted-foreground font-mono text-xl leading-relaxed">
               <p>
-                Hi, I&apos;m Toufic, a passionate{" "}
+                Hi, I&apos;m Toufic, a{" "}
                 <RevealFx delay={0.1}>
                   <Highlight className="text-black dark:text-white">
-                    Full Stack Developer
+                    Senior Full-Stack & Cloud Platform Engineer
                   </Highlight>
                 </RevealFx>{" "}
                 who loves turning complex challenges into seamless solutions.

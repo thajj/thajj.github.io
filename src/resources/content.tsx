@@ -122,7 +122,7 @@ const person: Person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Principal Software Developer",
+  role: "Senior Full-Stack & Cloud Platform Engineer @ Wisk.aero",
   avatar: "/images/avatar.png",
   location: "America/Montreal", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Français", "English"], // optional: Leave the array empty if you don't want to display languages
@@ -158,7 +158,7 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: `Tech Enthusiast and Problem Solver`,
-  subline: `Hi, I'm Toufic 👋, a passionate <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Full Stack Developer</code> who loves turning complex challenges into seamless solutions.`,
+  subline: `Hi, I'm Toufic 👋, a <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Senior Full-Stack & Cloud Platform Engineer</code> who loves turning complex challenges into seamless solutions.`,
   valueProposition: "I design and build scalable applications, lead teams through the full software lifecycle, and deliver high-quality software that meets business goals. Full stack development, cloud, and Agile are my daily focus.",
   featuredProjectSlugs: ["open-trivia", "stonkify", "portfolio"],
 };
@@ -181,134 +181,124 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: `I am a Senior Developer with over 10 years of experience in designing and optimizing scalable applications. I have expertise in leading complex projects through the full software development lifecycle using Agile methodologies like Scrum. Committed to delivering high-quality software, I aim to exceed business goals and technical requirements.`,
+    description: `Senior Full-Stack & Cloud Platform Engineer with 15+ years of experience delivering reliable software products end to end — from requirements and architecture to deployment and operations.
+
+My recent work focuses on cloud-native platforms, data-heavy systems, workflow automation, security-conscious architecture, governance/compliance, and AI-enabled engineering tools.
+
+I’ve led teams of 10+ while remaining highly hands-on, with a pragmatic approach to clean architecture, maintainable code, and practical technical direction.
+
+I’m especially interested in roles where I can combine full-stack engineering, cloud platforms, data systems, automation, and AI integration to help teams ship better software and create measurable business value.`,
   },
   work: {
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
-      // {
-      //   company: "FLY",
-      //   timeframe: "2022 - Present",
-      //   role: "Senior Design Engineer",
-      //   achievements: [
-      //     `Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.`,
-      //     `Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.`,
-      //   ],
-      //   images: [
-      //     // optional: leave the array empty if you don't want to display images
-      //     {
-      //       src: "/images/projects/project-01/cover-01.jpg",
-      //       alt: "Once UI Project",
-      //       width: 16,
-      //       height: 9,
-      //     },
-      //   ],
-      // },
-      // {
-      //   company: "Creativ3",
-      //   timeframe: "2018 - 2022",
-      //   role: "Lead Designer",
-      //   achievements: [
-      //     `Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.`,
-      //     `Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.`,
-      //   ],
-      //   images: [],
-      // },
       {
-        company: "CWP Energy Trading",
+        company: "Wisk.aero",
         location: "Montreal, QC",
-        timeframe: "October 2024 - Present",
+        timeframe: "September 2025 - Present",
+        role: "Full Stack Software Engineer",
+        achievements: [
+          `Architect, develop, and optimize robust cloud-native software solutions end-to-end.`,
+          `Own the full SDLC of high-reliability features, ensuring seamless deployment and operations.`,
+          `Collaborate in cross-functional teams to deliver scalable, debt-free codebases.`,
+        ],
+        images: [],
+      },
+      {
+        company: "CWP Energy Solutions",
+        location: "Montreal, QC",
+        timeframe: "October 2024 - July 2025",
         role: "Full Stack Developer",
         achievements: [
-          `Develop sophisticated applications to process large volumes of real-time data for internal and external users.`,
-          `Design and develop web applications that enhance CWP Energy Solutions' capabilities, including data visualization tools for clients and asset managers, as well as trading interfaces for executing transactions across various electricity markets.`,
-          `Create a client portal to automate billing and provide analytical reporting.`,
-          `Stay ahead of technological advancements by continuously researching and testing more efficient technologies.`,
+          `Built high-throughput applications to process real-time data for internal and external users.`,
+          `Designed data visualization tools and trading interfaces for executing transactions across electricity markets.`,
+          `Created a client portal to automate billing and analytical reporting.`,
         ],
         images: [],
       },
       {
-        company: "Self-Employed",
+        company: "Freelance",
+        location: "Montreal, QC",
+        timeframe: "June 2020 - August 2024",
+        role: "Full Stack Developer",
+        achievements: [
+          `Designed and built a comprehensive trading toolkit using React, natively integrated with Electron.`,
+          `Delivered multiple high-quality React projects focusing on micro-frontend and component-based architectures.`,
+          `Refined RLHF reward models to improve French LLM outputs.`,
+        ],
+        images: [],
+      },
+      {
+        company: "InMédia Technologies / Bibliomondo",
+        location: "Montreal, QC",
+        timeframe: "September 2017 - February 2020",
+        role: "Vice President Research And Development",
+        achievements: [
+          `Defined R&D roadmaps and software strategies, establishing accessibility and web standards.`,
+          `Ensured 99.8% product uptime by leveraging cloud platforms and robust risk management.`,
+          `Provided technical evaluations for tender opportunities, securing $2M+ in contracts.`,
+          `Managed R&D operations and development teams during major platform transitions.`,
+          `Spearheaded flagship product delivery from concept to production deployment.`,
+        ],
+        images: [],
+      },
+      {
+        company: "Bibliomondo Technologies du savoir",
+        location: "Montreal, QC",
+        timeframe: "March 2012 - September 2017",
+        role: "Director Of Research Development",
+        achievements: [
+          `Architected modern SPA projects using React, React Native, Redux, and Jest.`,
+          `Led a zero-downtime microservices migration, reducing server costs.`,
+        ],
+        images: [],
+      },
+      {
+        company: "Bibliomondo Technologies du savoir",
+        location: "Montreal, QC",
+        timeframe: "March 2010 - February 2012",
+        role: "Lead Software Developer",
+        achievements: [
+          `Directed code reviews, testing, and deployment of J2EE (JSF, REST APIs) and web applications.`,
+          `Orchestrated JSP to JSF front-end migration, enhancing Java EE integration.`,
+          `Transitioned architecture from EJB to RESTful services, boosting scalability.`,
+          `Deployed systems to 1,500+ workstations in public libraries, museums, and city administrations.`,
+        ],
+        images: [],
+      },
+      {
+        company: "Bibliomondo Technologies du savoir",
+        location: "Montreal, QC",
+        timeframe: "October 2009 - March 2010",
+        role: "Software Developer",
+        achievements: [
+          `Developed Java web applications, reducing deployment errors by 50% through automated testing.`,
+          `Guided QA to integrate Selenium, raising automated test coverage by 80%.`,
+          `Established CI/CD pipelines using Jenkins and Maven, boosting developer productivity by 30%.`,
+        ],
+        images: [],
+      },
+      {
+        company: "HD Firms",
+        location: "Montreal, QC",
+        timeframe: "September 2008 - September 2009",
+        role: "Founder",
+        achievements: [
+          `Completed 30+ freelance projects with a perfect 5/5 client satisfaction rating.`,
+          `Developed PHP/MySQL web applications meeting strict timelines and client specifications.`,
+        ],
+        images: [],
+      },
+      {
+        company: "NetCom",
         location: "Laval, QC",
-        timeframe: "June 2020 - September 2024",
-        role: "Independent Software Developer",
+        timeframe: "January 2005 - May 2006",
+        role: "Software Programmer",
         achievements: [
-          `Led independent software development initiatives, designing and developing a comprehensive trading toolkit using React 16.8+ with React Hooks and Isomorphic App capabilities, integrated natively with Electron.`,
-          `Completed multiple projects on Upwork leveraging the React ecosystem with a strong focus on component-based architecture and micro front-end design, utilizing React Hooks, Context API, and accessibility-enhancing libraries such as React Aria.`,
-          `Enhanced the quality of French language model outputs by refining reward models in Reinforcement Learning from Human Feedback (RLHF).`,
-        ],
-        images: [],
-      },
-      {
-        company: "InMedia Technologies",
-        location: "Montreal, QC",
-        timeframe: "Sept 2017 – Feb 2020",
-        role: "VP OF R&D",
-        achievements: [
-          `Developed and implemented a software development strategy and roadmap, incorporating accessibility standards and best practices in web development.`,
-          `Ensured product quality, performance, and security by integrating risk management and leveraging cloud platforms, leading to 99.8% uptime.`,
-          `Provided technical expertise in evaluating tender opportunities, securing contracts worth over $2 million.`,
-        ],
-        images: [],
-      },
-      {
-        company: "InMedia Technologies",
-        location: "Montreal, QC",
-        timeframe: "Feb 2012 – Sept 2017",
-        role: "DIRECTOR OF R&D",
-        achievements: [
-          `Spearheaded the development of the company's flagship product, managing the entire lifecycle from concept to deployment.`,
-          `Developed UX prototypes with React and React Native, established SPA projects with ES6+, Redux, React Router, i18next for internationalization, and Jest for testing.`,
-          `Led the migration to a microservices architecture, achieving near-zero downtime and significantly reducing server costs.`,
-        ],
-        images: [],
-      },
-      {
-        company: "Bibliomondo",
-        location: "Montreal, QC",
-        timeframe: "Mar 2010 – Feb 2012",
-        role: "LEAD DEVELOPER",
-        achievements: [
-          `Led code reviews, testing, debugging, and deployment of web applications using the J2EE stack (JSF, Servlet, REST API), HTML/CSS, and JavaScript.`,
-          `Managed the front-end migration from JSP to JSF, enhancing Java EE and CDI integration.`,
-          `Transitioned the architecture to a service-oriented model, improving scalability and performance by migrating from EJB to REST services.`,
-          `Successfully industrialized and deployed applications across 1,500 workstations in major libraries (e.g., Ville de Paris, Ville de Laval), museums, and city administrations, boosting operational efficiency and user experience.`,
-        ],
-        images: [],
-      },
-      {
-        company: "Bibliomondo",
-        location: "Montreal, QC",
-        timeframe: "Mar 2009 – Feb 2010",
-        role: "ANALYST PROGRAMMER",
-        achievements: [
-          `Implemented unit tests, deployments, and version control for existing and new Java web applications, reducing deployment errors by 50%.`,
-          `Guided the QA team in integrating Selenium, increasing automated testing coverage by 80% and reducing manual testing efforts.`,
-          `Introduced Jenkins, Nexus, and Maven, establishing a robust CI/CD infrastructure that streamlined the development process, resulting in a 30% increase in productivity.`,
-        ],
-        images: [],
-      },
-      {
-        company: "Freelancer.com (@HDFirms)",
-        location: "Montreal, QC",
-        timeframe: "2006 – 2009",
-        role: "DEVELOPER",
-        achievements: [
-          `Achieved a 5/5 rating on Freelancer.com, completing over 30 projects with diverse clients.`,
-          `Developed and maintained web applications using PHP, MySQL, JavaScript, XML, HTML, and CSS, consistently meeting client specifications and deadlines.`,
-        ],
-        images: [],
-      },
-      {
-        company: "Netcom Inc",
-        location: "Laval, QC",
-        timeframe: "2006",
-        role: "ANALYST PROGRAMMER",
-        achievements: [
-          `Evaluated and maintained existing software code, enhancing stability and performance.`,
-          `Migrated the backend from VB6 to C#.NET and upgraded the UI while migrating from Classic ASP to ASP.NET.`,
-          `Installed and configured the company's internal network infrastructure, including Active Directory, Exchange, and Group Policy Objects, ensuring a secure and efficient IT environment.`,
+          `Maintained legacy codebases, improving system stability and performance.`,
+          `Migrated backend from VB6 to C#.NET and UI from Classic ASP to ASP.NET.`,
+          `Configured internal infrastructure (Active Directory, Exchange, GPO) for a secure IT environment.`,
         ],
         images: [],
       },
@@ -319,16 +309,12 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "Associate Cloud Engineer",
-        description: `Google Cloud`,
+        name: "I.S.I Montréal",
+        description: `Intégration de systèmes d’information, Information Technology (2007 - 2008)`,
       },
       {
-        name: "IBM Professional Certificate",
-        description: `Cloud Application Development Foundations, Coursera`,
-      },
-      {
-        name: "ISI, Higher Institute of Computer Science",
-        description: `AEC in Information Integration Systems, Montreal, QC`,
+        name: "Université de Montréal",
+        description: `Computer Science (2003 - 2006)`,
       },
     ],
   },
@@ -336,36 +322,6 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
-      // {
-      //   title: "Figma",
-      //   description: `Able to prototype in Figma with Once UI with unnatural speed.`,
-      //   images: [
-      //     {
-      //       src: "/images/projects/project-01/cover-02.jpg",
-      //       alt: "Project image",
-      //       width: 16,
-      //       height: 9,
-      //     },
-      //     {
-      //       src: "/images/projects/project-01/cover-03.jpg",
-      //       alt: "Project image",
-      //       width: 16,
-      //       height: 9,
-      //     },
-      //   ],
-      // },
-      // {
-      //   title: "Next.js",
-      //   description: `Building next gen apps with Next.js + Once UI + Supabase.`,
-      //   images: [
-      //     {
-      //       src: "/images/projects/project-01/cover-04.jpg",
-      //       alt: "Project image",
-      //       width: 16,
-      //       height: 9,
-      //     },
-      //   ],
-      // },
       {
         title: "Front-End Technologies",
         description: `ReactJS, TypeScript, Angular, Next.js, Redux, Tailwind CSS, Vue.js.`,
@@ -378,7 +334,7 @@ const about: About = {
       },
       {
         title: "Cloud & DevOps",
-        description: `AWS, GCP, Azure, Docker, Kubernetes, Jenkins, Git, CI/CD, DevSecOps.`,
+        description: `AWS, GCP (GKE), Azure, Docker, Kubernetes, Jenkins, Git, CI/CD, DevSecOps.`,
         images: [],
       },
       {
@@ -389,6 +345,16 @@ const about: About = {
       {
         title: "Other Skills",
         description: `UI/UX Design, Team Leadership, Project Management, Agile Methodologies (Scrum, Kanban), Technical Documentation.`,
+        images: [],
+      },
+      {
+        title: "Certifications",
+        description: `Google Cloud Certified - Associate Cloud Engineer, Python for Data Science, AI & Development (IBM), Introduction to Cloud Computing (IBM), Architecting with Google Kubernetes Engine Specialization (Google Cloud), Cloud Application Development Foundations Specialization (IBM).`,
+        images: [],
+      },
+      {
+        title: "Publications",
+        description: `• "Trusted smart harvesting algorithm based on semantic relationship and social networks (SMESE-TSHA)"\n• "MLM-based learning and boosting model – part 1: multi-sources/rights of digital resources to build universal knowledge repositories using an enriched semantic micro metadata harvester engine and semantic shared knowledge notice"\n• "Traceable and Trusted Smart Harvesting Algorithm from Unstructured and Structured Web (SMESE-TTSHA)"`,
         images: [],
       },
     ],
