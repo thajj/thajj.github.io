@@ -122,7 +122,7 @@ const person: Person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Senior Full-Stack & Cloud Platform Engineer @ Wisk.aero",
+  role: "Senior Full-Stack & Cloud Platform Engineer",
   avatar: "/images/avatar.png",
   location: "America/Montreal", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Français", "English"], // optional: Leave the array empty if you don't want to display languages
