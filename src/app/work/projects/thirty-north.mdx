@@ -1,0 +1,56 @@
+---
+title: "Thirty North: Privacy-First GST/HST Tools"
+publishedAt: "2026-07-31"
+summary: "A bilingual educational product that helps Canadian cross-border freelancers track the small-supplier threshold, reason about registration timing, and document foreign-currency invoices."
+tags:
+  - "Next.js"
+  - "TypeScript"
+  - "Product Design"
+  - "Internationalization"
+  - "Accessibility"
+images:
+  - "https://thirtynorthgst.ca/og.png"
+team:
+  - name: "Toufic Hajj"
+    role: "Product Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/toufic-hajj/"
+---
+
+## The problem
+
+Canadian freelancers and independent professionals can earn revenue from clients outside Canada while still needing to monitor Canadian GST/HST rules. Foreign clients, zero-rated supplies, the small-supplier threshold, registration timing, and currency conversion are related questions, but they are not the same question. Generic calculators often collapse those distinctions or ask people to upload sensitive business records.
+
+I built [Thirty North](https://thirtynorthgst.ca/) as a focused educational product for that gap. It gives users practical starting points while clearly separating arithmetic and record-keeping support from legal, tax, and supply-classification advice.
+
+## Product principles
+
+The product follows four constraints:
+
+1. **Free before paid.** The public tools answer narrow, useful questions without requiring an account or purchase.
+2. **Private by design.** Business amounts stay on the user's device wherever possible. The foreign-currency tool sends only the selected currency and date to the Bank of Canada rate service, not the invoice amount.
+3. **Bilingual by default.** English and French routes have equivalent navigation, content, disclosures, and customer-facing policies.
+4. **Source-backed and bounded.** Explanations link to official CRA and Bank of Canada material and state what each tool cannot determine.
+
+## Free entry points
+
+The live product currently includes:
+
+- A [rolling four-quarter GST/HST threshold tracker](https://thirtynorthgst.ca/) with device-local records and clear assumptions.
+- A [GST/HST registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator) that separates the common timing scenarios instead of presenting one universal deadline.
+- A [foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst) for USD, EUR, GBP, and AUD invoices. It uses published Bank of Canada observations, handles weekends and holidays by finding the latest earlier observation, keeps processor fees separate, and produces a downloadable evidence note.
+- A complete [French tools hub](https://thirtynorthgst.ca/fr/outils/) with equivalent French versions of the calculators.
+
+Those pages create useful, searchable answers on their own. They also provide a natural path to the downloadable Action Kit, quarterly workspace, and complete bundle for users who want a repeatable offline review process.
+
+## Implementation
+
+Thirty North is a statically rendered Next.js and TypeScript application with bilingual route pairs, canonical and `hreflang` metadata, structured data, XML sitemaps, RSS feeds, and a consent-gated analytics layer. Core calculation logic is isolated from the interface and covered by unit tests; rendered-route tests verify important page content and links before release.
+
+The foreign-currency workflow uses the [Bank of Canada Valet API](https://www.bankofcanada.ca/valet/docs) for published observations. The interface records the rate date, series, source, conversion method, gross Canadian-dollar consideration, processor fee, and illustrative net amount so that a user can preserve the reasoning behind a conversion.
+
+## Scope and current stage
+
+This is a newly launched public product. The outcome so far is the product itself: a deployed bilingual website, a tested set of free tools, and three approved downloadable products. I do not present the calculators as professional advice, and I do not claim traffic, customer, or revenue results that have not been independently observed.
+
+[Explore the free Thirty North tools](https://thirtynorthgst.ca/tools/) or use the [French version](https://thirtynorthgst.ca/fr/outils/).
