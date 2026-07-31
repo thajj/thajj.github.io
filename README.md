@@ -17,6 +17,8 @@ Welcome to the repository of my personal portfolio website. This project showcas
   - [Registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator)
   - [GST/HST filing and payment deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-filing-deadline-calculator)
   - [Calculateur des dates limites de production et de paiement TPS/TVH](https://thirtynorthgst.ca/fr/outils/calculateur-date-limite-declaration-tps-tvh)
+  - [GST/HST instalment calculator for annual filers](https://thirtynorthgst.ca/tools/gst-hst-instalment-calculator)
+  - [Calculateur d’acomptes provisionnels TPS/TVQ](https://thirtynorthgst.ca/fr/outils/calculateur-acomptes-provisionnels-tps-tvq)
   - [GST/HST late-filing penalty calculator](https://thirtynorthgst.ca/tools/gst-hst-late-filing-penalty-calculator)
   - [Calculateur de pénalité pour production tardive TPS/TVH](https://thirtynorthgst.ca/fr/outils/calculateur-penalite-production-tardive-tps-tvh)
   - [GST/HST return calculator — lines 101 to 115](https://thirtynorthgst.ca/tools/gst-hst-return-calculator)
