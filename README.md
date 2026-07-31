@@ -8,6 +8,8 @@ Welcome to the repository of my personal portfolio website. This project showcas
   - [Free GST/HST tools](https://thirtynorthgst.ca/tools/)
   - [Canada sales tax calculator — all provinces and territories](https://thirtynorthgst.ca/tools/canada-sales-tax-calculator)
   - [Calculateur des taxes de vente au Canada — toutes les administrations](https://thirtynorthgst.ca/fr/outils/calculateur-taxes-vente-canada)
+  - [GST/HST place-of-supply screener for ordinary services](https://thirtynorthgst.ca/tools/gst-hst-place-of-supply-services)
+  - [Présélecteur du lieu de fourniture TPS/TVH des services](https://thirtynorthgst.ca/fr/outils/lieu-fourniture-services-tps-tvh)
   - [Québec GST/QST calculator — forward and reverse](https://thirtynorthgst.ca/tools/quebec-gst-qst-calculator)
   - [Calculateur TPS/TVQ du Québec — régulier et inverse](https://thirtynorthgst.ca/fr/outils/calculateur-tps-tvq-quebec)
   - [Registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator)
