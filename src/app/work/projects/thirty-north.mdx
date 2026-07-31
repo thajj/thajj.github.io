@@ -1,7 +1,7 @@
 ---
 title: "Thirty North: Privacy-First GST/HST Tools"
 publishedAt: "2026-07-31"
-summary: "A bilingual educational product that helps Canadian freelancers calculate sales tax, track the small-supplier threshold, screen registration and filing deadlines, prepare return-line arithmetic, and document foreign-currency invoices."
+summary: "A bilingual educational product that helps Canadian freelancers calculate sales tax, estimate Québec Quick Method remittances, track the small-supplier threshold, screen deadlines, prepare return-line arithmetic, and document foreign-currency invoices."
 tags:
   - "Next.js"
   - "TypeScript"
@@ -40,6 +40,7 @@ The live product currently includes:
 - A bilingual [Canada sales tax calculator](https://thirtynorthgst.ca/tools/canada-sales-tax-calculator), with an aligned [French calculateur des taxes de vente](https://thirtynorthgst.ca/fr/outils/calculateur-taxes-vente-canada), that adds or removes the current general GST, HST, PST, QST, or RST for all 13 provinces and territories, preserves separate tax lines, and compares one subtotal across Canada.
 - A bilingual [GST/HST place-of-supply screener for ordinary services](https://thirtynorthgst.ca/tools/gst-hst-place-of-supply-services), with an aligned [French lieu de fourniture version](https://thirtynorthgst.ca/fr/outils/lieu-fourniture-services-tps-tvh), that follows the CRA’s address-first general rules, handles no-address performance and rate-tie paths, and stops when a service-specific rule or missing fact needs review.
 - A bilingual [Québec GST/QST calculator](https://thirtynorthgst.ca/tools/quebec-gst-qst-calculator), with an aligned [French calculateur TPS/TVQ](https://thirtynorthgst.ca/fr/outils/calculateur-tps-tvq-quebec), that adds or removes the current 5% GST and 9.975% QST, keeps both tax lines visible, and explains why QST is not compounded on GST.
+- A bilingual [Québec GST/QST Quick Method calculator](https://thirtynorthgst.ca/tools/quebec-gst-qst-quick-method-calculator), with an aligned [French calculateur de la méthode rapide TPS/TVQ](https://thirtynorthgst.ca/fr/outils/calculateur-methode-rapide-tps-tvq-quebec), that applies the published service or qualifying resale rate groups to separate GST-included and QST-included bases, limits the 1% reduction independently, and stops uncertain eligibility, profile, or mixed-sales paths for review.
 - A [GST/HST registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator) that separates the common timing scenarios instead of presenting one universal deadline.
 - A bilingual [GST/HST filing and payment deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-filing-deadline-calculator), with an aligned [French date-limit calculator](https://thirtynorthgst.ca/fr/outils/calculateur-date-limite-declaration-tps-tvh), that screens monthly, quarterly, and annual CRA paths, keeps the qualifying sole-proprietor payment and filing dates separate, covers the listed-financial-institution exception, and preserves weekend and public-holiday boundaries.
 - A bilingual [GST/HST return calculator for lines 101 through 115](https://thirtynorthgst.ca/tools/gst-hst-return-calculator), with an aligned [French return worksheet](https://thirtynorthgst.ca/fr/outils/calculateur-declaration-tps-tvh), that follows the regular-method CRA working-copy sequence, separates entered amounts from calculated totals, stops quick-method users for review, and exports a private CSV record.
@@ -63,6 +64,8 @@ The service place-of-supply screener isolates the CRA’s general rules in a pur
 The filing-deadline calculator uses a pure calendar engine that preserves month-end arithmetic, separates filing from final payment, handles the current three-month, six-month, and qualifying sole-proprietor paths, and surfaces a next-weekday candidate without pretending to calculate CRA-recognized public holidays. Results stay browser-local and can be copied, printed, or exported as TXT and calendar reminders.
 
 The return calculator uses integer-cent arithmetic to derive lines 105, 108, 109, 112, 113 A, 113 B, 113 C, 114, and 115 from the regular-method inputs. It does not collect business numbers or names, and it stops quick-method or uncertain users before applying regular-method formulas.
+
+The Québec Quick Method estimator reproduces Revenu Québec’s published first-period service example, supports the qualifying resale rates, and tracks the separate annual sales room for each 1% reduction. Its bounded decision path prevents ordinary Québec rates from being applied to mixed, special, or out-of-province sales.
 
 The foreign-currency workflow uses the [Bank of Canada Valet API](https://www.bankofcanada.ca/valet/docs) for published observations. The interface records the rate date, series, source, conversion method, gross Canadian-dollar consideration, processor fee, and illustrative net amount so that a user can preserve the reasoning behind a conversion.
 
