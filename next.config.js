@@ -8,6 +8,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "aceternity.com",
       },
+      {
+        protocol: "https",
+        hostname: "thirtynorthgst.ca",
+      },
     ],
   },
   trailingSlash: true,
