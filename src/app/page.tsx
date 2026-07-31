@@ -129,14 +129,6 @@ export default function Home() {
                   About me
                 </Flex>
               </Button>
-              <Button
-                data-border="rounded"
-                href="https://thirtynorthgst.ca/"
-                variant="tertiary"
-                size="m"
-              >
-                Thirty North
-              </Button>
             </Flex>
           </RevealFx>
           {home.valueProposition && (
@@ -153,6 +145,52 @@ export default function Home() {
               </Flex>
             </RevealFx>
           )}
+          <RevealFx translateY="12" delay={0.4}>
+            <Flex
+              direction="column"
+              fillWidth
+              gap="m"
+              marginTop="l"
+              paddingTop="l"
+              style={{ borderTop: "1px solid var(--neutral-alpha-medium)" }}
+            >
+              <Flex direction="column" gap="8">
+                <Text variant="label-strong-s" onBackground="accent-weak">
+                  Current venture · Live
+                </Text>
+                <Heading as="h2" variant="heading-strong-l">
+                  Thirty North
+                </Heading>
+                <Text
+                  variant="body-default-m"
+                  onBackground="neutral-weak"
+                  wrap="balance"
+                >
+                  Nineteen free bilingual GST/HST tools and practical one-time
+                  digital workflows for Canadian freelancers—built with no account
+                  and no invoice upload.
+                </Text>
+              </Flex>
+              <Flex gap="s" wrap>
+                <Button
+                  href="/work/thirty-north"
+                  variant="tertiary"
+                  size="s"
+                  suffixIcon="chevronRight"
+                >
+                  Read the project overview
+                </Button>
+                <Button
+                  href="https://thirtynorthgst.ca/tools?utm_source=toufichajj.dev&utm_medium=referral&utm_campaign=owned_portfolio&utm_content=homepage_venture"
+                  variant="tertiary"
+                  size="s"
+                  suffixIcon="openLink"
+                >
+                  Use the free tools
+                </Button>
+              </Flex>
+            </Flex>
+          </RevealFx>
           {featuredProjects.length > 0 && (
             <RevealFx translateY="12" delay={0.45}>
               <Flex direction="column" fillWidth gap="m" marginTop="l">

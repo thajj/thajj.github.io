@@ -3,6 +3,7 @@ import "@/styles/main.scss";
 import "@/components/once-ui/tokens/index.scss";
 
 import classNames from "classnames";
+import { Suspense } from "react";
 
 import { Flex, Background } from "@/components/once-ui/components";
 
@@ -99,7 +100,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         direction="column"
       >
         <ThemeProvider>
-          <GoogleAnalytics />
+          <Suspense fallback={null}>
+            <GoogleAnalytics />
+          </Suspense>
           <a
             href="#main"
             className="absolute left-4 -top-full z-[100] rounded bg-background px-4 py-2 shadow-md outline-none transition-[top] duration-150 focus:top-4 focus:ring-2 focus:ring-ring"
