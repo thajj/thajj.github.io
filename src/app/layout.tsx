@@ -1,23 +1,25 @@
-import "@/styles/globals.css";
-import "@/styles/main.scss";
-import "@/components/once-ui/tokens/index.scss";
-
 import classNames from "classnames";
+import { Suspense } from "react";
 
-import { Flex, Background } from "@/components/once-ui/components";
-
-import { baseURL, effects, home, person, style } from "@/resources";
-import { ThemeProvider } from "@/components/ThemeProvider";
-
-import { Inter } from "next/font/google";
-import { Source_Code_Pro } from "next/font/google";
-
+import { Figtree, Source_Serif_4 } from "next/font/google";
 import { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { RouteGuard } from "@/components/RouteGuard";
-import { Footer } from "@/components/Footer";
+
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { baseURL, home, person } from "@/resources";
+
+const figtree = Figtree({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
@@ -44,92 +46,19 @@ export const metadata: Metadata = {
   },
 };
 
-const primary = Inter({
-  variable: "--font-primary",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-type FontConfig = {
-  variable: string;
-};
-
-const secondary: FontConfig | undefined = undefined;
-const tertiary: FontConfig | undefined = undefined;
-
-const code = Source_Code_Pro({
-  variable: "--font-code",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Flex
-      as="html"
+    <html
       lang="en"
-      background="page"
-      data-neutral={style.neutral}
-      data-brand={style.brand}
-      data-accent={style.accent}
-      data-solid={style.solid}
-      data-solid-style={style.solidStyle}
-      data-theme={style.theme}
-      data-border={style.border}
-      data-surface={style.surface}
-      data-transition={style.transition}
-      className={classNames(
-        primary.variable,
-        secondary ? secondary.variable : "",
-        tertiary ? tertiary.variable : "",
-        code.variable
-      )}
+      className={classNames(figtree.variable, sourceSerif.variable)}
       suppressHydrationWarning
     >
-      <Flex
-        style={{ minHeight: "100vh" }}
-        as="body"
-        fillWidth
-        margin="0"
-        padding="0"
-        direction="column"
-      >
-        <ThemeProvider>
+      <body style={{ margin: 0 }} suppressHydrationWarning>
+        <Suspense fallback={null}>
           <GoogleAnalytics />
-          <a
-            href="#main"
-            className="absolute left-4 -top-full z-[100] rounded bg-background px-4 py-2 shadow-md outline-none transition-[top] duration-150 focus:top-4 focus:ring-2 focus:ring-ring"
-          >
-            Skip to main content
-          </a>
-          <Background
-            gradient={effects.gradient}
-            dots={effects.dots}
-            lines={effects.lines}
-          />
-          <Flex fillWidth minHeight="16"></Flex>
-          <Header />
-          <Flex
-            id="main"
-            zIndex={0}
-            fillWidth
-            paddingY="l"
-            paddingX="l"
-            justifyContent="center"
-            flex={1}
-          >
-            <Flex justifyContent="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
-            </Flex>
-          </Flex>
-          <Footer />
-          <ScrollToTopButton />
-        </ThemeProvider>
-      </Flex>
-    </Flex>
+        </Suspense>
+        {children}
+      </body>
+    </html>
   );
 }

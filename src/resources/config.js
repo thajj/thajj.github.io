@@ -8,7 +8,7 @@ const routes = {
   "/projects": true,
   "/skills": true,
   "/contact": false,
-  "/blog": false,
+  "/blog": true,
   "/gallery": false,
 };
 

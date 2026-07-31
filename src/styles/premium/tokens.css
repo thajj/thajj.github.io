@@ -1,0 +1,15 @@
+:root {
+  --charcoal: #17201d;
+  --graphite: #2b322f;
+  --ivory: #f7f2e8;
+  --gold: #c8a86b;
+  --gold-deep: #7a5f2c;
+  --sage: #879687;
+  --mist: #d7ddcf;
+  --card: #fcfaf3;
+  --line: rgba(43, 50, 47, 0.12);
+  --serif: var(--font-serif), Georgia, 'Times New Roman', serif;
+  --sans: var(--font-sans), 'Segoe UI', sans-serif;
+  --maxw: 1120px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

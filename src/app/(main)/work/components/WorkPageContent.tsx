@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Flex, Tag, Text } from "@/components/once-ui/components";
-import { Projects } from "@/app/work/components/Projects";
+import { Projects } from "@/app/(main)/work/components/Projects";
 import { Timeline } from "@/components/ui/timeline";
 import { ScrollReveal } from "@/components/ScrollReveal";
 

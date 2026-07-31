@@ -76,7 +76,8 @@ type About = {
     title: string;
     skills: {
       title: string;
-      description: string;
+      description?: string;
+      items: string[];
       images: {
         src: string;
         alt: string;
@@ -157,10 +158,11 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: `Tech Enthusiast and Problem Solver`,
-  subline: `Hi, I'm Toufic 👋, a <code class="bg-muted px-[0.3rem] font-mono text-xl font-semibold">Senior Full-Stack & Cloud Platform Engineer</code> who loves turning complex challenges into seamless solutions.`,
-  valueProposition: "I design and build scalable applications, lead teams through the full software lifecycle, and deliver high-quality software that meets business goals. Full stack development, cloud, and Agile are my daily focus.",
-  featuredProjectSlugs: ["open-trivia", "stonkify", "portfolio"],
+  headline: `Toufic Hajj`,
+  subline: `Senior Full-Stack & Cloud Platform Engineer — ideation to mass deployment, on-prem to cloud.`,
+  valueProposition:
+    "I design and ship platforms for public and private organizations: architecture, compliance, and delivery that hold up from first prototype to city-scale rollout.",
+  featuredProjectSlugs: ["open-trivia", "stonkify", "banq"],
 };
 
 const about: About = {
@@ -181,13 +183,13 @@ const about: About = {
   intro: {
     display: true,
     title: "Introduction",
-    description: `Senior Full-Stack & Cloud Platform Engineer with 15+ years of experience delivering reliable software products end to end — from requirements and architecture to deployment and operations.
+    description: `Senior Full-Stack & Cloud Platform Engineer with 15+ years owning products end to end — from ideation and architecture through mass deployment across on-premise, cloud, and hybrid environments for public and private organizations.
+
+Earlier in my career I helped shape knowledge-technology platforms for cities, libraries, museums, and institutions (InMédia / BiblioMondo): federated content, DAM, citizen portals, multilingual delivery, accessibility (WCAG), and GDPR-conscious systems serving millions of users worldwide.
 
 My recent work focuses on cloud-native platforms, data-heavy systems, workflow automation, security-conscious architecture, governance/compliance, and AI-enabled engineering tools.
 
-I’ve led teams of 10+ while remaining highly hands-on, with a pragmatic approach to clean architecture, maintainable code, and practical technical direction.
-
-I’m especially interested in roles where I can combine full-stack engineering, cloud platforms, data systems, automation, and AI integration to help teams ship better software and create measurable business value.`,
+I’ve led teams of 10+ while remaining highly hands-on. I’m especially interested in roles where full-stack engineering, cloud platforms, data systems, automation, and AI integration create measurable business value.`,
   },
   work: {
     display: true, // set to false to hide this section
@@ -235,11 +237,13 @@ I’m especially interested in roles where I can combine full-stack engineering,
         timeframe: "September 2017 - February 2020",
         role: "Vice President Research And Development",
         achievements: [
-          `Defined R&D roadmaps and software strategies, establishing accessibility and web standards.`,
-          `Ensured 99.8% product uptime by leveraging cloud platforms and robust risk management.`,
-          `Provided technical evaluations for tender opportunities, securing $2M+ in contracts.`,
-          `Managed R&D operations and development teams during major platform transitions.`,
-          `Spearheaded flagship product delivery from concept to production deployment.`,
+          `Owned R&D strategy for an all-in-one knowledge platform (CMS, DAM, catalogues, citizen portals, mobile, digital signage) serving cities, libraries, museums, and institutions.`,
+          `Drove delivery from ideation to production across on-premise, cloud, and hybrid deployments for public-sector and private clients.`,
+          `Established accessibility (WCAG) and privacy-conscious (GDPR-aligned) engineering standards for citizen-facing portals.`,
+          `Ensured 99.8% product uptime through cloud architecture, operational rigor, and risk management.`,
+          `Led technical evaluations for tenders, helping secure $2M+ in contracts.`,
+          `Managed R&D teams of 10+ through major platform transitions while staying hands-on on architecture and delivery.`,
+          `Co-authored research on semantic harvesting, micrometadata, and ML-driven knowledge systems (SMESE / MLM lines of work).`,
         ],
         images: [],
       },
@@ -249,8 +253,10 @@ I’m especially interested in roles where I can combine full-stack engineering,
         timeframe: "March 2012 - September 2017",
         role: "Director Of Research Development",
         achievements: [
-          `Architected modern SPA projects using React, React Native, Redux, and Jest.`,
-          `Led a zero-downtime microservices migration, reducing server costs.`,
+          `Architected modern SPA and mobile experiences (React, React Native, Redux, Jest) for multilingual knowledge and cultural portals.`,
+          `Led a zero-downtime microservices migration that reduced infrastructure cost while protecting uptime for institutional clients.`,
+          `Advanced platform capabilities spanning federated content, multimedia catalogues, DAM, and rights-aware media distribution.`,
+          `Supported large-scale public deployments across municipal, library, and museum networks.`,
         ],
         images: [],
       },
@@ -260,10 +266,10 @@ I’m especially interested in roles where I can combine full-stack engineering,
         timeframe: "March 2010 - February 2012",
         role: "Lead Software Developer",
         achievements: [
-          `Directed code reviews, testing, and deployment of J2EE (JSF, REST APIs) and web applications.`,
-          `Orchestrated JSP to JSF front-end migration, enhancing Java EE integration.`,
-          `Transitioned architecture from EJB to RESTful services, boosting scalability.`,
-          `Deployed systems to 1,500+ workstations in public libraries, museums, and city administrations.`,
+          `Directed code reviews, testing, and deployment of J2EE (JSF, REST APIs) and web applications for knowledge-technology products.`,
+          `Orchestrated JSP → JSF front-end migration and EJB → RESTful services transition to improve scalability and maintainability.`,
+          `Deployed and supported systems across 1,500+ workstations in public libraries, museums, and city administrations (on-prem / networked environments).`,
+          `Built foundations for secure public multimedia workstation and resource management in institutional settings.`,
         ],
         images: [],
       },
@@ -319,42 +325,100 @@ I’m especially interested in roles where I can combine full-stack engineering,
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
         title: "Front-End Technologies",
-        description: `ReactJS, TypeScript, Angular, Next.js, Redux, Tailwind CSS, Vue.js.`,
+        items: [
+          "React",
+          "TypeScript",
+          "Angular",
+          "Next.js",
+          "Redux",
+          "Tailwind CSS",
+          "Vue.js",
+        ],
         images: [],
       },
       {
         title: "Back-End & API Development",
-        description: `Node.js, Express.js, Spring Boot, REST/RESTful APIs, Microservices, Serverless Architecture.`,
+        items: [
+          "Node.js",
+          "Express.js",
+          "Spring Boot",
+          "REST / RESTful APIs",
+          "Microservices",
+          "Serverless architecture",
+        ],
         images: [],
       },
       {
         title: "Cloud & DevOps",
-        description: `AWS, GCP (GKE), Azure, Docker, Kubernetes, Jenkins, Git, CI/CD, DevSecOps.`,
+        items: [
+          "AWS",
+          "GCP (GKE)",
+          "Azure",
+          "Docker",
+          "Kubernetes",
+          "Jenkins",
+          "Git",
+          "CI/CD",
+          "DevSecOps",
+        ],
         images: [],
       },
       {
         title: "Data Management",
-        description: `SQL (MySQL, PostgreSQL), NoSQL (MongoDB, Elasticsearch), Apache Kafka, Apache Spark.`,
+        items: [
+          "SQL (MySQL, PostgreSQL)",
+          "NoSQL (MongoDB, Elasticsearch)",
+          "Apache Kafka",
+          "Apache Spark",
+        ],
         images: [],
       },
       {
         title: "Other Skills",
-        description: `UI/UX Design, Team Leadership, Project Management, Agile Methodologies (Scrum, Kanban), Technical Documentation.`,
+        items: [
+          "UI/UX design",
+          "Team leadership",
+          "Project management",
+          "Agile (Scrum, Kanban)",
+          "Technical documentation",
+        ],
         images: [],
       },
       {
         title: "Certifications",
-        description: `Google Cloud Certified - Associate Cloud Engineer, Python for Data Science, AI & Development (IBM), Introduction to Cloud Computing (IBM), Architecting with Google Kubernetes Engine Specialization (Google Cloud), Cloud Application Development Foundations Specialization (IBM).`,
+        items: [
+          "Google Cloud Certified — Associate Cloud Engineer",
+          "Python for Data Science, AI & Development (IBM)",
+          "Introduction to Cloud Computing (IBM)",
+          "Architecting with Google Kubernetes Engine Specialization (Google Cloud)",
+          "Cloud Application Development Foundations Specialization (IBM)",
+        ],
         images: [],
       },
       {
         title: "Publications",
-        description: `• "Trusted smart harvesting algorithm based on semantic relationship and social networks (SMESE-TSHA)"\n• "MLM-based learning and boosting model – part 1: multi-sources/rights of digital resources to build universal knowledge repositories using an enriched semantic micro metadata harvester engine and semantic shared knowledge notice"\n• "Traceable and Trusted Smart Harvesting Algorithm from Unstructured and Structured Web (SMESE-TTSHA)"`,
+        items: [
+          "Trusted smart harvesting algorithm based on semantic relationship and social networks (SMESE-TSHA) — co-author, InMédia Technologies",
+          "Traceable and Trusted Smart Harvesting Algorithm from Unstructured and Structured Web (SMESE-TTSHA) — co-author, InMédia Technologies",
+          "MLM-based learning and boosting model – part 1: multi-sources/rights of digital resources to build universal knowledge repositories using an enriched semantic micrometadata harvester and semantic shared knowledge notice — co-author, InMédia Technologies",
+        ],
+        images: [],
+      },
+      {
+        title: "Domains & deployment",
+        items: [
+          "Public sector & smart cities (citizen portals, municipal intranets, e-services)",
+          "Libraries & cultural institutions (catalogues, DAM, virtual exhibitions)",
+          "Museums & heritage networks (multimedia collections, digital signage)",
+          "On-premise, cloud, and hybrid mass deployment",
+          "Multilingual portals, WCAG accessibility, GDPR-conscious personal data handling",
+          "Rights-based digital asset distribution and federated content",
+        ],
         images: [],
       },
     ],
@@ -385,23 +449,7 @@ const gallery: Gallery = {
   label: "Gallery",
   title: "My photo gallery",
   description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com — use descriptive alt text for accessibility
-  images: [
-    { src: "/images/gallery/img-01.jpg", alt: "Gallery photo 1, vertical format", orientation: "vertical" },
-    { src: "/images/gallery/img-02.jpg", alt: "Gallery photo 2, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-03.jpg", alt: "Gallery photo 3, vertical format", orientation: "vertical" },
-    { src: "/images/gallery/img-04.jpg", alt: "Gallery photo 4, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-05.jpg", alt: "Gallery photo 5, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-06.jpg", alt: "Gallery photo 6, vertical format", orientation: "vertical" },
-    { src: "/images/gallery/img-07.jpg", alt: "Gallery photo 7, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-08.jpg", alt: "Gallery photo 8, vertical format", orientation: "vertical" },
-    { src: "/images/gallery/img-09.jpg", alt: "Gallery photo 9, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-10.jpg", alt: "Gallery photo 10, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-11.jpg", alt: "Gallery photo 11, vertical format", orientation: "vertical" },
-    { src: "/images/gallery/img-12.jpg", alt: "Gallery photo 12, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-13.jpg", alt: "Gallery photo 13, landscape", orientation: "horizontal" },
-    { src: "/images/gallery/img-14.jpg", alt: "Gallery photo 14, landscape", orientation: "horizontal" },
-  ],
+  images: [],
 };
 
 const renderJSX = (str: string) => {

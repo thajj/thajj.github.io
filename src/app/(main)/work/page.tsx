@@ -1,6 +1,5 @@
 import { getPosts } from "@/app/utils";
-import { Flex } from "@/components/once-ui/components";
-import { WorkPageContent } from "@/app/work/components/WorkPageContent";
+import { PremiumWorkPage } from "@/components/premium/PremiumWorkPage";
 import { baseURL, person, work } from "@/resources";
 
 export function generateMetadata() {
@@ -16,12 +15,7 @@ export function generateMetadata() {
       description,
       type: "website",
       url: `https://${baseURL}/work`,
-      images: [
-        {
-          url: ogImage,
-          alt: title,
-        },
-      ],
+      images: [{ url: ogImage, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -33,17 +27,15 @@ export function generateMetadata() {
 }
 
 export default function Work() {
-  const allProjects = getPosts(["src", "app", "work", "projects"]);
-
-  const sortedProjects = allProjects.sort((a, b) => {
-    return (
+  const allProjects = getPosts(["src", "app", "(main)", "work", "projects"]);
+  const sortedProjects = allProjects.sort(
+    (a, b) =>
       new Date(b.metadata.publishedAt).getTime() -
       new Date(a.metadata.publishedAt).getTime()
-    );
-  });
+  );
 
   return (
-    <Flex fillWidth maxWidth="m" direction="column">
+    <>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -54,22 +46,11 @@ export default function Work() {
             headline: work.title,
             description: work.description,
             url: `https://${baseURL}/work`,
-            image: `https://${baseURL}/og?title=${encodeURIComponent(work.title)}`,
-            author: {
-              "@type": "Person",
-              name: person.name,
-            },
-            hasPart: sortedProjects.map((project) => ({
-              "@type": "CreativeWork",
-              headline: project.metadata.title,
-              description: project.metadata.summary,
-              url: `https://${baseURL}/work/${project.slug}`,
-              image: `https://${baseURL}/${project.metadata.image}`,
-            })),
+            author: { "@type": "Person", name: person.name },
           }),
         }}
       />
-      <WorkPageContent sortedProjects={sortedProjects} />
-    </Flex>
+      <PremiumWorkPage projects={sortedProjects} />
+    </>
   );
 }

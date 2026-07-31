@@ -1,4 +1,4 @@
-import { formatDate } from "../../utils";
+import { formatDate } from "@/app/utils";
 import {
   Flex,
   Grid,
@@ -6,7 +6,7 @@ import {
   SmartLink,
   Text,
 } from "@/components/once-ui/components";
-import styles from "@/app/blog/components/Posts.module.scss";
+import styles from "@/app/(main)/blog/components/Posts.module.scss";
 
 interface PostsProps {
   blogs: {
