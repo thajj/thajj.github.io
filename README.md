@@ -12,6 +12,8 @@ Welcome to the repository of my personal portfolio website. This project showcas
   - [Présélecteur du lieu de fourniture TPS/TVH des services](https://thirtynorthgst.ca/fr/outils/lieu-fourniture-services-tps-tvh)
   - [Québec GST/QST calculator — forward and reverse](https://thirtynorthgst.ca/tools/quebec-gst-qst-calculator)
   - [Calculateur TPS/TVQ du Québec — régulier et inverse](https://thirtynorthgst.ca/fr/outils/calculateur-tps-tvq-quebec)
+  - [Québec GST/QST Quick Method calculator](https://thirtynorthgst.ca/tools/quebec-gst-qst-quick-method-calculator)
+  - [Calculateur de la méthode rapide TPS/TVQ du Québec](https://thirtynorthgst.ca/fr/outils/calculateur-methode-rapide-tps-tvq-quebec)
   - [Registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator)
   - [GST/HST filing and payment deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-filing-deadline-calculator)
   - [Calculateur des dates limites de production et de paiement TPS/TVH](https://thirtynorthgst.ca/fr/outils/calculateur-date-limite-declaration-tps-tvh)
