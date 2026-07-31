@@ -8,6 +8,8 @@ Welcome to the repository of my personal portfolio website. This project showcas
   - [Free GST/HST tools](https://thirtynorthgst.ca/tools/)
   - [Registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator)
   - [Foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst)
+  - [Québec GST/QST C$30,000 guide](https://thirtynorthgst.ca/guides/quebec-freelancer-gst-qst-30000-threshold)
+  - [Guide québécois TPS/TVQ en français](https://thirtynorthgst.ca/fr/guides/travailleur-autonome-quebec-seuil-30000-tps-tvq)
   - [Outils gratuits en français](https://thirtynorthgst.ca/fr/outils/)
 
 ## 🚀 Features
