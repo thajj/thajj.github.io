@@ -1,7 +1,7 @@
 ---
 title: "Thirty North: Privacy-First GST/HST Tools"
 publishedAt: "2026-07-31"
-summary: "A bilingual educational product that helps Canadian freelancers calculate sales tax, estimate Québec Quick Method remittances, track the small-supplier threshold, screen deadlines, prepare return-line arithmetic, and document foreign-currency invoices."
+summary: "A bilingual educational product that helps Canadian freelancers calculate sales tax, estimate Québec Quick Method remittances and GST/HST late-filing penalties, track the small-supplier threshold, screen deadlines, prepare return-line arithmetic, and document foreign-currency invoices."
 tags:
   - "Next.js"
   - "TypeScript"
@@ -43,6 +43,7 @@ The live product currently includes:
 - A bilingual [Québec GST/QST Quick Method calculator](https://thirtynorthgst.ca/tools/quebec-gst-qst-quick-method-calculator), with an aligned [French calculateur de la méthode rapide TPS/TVQ](https://thirtynorthgst.ca/fr/outils/calculateur-methode-rapide-tps-tvq-quebec), that applies the published service or qualifying resale rate groups to separate GST-included and QST-included bases, limits the 1% reduction independently, and stops uncertain eligibility, profile, or mixed-sales paths for review.
 - A [GST/HST registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator) that separates the common timing scenarios instead of presenting one universal deadline.
 - A bilingual [GST/HST filing and payment deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-filing-deadline-calculator), with an aligned [French date-limit calculator](https://thirtynorthgst.ca/fr/outils/calculateur-date-limite-declaration-tps-tvh), that screens monthly, quarterly, and annual CRA paths, keeps the qualifying sole-proprietor payment and filing dates separate, covers the listed-financial-institution exception, and preserves weekend and public-holiday boundaries.
+- A bilingual [GST/HST late-filing penalty calculator](https://thirtynorthgst.ca/tools/gst-hst-late-filing-penalty-calculator), with an aligned [French penalty calculator](https://thirtynorthgst.ca/fr/outils/calculateur-penalite-production-tardive-tps-tvh), that applies the CRA’s 1% base plus 25% of that base for each complete month up to 12, keeps daily compounded interest and separate penalties out of the estimate, and exports a private record.
 - A bilingual [GST/HST return calculator for lines 101 through 115](https://thirtynorthgst.ca/tools/gst-hst-return-calculator), with an aligned [French return worksheet](https://thirtynorthgst.ca/fr/outils/calculateur-declaration-tps-tvh), that follows the regular-method CRA working-copy sequence, separates entered amounts from calculated totals, stops quick-method users for review, and exports a private CSV record.
 - A [foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst) for USD, EUR, GBP, and AUD invoices. It uses published Bank of Canada observations, handles weekends and holidays by finding the latest earlier observation, keeps processor fees separate, and produces a downloadable evidence note.
 - A bilingual [GST/HST invoice requirements checker](https://thirtynorthgst.ca/tools/gst-hst-invoice-requirements-checker), with a fully aligned [French TPS/TVQ version](https://thirtynorthgst.ca/fr/outils/verificateur-exigences-facture-tps-tvq), that turns the current CRA or Revenu Québec C$100 and C$500 table into a private seller or purchaser checklist.
@@ -62,6 +63,8 @@ The Canada-wide calculator applies the same integer-cent discipline across all 1
 The service place-of-supply screener isolates the CRA’s general rules in a pure decision engine. It preserves unresolved provinces when tied jurisdictions share the same highest HST rate, separates federal GST/HST from QST, PST, and RST, and exports a reviewable browser-local result without collecting client facts.
 
 The filing-deadline calculator uses a pure calendar engine that preserves month-end arithmetic, separates filing from final payment, handles the current three-month, six-month, and qualifying sole-proprietor paths, and surfaces a next-weekday candidate without pretending to calculate CRA-recognized public holidays. Results stay browser-local and can be copied, printed, or exported as TXT and calendar reminders.
+
+The late-filing penalty calculator uses integer-cent arithmetic for the A + (B × C) formula, clamps date-to-date month anniversaries, caps C at 12, and clearly separates the stable filing-penalty formula from prescribed-rate interest and account-specific assessments.
 
 The return calculator uses integer-cent arithmetic to derive lines 105, 108, 109, 112, 113 A, 113 B, 113 C, 114, and 115 from the regular-method inputs. It does not collect business numbers or names, and it stops quick-method or uncertain users before applying regular-method formulas.
 
