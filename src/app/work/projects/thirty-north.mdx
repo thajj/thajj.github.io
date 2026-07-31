@@ -1,7 +1,7 @@
 ---
 title: "Thirty North: Privacy-First GST/HST Tools"
 publishedAt: "2026-07-31"
-summary: "A bilingual educational product that helps Canadian freelancers calculate sales tax, track the small-supplier threshold, screen registration and filing deadlines, and document foreign-currency invoices."
+summary: "A bilingual educational product that helps Canadian freelancers calculate sales tax, track the small-supplier threshold, screen registration and filing deadlines, prepare return-line arithmetic, and document foreign-currency invoices."
 tags:
   - "Next.js"
   - "TypeScript"
@@ -42,6 +42,7 @@ The live product currently includes:
 - A bilingual [Québec GST/QST calculator](https://thirtynorthgst.ca/tools/quebec-gst-qst-calculator), with an aligned [French calculateur TPS/TVQ](https://thirtynorthgst.ca/fr/outils/calculateur-tps-tvq-quebec), that adds or removes the current 5% GST and 9.975% QST, keeps both tax lines visible, and explains why QST is not compounded on GST.
 - A [GST/HST registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator) that separates the common timing scenarios instead of presenting one universal deadline.
 - A bilingual [GST/HST filing and payment deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-filing-deadline-calculator), with an aligned [French date-limit calculator](https://thirtynorthgst.ca/fr/outils/calculateur-date-limite-declaration-tps-tvh), that screens monthly, quarterly, and annual CRA paths, keeps the qualifying sole-proprietor payment and filing dates separate, covers the listed-financial-institution exception, and preserves weekend and public-holiday boundaries.
+- A bilingual [GST/HST return calculator for lines 101 through 115](https://thirtynorthgst.ca/tools/gst-hst-return-calculator), with an aligned [French return worksheet](https://thirtynorthgst.ca/fr/outils/calculateur-declaration-tps-tvh), that follows the regular-method CRA working-copy sequence, separates entered amounts from calculated totals, stops quick-method users for review, and exports a private CSV record.
 - A [foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst) for USD, EUR, GBP, and AUD invoices. It uses published Bank of Canada observations, handles weekends and holidays by finding the latest earlier observation, keeps processor fees separate, and produces a downloadable evidence note.
 - A bilingual [GST/HST invoice requirements checker](https://thirtynorthgst.ca/tools/gst-hst-invoice-requirements-checker), with a fully aligned [French TPS/TVQ version](https://thirtynorthgst.ca/fr/outils/verificateur-exigences-facture-tps-tvq), that turns the current CRA or Revenu Québec C$100 and C$500 table into a private seller or purchaser checklist.
 - A source-backed guide to the [Québec GST/QST C$30,000 threshold](https://thirtynorthgst.ca/guides/quebec-freelancer-gst-qst-30000-threshold), with a fully aligned [French TPS/TVQ version](https://thirtynorthgst.ca/fr/guides/travailleur-autonome-quebec-seuil-30000-tps-tvq).
@@ -60,6 +61,8 @@ The Canada-wide calculator applies the same integer-cent discipline across all 1
 The service place-of-supply screener isolates the CRA’s general rules in a pure decision engine. It preserves unresolved provinces when tied jurisdictions share the same highest HST rate, separates federal GST/HST from QST, PST, and RST, and exports a reviewable browser-local result without collecting client facts.
 
 The filing-deadline calculator uses a pure calendar engine that preserves month-end arithmetic, separates filing from final payment, handles the current three-month, six-month, and qualifying sole-proprietor paths, and surfaces a next-weekday candidate without pretending to calculate CRA-recognized public holidays. Results stay browser-local and can be copied, printed, or exported as TXT and calendar reminders.
+
+The return calculator uses integer-cent arithmetic to derive lines 105, 108, 109, 112, 113 A, 113 B, 113 C, 114, and 115 from the regular-method inputs. It does not collect business numbers or names, and it stops quick-method or uncertain users before applying regular-method formulas.
 
 The foreign-currency workflow uses the [Bank of Canada Valet API](https://www.bankofcanada.ca/valet/docs) for published observations. The interface records the rate date, series, source, conversion method, gross Canadian-dollar consideration, processor fee, and illustrative net amount so that a user can preserve the reasoning behind a conversion.
 
