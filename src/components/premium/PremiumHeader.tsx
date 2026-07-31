@@ -7,6 +7,7 @@ import { PremiumBadge } from "./PremiumBadge";
 import { person } from "@/resources";
 
 const navLinks = [
+  { href: "/#context", label: "Context" },
   { href: "/#work", label: "Work" },
   { href: "/#focus", label: "Focus" },
   { href: "/about", label: "About" },

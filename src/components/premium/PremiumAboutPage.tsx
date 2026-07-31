@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PremiumImage } from "./PremiumImage";
+import { PremiumContext } from "./PremiumContext";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 import { about, person, social } from "@/resources";
@@ -80,6 +81,8 @@ export function PremiumAboutPage() {
         </section>
       )}
 
+      <PremiumContext />
+
       {about.work.display && (
         <section id="experience">
           <div className="wrap">
@@ -87,7 +90,7 @@ export function PremiumAboutPage() {
               <SectionHead
                 eyebrow="Career"
                 title={about.work.title}
-                intro="15+ years building reliable software across aviation, energy, publishing, and developer tooling."
+                intro="Knowledge platforms for institutions, then aviation, energy, and product engineering — 15+ years of ownership from ideation through deployment."
               />
             </Reveal>
             <div className="experience-list">
@@ -174,7 +177,7 @@ export function PremiumAboutPage() {
                   <h2>Schedule a conversation</h2>
                   <p>
                     Open to full-stack, cloud platform, and technical leadership
-                    roles.
+                    roles — including public-sector and institutional platforms.
                   </p>
                 </div>
                 <div className="cta-actions">

@@ -4,7 +4,7 @@ import { SectionHead } from "./SectionHead";
 import { about } from "@/resources";
 
 export function PremiumExperience() {
-  const recent = about.work.experiences.slice(0, 4);
+  const recent = about.work.experiences.slice(0, 5);
 
   return (
     <section id="experience">
@@ -13,7 +13,7 @@ export function PremiumExperience() {
           <SectionHead
             eyebrow="Experience"
             title="Recent roles. Real ownership."
-            intro="Aviation software, energy markets, publishing platforms — always hands-on, always shipping."
+            intro="From R&D leadership on knowledge platforms to aviation and energy markets — always hands-on, always shipping under real constraints."
           />
         </Reveal>
         <div className="timeline">

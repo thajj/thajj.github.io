@@ -27,7 +27,7 @@ export function PremiumPillars() {
           <SectionHead
             eyebrow="Focus"
             title="Where I create leverage."
-            intro="I stay close to the code while shaping architecture, delivery, and the systems that keep products healthy in production."
+            intro="Platform architecture, institutional deployment, and hands-on leadership — the same muscles from knowledge technologies, applied to cloud-native and AI-enabled systems."
           />
         </Reveal>
         <div className="pillars">

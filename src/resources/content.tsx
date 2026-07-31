@@ -157,12 +157,12 @@ const social: SocialLink[] = [
 const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  description: `Portfolio of ${person.name} — knowledge platforms, institutional deployment, and cloud-native systems from ideation to mass rollout.`,
   headline: `Toufic Hajj`,
   subline: `Senior Full-Stack & Cloud Platform Engineer — ideation to mass deployment, on-prem to cloud.`,
   valueProposition:
     "I design and ship platforms for public and private organizations: architecture, compliance, and delivery that hold up from first prototype to city-scale rollout.",
-  featuredProjectSlugs: ["open-trivia", "stonkify", "banq"],
+  featuredProjectSlugs: ["banq", "chalons", "stonkify"],
 };
 
 const about: About = {
@@ -379,17 +379,6 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
         images: [],
       },
       {
-        title: "Other Skills",
-        items: [
-          "UI/UX design",
-          "Team leadership",
-          "Project management",
-          "Agile (Scrum, Kanban)",
-          "Technical documentation",
-        ],
-        images: [],
-      },
-      {
         title: "Certifications",
         items: [
           "Google Cloud Certified — Associate Cloud Engineer",
@@ -401,23 +390,23 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
         images: [],
       },
       {
-        title: "Publications",
+        title: "Research & publications",
         items: [
           "Trusted smart harvesting algorithm based on semantic relationship and social networks (SMESE-TSHA) — co-author, InMédia Technologies",
           "Traceable and Trusted Smart Harvesting Algorithm from Unstructured and Structured Web (SMESE-TTSHA) — co-author, InMédia Technologies",
-          "MLM-based learning and boosting model – part 1: multi-sources/rights of digital resources to build universal knowledge repositories using an enriched semantic micrometadata harvester and semantic shared knowledge notice — co-author, InMédia Technologies",
+          "MLM-based learning and boosting model – part 1: multi-sources/rights of digital resources to build universal knowledge repositories — co-author, InMédia Technologies",
         ],
         images: [],
       },
       {
-        title: "Domains & deployment",
+        title: "Other skills",
         items: [
-          "Public sector & smart cities (citizen portals, municipal intranets, e-services)",
-          "Libraries & cultural institutions (catalogues, DAM, virtual exhibitions)",
-          "Museums & heritage networks (multimedia collections, digital signage)",
-          "On-premise, cloud, and hybrid mass deployment",
-          "Multilingual portals, WCAG accessibility, GDPR-conscious personal data handling",
-          "Rights-based digital asset distribution and federated content",
+          "UI/UX design",
+          "Team leadership & R&D management",
+          "Public-sector tenders & technical evaluations",
+          "Project management",
+          "Agile (Scrum, Kanban)",
+          "Technical documentation",
         ],
         images: [],
       },
@@ -436,7 +425,7 @@ const blog: Blog = {
 const work: Work = {
   label: "Work",
   title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
+  description: `Institutional platforms, mobile companions, and product systems by ${person.name} — from libraries and cultural portals to trading tooling.`,
 };
 
 const contact: Contact = {
@@ -452,8 +441,100 @@ const gallery: Gallery = {
   images: [],
 };
 
+const context = {
+  eyebrow: "Context",
+  title: "The arena I know best.",
+  intro:
+    "A decade inside knowledge technologies (InMédia / BiblioMondo) — platforms for cities, libraries, museums, and institutions that must federate content, respect rights, and survive mass deployment.",
+  sectors: [
+    {
+      label: "01",
+      title: "Cities",
+      body: "Citizen portals, municipal intranets, and public e-services that keep working when the city is online — and when it isn’t.",
+    },
+    {
+      label: "02",
+      title: "Libraries",
+      body: "Multimedia catalogues, personal spaces, and companion apps that connect physical collections to digital convenience.",
+    },
+    {
+      label: "03",
+      title: "Museums",
+      body: "DAM, virtual exhibitions, and digital signage across heritage networks — rights-aware media, not just file storage.",
+    },
+    {
+      label: "04",
+      title: "Enterprises",
+      body: "Private and hybrid deployments for organizations that need the same platform rigor without a public-facing mandate.",
+    },
+  ],
+  capabilities: {
+    label: "Platform",
+    title: "What the stack had to do",
+    intro:
+      "Not a marketing site — an open, flexible CMS + DAM platform that creates, manages, and presents information and services to the public.",
+    items: [
+      "Web portals and personal / citizen spaces",
+      "Multimedia catalogues and advanced viewers",
+      "Digital asset management with usage rights",
+      "Virtual exhibitions and digital signage",
+      "Mobile apps, newsletters, calendars, and events",
+      "Forms, surveys, and back-office operations",
+      "Multilingual delivery with WCAG-minded admin tooling",
+      "GDPR-conscious handling of personal data",
+    ],
+  },
+  deployment: {
+    label: "Deployment",
+    title: "Where it had to run",
+    intro:
+      "Same product family — different operational realities. Architecture that survives tenders, audits, and city-scale rollout.",
+    items: [
+      "On-premise: institutional networks and 1,500+ public workstations",
+      "Cloud: multi-tenant portals and government API integrations",
+      "Hybrid: public surfaces with secured intranet cores",
+      "Public organizations: libraries, museums, municipalities, ministries",
+      "Private organizations: enterprise knowledge and media workflows",
+      "Mass deployment with uptime, accessibility, and tender scrutiny",
+    ],
+  },
+  lifecycle: {
+    eyebrow: "From idea to fleet",
+    stages: [
+      {
+        meta: "Ideate",
+        title: "Shape the product",
+        body: "Roadmaps, research (SMESE / MLM harvesting lines), and stakeholder needs before a line of production code ships.",
+      },
+      {
+        meta: "Architect",
+        title: "Make it durable",
+        body: "SPA/mobile fronts, microservices migrations, federated content, and standards that outlast a single release.",
+      },
+      {
+        meta: "Deploy",
+        title: "Roll it out at scale",
+        body: "On-prem, cloud, and hybrid mass deployment for institutions that cannot treat go-live as a demo day.",
+      },
+    ],
+  },
+  aside:
+    "That context still frames how I build today: cloud-native and AI-enabled systems, but with the same bias toward platforms people can operate under real institutional constraints.",
+};
+
 const renderJSX = (str: string) => {
   return <span dangerouslySetInnerHTML={{ __html: str }} />;
 };
 
-export { person, social, home, about, blog, work, contact, gallery, renderJSX };
+export {
+  person,
+  social,
+  home,
+  about,
+  blog,
+  work,
+  contact,
+  gallery,
+  context,
+  renderJSX,
+};

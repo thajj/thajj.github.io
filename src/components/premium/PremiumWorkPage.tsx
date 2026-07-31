@@ -29,8 +29,8 @@ export function PremiumWorkPage({ projects }: { projects: Project[] }) {
           <p className="eyebrow">{work.label}</p>
           <h1>Selected work</h1>
           <p className="page-lede">
-            Case studies across mobile, trading platforms, and digital products —
-            each owned end to end.
+            Institutional platforms, library companions, and product systems —
+            each owned from design through delivery.
           </p>
         </div>
       </section>

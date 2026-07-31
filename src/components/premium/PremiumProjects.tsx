@@ -29,7 +29,7 @@ export function PremiumProjects() {
           <SectionHead
             eyebrow="Selected work"
             title="Case studies that shipped."
-            intro="Mobile, trading tooling, and developer platforms — designed, built, and delivered end to end."
+            intro="Institutional portals and library companions from the knowledge-platform years — plus product systems built since."
           />
         </Reveal>
 

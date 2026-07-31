@@ -1,5 +1,6 @@
 import { PremiumHero } from "./PremiumHero";
 import { PremiumProjects } from "./PremiumProjects";
+import { PremiumContext } from "./PremiumContext";
 import { PremiumPillars } from "./PremiumPillars";
 import { PremiumExperience } from "./PremiumExperience";
 import { PremiumQuote } from "./PremiumQuote";
@@ -9,6 +10,7 @@ export function PremiumHome() {
   return (
     <main>
       <PremiumHero />
+      <PremiumContext />
       <PremiumProjects />
       <PremiumPillars />
       <PremiumExperience />
