@@ -2,6 +2,10 @@
 
 Welcome to the repository of my personal portfolio website. This project showcases my skills, experiences, and projects in the field of AI, Blockchain, and Cloud Technologies.
 
+## 🌐 Current Product
+
+- [Thirty North](https://thirtynorthgst.ca/) — privacy-first GST/HST threshold and registration-timing tools for Canadian cross-border freelancers, with free resources in English and French.
+
 ## 🚀 Features
 
 - Responsive design for optimal viewing on all devices
