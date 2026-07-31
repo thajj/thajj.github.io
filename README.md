@@ -6,6 +6,8 @@ Welcome to the repository of my personal portfolio website. This project showcas
 
 - [Thirty North](https://thirtynorthgst.ca/) — privacy-first GST/HST threshold and registration-timing tools for Canadian cross-border freelancers, with free resources in English and French.
   - [Free GST/HST tools](https://thirtynorthgst.ca/tools/)
+  - [Québec GST/QST calculator — forward and reverse](https://thirtynorthgst.ca/tools/quebec-gst-qst-calculator)
+  - [Calculateur TPS/TVQ du Québec — régulier et inverse](https://thirtynorthgst.ca/fr/outils/calculateur-tps-tvq-quebec)
   - [Registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator)
   - [Foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst)
   - [GST/HST invoice requirements checker](https://thirtynorthgst.ca/tools/gst-hst-invoice-requirements-checker)
