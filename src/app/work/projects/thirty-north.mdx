@@ -37,6 +37,7 @@ The product follows four constraints:
 The live product currently includes:
 
 - A [rolling four-quarter GST/HST threshold tracker](https://thirtynorthgst.ca/) with device-local records and clear assumptions.
+- A bilingual [Québec GST/QST calculator](https://thirtynorthgst.ca/tools/quebec-gst-qst-calculator), with an aligned [French calculateur TPS/TVQ](https://thirtynorthgst.ca/fr/outils/calculateur-tps-tvq-quebec), that adds or removes the current 5% GST and 9.975% QST, keeps both tax lines visible, and explains why QST is not compounded on GST.
 - A [GST/HST registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator) that separates the common timing scenarios instead of presenting one universal deadline.
 - A [foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst) for USD, EUR, GBP, and AUD invoices. It uses published Bank of Canada observations, handles weekends and holidays by finding the latest earlier observation, keeps processor fees separate, and produces a downloadable evidence note.
 - A bilingual [GST/HST invoice requirements checker](https://thirtynorthgst.ca/tools/gst-hst-invoice-requirements-checker), with a fully aligned [French TPS/TVQ version](https://thirtynorthgst.ca/fr/outils/verificateur-exigences-facture-tps-tvq), that turns the current CRA or Revenu Québec C$100 and C$500 table into a private seller or purchaser checklist.
@@ -48,6 +49,8 @@ Those pages create useful, searchable answers on their own. They also provide a 
 ## Implementation
 
 Thirty North is a statically rendered Next.js and TypeScript application with bilingual route pairs, canonical and `hreflang` metadata, structured data, XML sitemaps, RSS feeds, and a consent-gated analytics layer. Core calculation logic is isolated from the interface and covered by unit tests; rendered-route tests verify important page content and links before release.
+
+The Québec tax calculator uses integer-cent arithmetic for forward calculations and reconciles reverse calculations to the exact entered total. Its content and FAQ are grounded in current Revenu Québec and CRA sources while making the tool's tax-treatment limits explicit.
 
 The foreign-currency workflow uses the [Bank of Canada Valet API](https://www.bankofcanada.ca/valet/docs) for published observations. The interface records the rate date, series, source, conversion method, gross Canadian-dollar consideration, processor fee, and illustrative net amount so that a user can preserve the reasoning behind a conversion.
 
