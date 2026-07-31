@@ -4,7 +4,7 @@ Welcome to the repository of my personal portfolio website. This project showcas
 
 ## 🌐 Current Product
 
-- [Thirty North](https://thirtynorthgst.ca/) — privacy-first GST/HST threshold, registration-timing, and filing-deadline tools for Canadian cross-border freelancers, with free resources in English and French.
+- [Thirty North](https://thirtynorthgst.ca/) — privacy-first GST/HST threshold, registration-timing, filing-deadline, and return-line tools for Canadian cross-border freelancers, with free resources in English and French.
   - [Free GST/HST tools](https://thirtynorthgst.ca/tools/)
   - [Canada sales tax calculator — all provinces and territories](https://thirtynorthgst.ca/tools/canada-sales-tax-calculator)
   - [Calculateur des taxes de vente au Canada — toutes les administrations](https://thirtynorthgst.ca/fr/outils/calculateur-taxes-vente-canada)
@@ -15,6 +15,8 @@ Welcome to the repository of my personal portfolio website. This project showcas
   - [Registration deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-registration-deadline-calculator)
   - [GST/HST filing and payment deadline calculator](https://thirtynorthgst.ca/tools/gst-hst-filing-deadline-calculator)
   - [Calculateur des dates limites de production et de paiement TPS/TVH](https://thirtynorthgst.ca/fr/outils/calculateur-date-limite-declaration-tps-tvh)
+  - [GST/HST return calculator — lines 101 to 115](https://thirtynorthgst.ca/tools/gst-hst-return-calculator)
+  - [Calculateur de déclaration TPS/TVH — lignes 101 à 115](https://thirtynorthgst.ca/fr/outils/calculateur-declaration-tps-tvh)
   - [Foreign-currency invoice converter](https://thirtynorthgst.ca/tools/usd-cad-invoice-converter-gst-hst)
   - [GST/HST invoice requirements checker](https://thirtynorthgst.ca/tools/gst-hst-invoice-requirements-checker)
   - [Vérificateur des exigences de facture TPS/TVQ](https://thirtynorthgst.ca/fr/outils/verificateur-exigences-facture-tps-tvq)
