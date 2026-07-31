@@ -129,6 +129,14 @@ export default function Home() {
                   About me
                 </Flex>
               </Button>
+              <Button
+                data-border="rounded"
+                href="https://thirtynorthgst.ca/"
+                variant="tertiary"
+                size="m"
+              >
+                Thirty North
+              </Button>
             </Flex>
           </RevealFx>
           {home.valueProposition && (
