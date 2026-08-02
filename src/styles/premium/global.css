@@ -929,7 +929,8 @@
   font-weight: 500;
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   line-height: 1.4;
-  max-width: 28ch;
+  max-width: none;
+  width: 100%;
   color: var(--ivory);
 }
 

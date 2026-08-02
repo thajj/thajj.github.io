@@ -23,7 +23,7 @@ export function generateMetadata({ params }: BlogParams) {
   const { title, publishedAt, summary, image } = post.metadata;
   const ogImage = image
     ? `https://${baseURL}${image}`
-    : `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+    : `https://${baseURL}/og.png`;
 
   return {
     title,

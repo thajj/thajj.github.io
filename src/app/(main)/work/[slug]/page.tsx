@@ -21,8 +21,7 @@ export function generateMetadata({ params }: WorkParams) {
   if (!post) return {};
 
   const { title, publishedAt, summary, images } = post.metadata;
-  const ogImage =
-    images?.[0] ?? `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = images?.[0] ?? `https://${baseURL}/og.png`;
 
   return {
     title,

@@ -5,7 +5,7 @@ import { baseURL, blog, person } from "@/resources";
 export function generateMetadata() {
   const title = blog.title;
   const description = blog.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = `https://${baseURL}/og.png`;
 
   return {
     title,
