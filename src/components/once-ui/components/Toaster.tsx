@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Flex, Toast } from '.';
@@ -19,6 +19,16 @@ interface ToasterProps {
 const Toaster: React.FC<ToasterProps> = ({
     toasts,
     removeToast }) => {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
+
     return createPortal(
         <Flex
             zIndex={11}
