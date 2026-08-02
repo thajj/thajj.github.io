@@ -1313,6 +1313,63 @@
   margin: 0 0 8px;
 }
 
+.premium-page .education-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.premium-page .education-section .section-head {
+  margin-bottom: 28px;
+}
+
+.premium-page .education-section .section-head h2 {
+  font-size: clamp(1.55rem, 2.6vw, 2.1rem);
+}
+
+.premium-page .education-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 28px 40px;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.premium-page .education-block {
+  min-width: 0;
+}
+
+.premium-page .education-label {
+  margin: 18px 0 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.premium-page .education-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.premium-page .education-list li {
+  display: grid;
+  gap: 4px;
+  padding: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(43, 50, 47, 0.82);
+}
+
+.premium-page .education-list strong {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
 .premium-page .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1773,6 +1830,11 @@
 
   .premium-page .skill-card-wide {
     grid-column: span 1;
+  }
+
+  .premium-page .education-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .premium-page .panel,

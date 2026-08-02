@@ -119,28 +119,8 @@ export function PremiumAboutPage() {
         </section>
       )}
 
-      {about.studies.display && (
-        <section>
-          <div className="wrap">
-            <Reveal>
-              <SectionHead eyebrow="Education" title={about.studies.title} />
-            </Reveal>
-            <div className="steps">
-              {about.studies.institutions.map((inst) => (
-                <Reveal key={inst.name}>
-                  <article className="step">
-                    <h3>{inst.name}</h3>
-                    <p>{inst.description}</p>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       {about.technical.display && (
-        <section>
+        <section id="capabilities">
           <div className="wrap">
             <Reveal>
               <SectionHead
@@ -154,10 +134,7 @@ export function PremiumAboutPage() {
                 const format = skill.format ?? "tags";
                 const wide = format === "list";
                 return (
-                  <Reveal
-                    key={skill.title}
-                    delay={(index % 3) * 60}
-                  >
+                  <Reveal key={skill.title} delay={(index % 3) * 60}>
                     <article
                       className={`skill-card${wide ? " skill-card-wide" : ""}`}
                     >
@@ -185,6 +162,46 @@ export function PremiumAboutPage() {
                   </Reveal>
                 );
               })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {about.studies.display && (
+        <section className="education-section" id="education">
+          <div className="wrap">
+            <Reveal>
+              <SectionHead
+                eyebrow="Background"
+                title={about.studies.title}
+                intro={about.studies.intro}
+              />
+            </Reveal>
+            <div className="education-layout">
+              <div className="education-block">
+                <p className="education-label">Studies</p>
+                <ul className="education-list">
+                  {about.studies.institutions.map((inst) => (
+                    <li key={inst.name}>
+                      <strong>{inst.name}</strong>
+                      <span>{inst.description}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {about.studies.certifications &&
+                about.studies.certifications.length > 0 && (
+                  <div className="education-block">
+                    <p className="education-label">Certifications</p>
+                    <ul className="education-list">
+                      {about.studies.certifications.map((cert) => (
+                        <li key={cert}>
+                          <span>{cert}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
             </div>
           </div>
         </section>

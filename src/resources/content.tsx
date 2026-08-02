@@ -71,10 +71,12 @@ type About = {
   studies: {
     display: boolean;
     title: string;
+    intro?: string;
     institutions: {
       name: string;
       description: string;
     }[];
+    certifications?: string[];
   };
   technical: {
     display: boolean;
@@ -345,8 +347,9 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education & credentials",
+    intro: "Formal studies and certifications — supporting context for the work above.",
     institutions: [
       {
         name: "I.S.I Montréal",
@@ -356,6 +359,13 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
         name: "Université de Montréal",
         description: `Computer Science (2003 - 2006)`,
       },
+    ],
+    certifications: [
+      "Google Cloud Certified — Associate Cloud Engineer",
+      "Architecting with Google Kubernetes Engine Specialization (Google Cloud)",
+      "Cloud Application Development Foundations Specialization (IBM)",
+      "Python for Data Science, AI & Development (IBM)",
+      "Introduction to Cloud Computing (IBM)",
     ],
   },
   technical: {
@@ -503,18 +513,6 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
           "Adaptive delivery (Agile and beyond)",
           "Technical writing & decision records",
           "Stakeholder & exec alignment",
-        ],
-        images: [],
-      },
-      {
-        title: "Certifications",
-        format: "list",
-        items: [
-          "Google Cloud Certified — Associate Cloud Engineer",
-          "Architecting with Google Kubernetes Engine Specialization (Google Cloud)",
-          "Cloud Application Development Foundations Specialization (IBM)",
-          "Python for Data Science, AI & Development (IBM)",
-          "Introduction to Cloud Computing (IBM)",
         ],
         images: [],
       },
