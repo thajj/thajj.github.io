@@ -10,7 +10,7 @@ function shortTitle(title: string) {
   return cut && cut.length < title.length ? cut : title;
 }
 
-function useCaseLabel(slug: string) {
+function caseLabel(slug: string) {
   const collection = work.collections?.find((c) => c.slugs.includes(slug));
   return collection?.eyebrow ?? null;
 }
@@ -58,7 +58,7 @@ export function PremiumProjects() {
                 )}
                 <div className="work-feature-copy">
                   <p className="eyebrow">
-                    {useCaseLabel(primary.slug) ?? "Featured"}
+                    {caseLabel(primary.slug) ?? "Featured"}
                   </p>
                   <h3>{shortTitle(primary.metadata.title)}</h3>
                   <p>{primary.metadata.summary}</p>
@@ -85,9 +85,9 @@ export function PremiumProjects() {
                       />
                     )}
                     <div className="body">
-                      {useCaseLabel(project.slug) && (
+                      {caseLabel(project.slug) && (
                         <p className="project-lane">
-                          {useCaseLabel(project.slug)}
+                          {caseLabel(project.slug)}
                         </p>
                       )}
                       <h3>{shortTitle(project.metadata.title)}</h3>
