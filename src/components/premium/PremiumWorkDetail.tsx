@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PremiumImage } from "./PremiumImage";
+import { PremiumImage, portraitSlugs } from "./PremiumImage";
 import { PremiumMDX } from "@/components/premium/PremiumMDX";
 import { formatProjectDate } from "@/app/utils";
 
@@ -18,6 +18,10 @@ type ProjectPost = {
 
 export function PremiumWorkDetail({ post }: { post: ProjectPost }) {
   const heroImage = post.metadata.images?.[0];
+  const isPortrait = portraitSlugs.has(post.slug);
+  const galleryImages = isPortrait
+    ? post.metadata.images
+    : post.metadata.images.slice(1);
 
   return (
     <main className="inner-page">
@@ -49,7 +53,7 @@ export function PremiumWorkDetail({ post }: { post: ProjectPost }) {
         </div>
       </section>
 
-      {heroImage && (
+      {heroImage && !isPortrait && (
         <section className="detail-media">
           <div className="wrap">
             <PremiumImage
@@ -70,16 +74,23 @@ export function PremiumWorkDetail({ post }: { post: ProjectPost }) {
         </div>
       </section>
 
-      {post.metadata.images.length > 1 && (
+      {galleryImages.length > 0 && (
         <section>
           <div className="wrap">
-            <div className="detail-gallery">
-              {post.metadata.images.slice(1).map((image, index) => (
+            <div
+              className={
+                isPortrait
+                  ? "detail-gallery detail-gallery-portrait"
+                  : "detail-gallery"
+              }
+            >
+              {galleryImages.map((image, index) => (
                 <PremiumImage
                   key={image}
                   src={image}
-                  alt={`${post.metadata.title} screenshot ${index + 2}`}
+                  alt={`${post.metadata.title} screenshot ${index + 1}`}
                   slug={post.slug}
+                  aspectRatio={isPortrait ? "9 / 16" : "16 / 9"}
                 />
               ))}
             </div>

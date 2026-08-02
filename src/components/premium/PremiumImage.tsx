@@ -1,4 +1,6 @@
 const containSlugs = new Set(["open-trivia", "chalons", "banq"]);
+/** Portrait mobile screenshots — need phone aspect, not 16:9 letterbox */
+const portraitSlugs = new Set(["open-trivia"]);
 
 interface PremiumImageProps {
   src: string;
@@ -16,10 +18,11 @@ export function PremiumImage({
   className = "",
 }: PremiumImageProps) {
   const contain = slug ? containSlugs.has(slug) : false;
+  const portrait = aspectRatio === "9 / 16" || aspectRatio === "9/16";
 
   return (
     <div
-      className={`premium-media${contain ? " contain" : ""}${className ? ` ${className}` : ""}`}
+      className={`premium-media${contain ? " contain" : ""}${portrait ? " portrait" : ""}${className ? ` ${className}` : ""}`}
       style={{ aspectRatio }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -28,4 +31,4 @@ export function PremiumImage({
   );
 }
 
-export { containSlugs };
+export { containSlugs, portraitSlugs };

@@ -1,47 +1,54 @@
 ---
-title: "Revolutionizing Trading Decisions with Stonkify"
+title: "Stonkify: Desktop Trading Toolkit"
 publishedAt: "2024-04"
-organization: "Freelance"
-summary: "Desktop trading toolkit (React, Electron, real-time scanners) — a private-sector product system built for operators who live in the UI all day."
+organization: "Client project"
+summary: "Electron + MERN trading workstation — real-time scanners, news, charts, and OS-level hotkeys built for day traders who live in the UI."
 tags:
   - React
-  - Node.js
   - Electron
-  - MongoDB
+  - Node.js
+  - Real-time
 images:
   - "/images/projects/stonkify/cover-01.png"
   - "/images/projects/stonkify/cover-02.png"
   - "/images/projects/stonkify/cover-03.jpg"
-  - "/images/projects/stonkify/cover.png"
 team:
   - name: "Toufic Hajj"
-    role: "Full Stack Developer"
+    role: "Full-Stack Developer"
     avatar: "/images/avatar.png"
     linkedIn: "https://www.linkedin.com/in/toufic-hajj/"
 ---
 
+## Context
+
+Day traders do not browse — they scan. Seconds matter when a name gaps on high relative volume, news hits, or post-market prints move the thesis. Generic web dashboards force tab-hopping; brokerage UIs bury the reads that matter.
+
+**Stonkify** is a desktop trading toolkit I built for that operator: a dark, high-density workstation that puts scanners, news, indices, and symbol detail in one Electron shell — with custom hotkeys and mouse hooks so analysis and execution stay in flow.
+
 ## Overview
 
-In this project, I developed a sophisticated Trading Toolkit application aimed at revolutionizing trading decisions by removing guesswork for traders. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Electron, Stonkify empowers traders with powerful tools and real-time data analysis, enabling them to make informed and strategic decisions in the financial markets.
+I owned the full stack: React UI on Electron, Node/Express services, MongoDB persistence, and live market data wired into scanners and symbol views. The product problem was clarity under speed — show the right lists, color the right signals, and open a single-stock workspace without leaving the desk layout.
 
-## Key Features
+The design language matches how traders already think: green/red for direction, blue highlights for unusual relative volume, premium gates for advanced widgets, and always-on-top windows for the most-active grid.
 
-- **Real-Time Market Scanners**: Provides high of day, low of day, and unusual high relative volume scanners, delivering critical market insights to traders.
-- **News Scanner with Sentiment Analysis**: Offers up-to-the-minute news and market sentiment analysis to inform trading strategies.
-- **Single Stock Window**: Allows instant access to stock-specific news and data with a single click, enhancing decision-making speed.
-- **Crypto Volume Monitor**: Extends market analysis to cryptocurrencies, enabling traders to capitalize on opportunities in both traditional and crypto markets.
-- **Custom Hotkeys and Mouse Hooks**: Enhances efficiency and precision by enabling rapid data analysis and swift trade execution through customizable keyboard and mouse shortcuts, leveraging Electron's ability to interact with low-level system events.
+## What shipped
 
-## Technologies Used
+- **Stock scanners**: new highs / new lows, up & down on high relative volume, most active, gap-up — with live `LAST`, `% CHG`, volume, and `R.VOL` columns
+- **Conditional formatting**: heat on percent change; blue callouts when relative volume spikes above baseline
+- **News scanner**: latest wires (WSJ, Bloomberg, Reuters, etc.) plus lanes for earnings, analyst ratings, SPACs/IPOs, and FDA approvals
+- **Market indices strip**: S&P 500, Nasdaq 100, Dow, Russell 2000, and VIX with live price and percent change
+- **Single-stock workspace**: company header, regular + post-market prints, intraday chart intervals, and Finviz-backed chart overlays for technical context
+- **Trading View widgets**: market overview, hot list, economic calendar, ticker tape, short news snapshots, fundamental data
+- **Most Active grid**: pinable dense table (favorites, high, volume, R.VOL) for continuous monitoring
+- **OS-level control**: custom hotkeys and mouse hooks so the toolkit can drive rapid navigation and trade-adjacent actions alongside the broker
+- **Monetization surface**: premium-only widgets (e.g. trading hours, candlestick timer) gated in the shell
 
-- **MERN Stack (MongoDB, Express.js, React.js, Node.js):** For building a robust and scalable application with seamless integration of components.
-- **Electron:** For cross-platform compatibility, ensuring consistent performance across various operating systems and enabling interaction with low-level system events for hotkeys and mouse hooks.
-- **Real-Time Data Integration:** For providing traders with up-to-date market data and analytics.
+## Stack & craft
 
-## Challenges and Learnings
+**MERN + Electron** — MongoDB, Express, React, Node for the application core; Electron for cross-platform desktop, native window behaviors (pin / always-on-top), and low-level keyboard/mouse hooks. Real-time market feeds power scanners and the indices bar; external chart providers enrich the symbol pane without rebuilding a full charting stack.
 
-One key challenge was integrating keyboard and mouse hooks between the toolkit and trading software while ensuring security measures to safeguard user data. Implementing this functionality required in-depth knowledge of low-level system interactions and careful handling of user permissions. Additionally, balancing a feature-rich application with a user-friendly interface was essential to cater to traders' real-time data needs without overwhelming them.
+The hard craft was not “another dashboard.” It was keeping a feature-dense trading UI readable under pressure, and wiring desktop hooks securely so the toolkit could sit next to broker software without becoming a liability.
 
 ## Outcome
 
-The integration of custom hotkeys and mouse actions has been a game-changer, allowing traders to access a wide range of features rapidly and execute trades swiftly. The application's versatility, extending to both traditional markets and cryptocurrencies, has broadened its appeal. Traders now have a powerful toolkit that enhances efficiency, customization, and ultimately drives greater trading success.
+Traders get a purpose-built workstation: scan → select → inspect → act, with less context switching. The same product muscles show up here as elsewhere in my work — operator UX, clear constraints, and a system built for people who use it all day.

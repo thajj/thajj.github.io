@@ -1,8 +1,8 @@
 ---
-title: "Developing OpenTrivia: An Engaging, Ad-Free Quiz Game"
+title: "Open Trivia: Cross-Platform Quiz Product"
 publishedAt: "2021-12"
 organization: "Client project"
-summary: "End-to-end Flutter + Laravel quiz app — cross-platform delivery and full-stack ownership on a consumer client product."
+summary: "Flutter + Laravel quiz app — topic library, timed play, scored results, and answer review shipped end-to-end for phones and tablets."
 tags:
   - Flutter
   - Laravel
@@ -14,32 +14,41 @@ images:
   - "/images/projects/open-trivia/cover-03.jpg"
   - "/images/projects/open-trivia/cover-04.jpg"
   - "/images/projects/open-trivia/cover-05.jpg"
+team:
+  - name: "Toufic Hajj"
+    role: "Full-Stack Developer"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/toufic-hajj/"
 ---
+
+## Context
+
+The client wanted a free, **ad-free** quiz product people would actually finish — not a banner-stuffed trivia clone. That meant a clean play loop on phones and tablets, a real question catalogue, and a backend that could serve topics and scores without slowing the client down.
+
+**Open Trivia** is the end-to-end mobile product I designed and built for that brief: Flutter clients on iOS and Android, Laravel APIs, and PostgreSQL for the question and session data.
 
 ## Overview
 
-In this project, I played a pivotal role in the end-to-end development of **OpenTrivia**, a free, ad-free, and multiplatform mobile application that offers an engaging quiz game experience for users on phones and tablets. The client's goal was to create an entertaining and interactive quiz platform with a wide range of questions and topics. Leveraging my expertise in both back-end and front-end technologies, I led the design and implementation of the application, ensuring its functionality, responsiveness, and aesthetic appeal.
+I owned client and server: topic browsing, timed question play, results, and answer verification — plus the REST contract that keeps Flutter and Laravel in sync. The UX is intentionally simple: start → pick a topic → answer under a countdown → see score → review mistakes.
 
-## Key Features
+The visual system is high-contrast and brand-forward (magenta / charcoal / white) with wave transitions between sections — readable on small screens and consistent across the full session flow. Copy surfaces in both English and French (`Retour`, `Réponse:`), reflecting a bilingual audience.
 
-- **Wide Range of Topics**: Offers an extensive database of quiz questions covering various subjects to keep users engaged and challenged.
-- **Ad-Free Experience**: Provides an uninterrupted gaming experience without any advertisements, enhancing user satisfaction.
-- **Multiplatform Compatibility**: Built using Flutter to ensure seamless performance on both iOS and Android devices, including phones and tablets.
-- **User-Friendly Interface**: Designed with intuitive navigation and appealing visuals to attract users of all ages.
-- **Responsive Design**: Ensures optimal display and interaction across different screen sizes and device orientations.
+## What shipped
 
-## Technologies Used
+- **Start experience**: branded splash with a single clear CTA (“Tap to start”)
+- **Topic library**: two-column catalogue across general knowledge, books, film, music, TV, video games, board games, science & nature, computers, mathematics, and more
+- **Timed play**: category header, question index, circular countdown, and four-option multiple choice
+- **Results summary**: question count, score %, correct / incorrect split, with paths to go back or verify answers
+- **Answer review**: per-question cards with green/red feedback and the correct answer when the player missed
+- **Ad-free consumer model**: uninterrupted sessions by design — no interstitial clutter in the play path
+- **Cross-platform delivery**: one Flutter codebase for phones and tablets; Laravel + PostgreSQL for APIs and persistence
 
-- **Flutter**: For developing a high-performance, cross-platform mobile application with a single codebase.
-- **Dart**: The programming language used with Flutter for client-side development.
-- **Laravel (PHP)**: For building a robust back-end and RESTful APIs to communicate with the client application.
-- **PostgreSQL**: As the database system for efficient data storage and retrieval.
-- **HTML, CSS, JavaScript**: For web components and enhancing responsive design elements.
+## Stack & craft
 
-## Challenges and Learnings
+**Flutter / Dart** for the multiplatform client; **Laravel (PHP)** for REST APIs; **PostgreSQL** for durable storage. The engineering focus was reliable client–server sync (session state, scoring, review payloads) and consistent layout across device sizes and orientations.
 
-One of the main challenges was ensuring smooth communication between the Flutter client application and the Laravel back end via REST APIs. This required careful API design and thorough testing to handle data synchronization and user interactions efficiently. Additionally, optimizing the application for performance across various devices and screen sizes was crucial to provide a consistent user experience. Balancing a rich feature set with an ad-free model also required thoughtful consideration to maintain sustainability without compromising user satisfaction.
+Building an ad-free quiz sounds light until you own the whole loop: content model, timed interaction, results, localization strings, and an API that stays fast when people hammer “next question.”
 
 ## Outcome
 
-The OpenTrivia application successfully achieved the client's objectives by providing a free, ad-free, and engaging quiz game. Users have praised its wide range of topics and seamless performance across devices. The project showcases effective cross-platform development and demonstrates the potential of Flutter and Laravel in building interactive and responsive mobile applications. OpenTrivia stands as a testament to creating user-centric apps that prioritize engagement and satisfaction without relying on ad revenue.
+The client received a shippable consumer product — free to play, ad-free by principle, and coherent from splash through answer review. It is a clear example of full-stack ownership on a mobile client product: product IA, UI polish, and backend delivery in one pass.
