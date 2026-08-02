@@ -24,6 +24,11 @@ type Home = {
   subline: string;
   valueProposition?: string;
   featuredProjectSlugs?: string[];
+  featuredWork?: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+  };
 };
 
 type About = {
@@ -98,6 +103,14 @@ type Work = {
   label: string;
   title: string;
   description: string;
+  heroLede?: string;
+  collections?: {
+    id: string;
+    eyebrow: string;
+    title: string;
+    intro: string;
+    slugs: string[];
+  }[];
 };
 
 type Gallery = {
@@ -156,19 +169,25 @@ const social: SocialLink[] = [
 
 const home: Home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio of ${person.name} — knowledge platforms, institutional deployment, and cloud-native systems from ideation to mass rollout.`,
+  title: `Toufic Hajj — Platforms & Product Engineering`,
+  description: `${person.name} — Senior Full-Stack & Cloud Platform Engineer. Knowledge platforms, institutional deployment, and products shipped from ideation to production.`,
   headline: `Toufic Hajj`,
   subline: `Senior Full-Stack & Cloud Platform Engineer — ideation to mass deployment, on-prem to cloud.`,
   valueProposition:
     "I design and ship platforms for public and private organizations: architecture, compliance, and delivery that hold up from first prototype to city-scale rollout.",
-  featuredProjectSlugs: ["banq", "chalons", "stonkify"],
+  featuredProjectSlugs: ["thirty-north", "banq", "chalons"],
+  featuredWork: {
+    eyebrow: "Selected work",
+    title: "Proof under constraint.",
+    intro:
+      "Latest first: a live privacy-first product, then institutional platforms that show the same ownership — citizen UX, bilingual delivery, and systems people can operate.",
+  },
 };
 
 const about: About = {
   label: "Who am I?",
   title: "About me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role}. Platforms, products, and delivery from Montreal.`,
   tableOfContent: {
     display: true,
     subItems: true,
@@ -204,6 +223,18 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
           `Architect, develop, and optimize robust cloud-native software solutions end-to-end.`,
           `Own the full SDLC of high-reliability features, ensuring seamless deployment and operations.`,
           `Collaborate in cross-functional teams to deliver scalable, debt-free codebases.`,
+        ],
+        images: [],
+      },
+      {
+        company: "Technologies Toufic Hajj Inc. — Thirty North",
+        location: "Montreal, QC",
+        timeframe: "2024 - Present",
+        role: "Founder / Full-Stack Product",
+        achievements: [
+          `Shipped thirtynorthgst.ca: privacy-first GST/HST threshold tracker for Canadian cross-border freelancers.`,
+          `Built dual CRA threshold tests (single-quarter and four-quarter), bilingual EN/FR UX, guides, and paid workflow kits.`,
+          `Designed honest product limits — calculates user inputs, does not classify work or replace tax advice — with local-first data and merchant-of-record checkout.`,
         ],
         images: [],
       },
@@ -416,16 +447,42 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
 
 const blog: Blog = {
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Notes on platforms & delivery",
+  description: `Essays on institutional platforms, deployment, leadership, and building software that survives real constraints — by ${person.name}.`,
 };
 
 const work: Work = {
   label: "Work",
-  title: "My projects",
-  description: `Institutional platforms, mobile companions, and product systems by ${person.name} — from libraries and cultural portals to trading tooling.`,
+  title: "Selected work",
+  description: `Case studies by ${person.name} — institutional platforms, product systems, and independent builds, grouped by the constraints they were built for.`,
+  heroLede:
+    "Not a flat archive. Work grouped by use case — so the strongest signal for each brief is easy to find.",
+  collections: [
+    {
+      id: "products",
+      eyebrow: "Shipped products",
+      title: "Live systems with honest limits.",
+      intro:
+        "Privacy-first tools and operator-facing product systems — designed for real decisions, not demos. Start with Thirty North.",
+      slugs: ["thirty-north", "stonkify"],
+    },
+    {
+      id: "institutional",
+      eyebrow: "Institutional platforms",
+      title: "Public interfaces under real constraints.",
+      intro:
+        "National libraries and municipal companions — citizen UX, multilingual delivery, accessibility, and shipping inside knowledge-platform ecosystems.",
+      slugs: ["banq", "chalons"],
+    },
+    {
+      id: "independent",
+      eyebrow: "Independent builds",
+      title: "Full-stack craft outside the institution.",
+      intro:
+        "Client and personal products that show range — useful evidence of delivery, not the center of the career narrative.",
+      slugs: ["open-trivia", "portfolio"],
+    },
+  ],
 };
 
 const contact: Contact = {
@@ -519,7 +576,7 @@ const context = {
     ],
   },
   aside:
-    "That context still frames how I build today: cloud-native and AI-enabled systems, but with the same bias toward platforms people can operate under real institutional constraints.",
+    "That context still frames how I build today — including Thirty North: cloud-era products with the same bias toward privacy, clear limits, and systems people can operate before the next invoice (or deploy) changes the answer.",
 };
 
 const renderJSX = (str: string) => {

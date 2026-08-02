@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PremiumImage } from "./PremiumImage";
 import { PremiumMDX } from "@/components/premium/PremiumMDX";
-import { formatDate } from "@/app/utils";
+import { formatProjectDate } from "@/app/utils";
 
 type ProjectPost = {
   slug: string;
@@ -10,6 +10,8 @@ type ProjectPost = {
     publishedAt: string;
     summary: string;
     images: string[];
+    link?: string;
+    organization?: string;
   };
   content: string;
 };
@@ -24,9 +26,26 @@ export function PremiumWorkDetail({ post }: { post: ProjectPost }) {
           <Link className="back-link" href="/work">
             ← All projects
           </Link>
-          <p className="eyebrow">{formatDate(post.metadata.publishedAt)}</p>
+          <p className="eyebrow">
+            {formatProjectDate(
+              post.metadata.publishedAt,
+              post.metadata.organization
+            )}
+          </p>
           <h1>{post.metadata.title}</h1>
           <p className="page-lede">{post.metadata.summary}</p>
+          {post.metadata.link && (
+            <div className="page-hero-actions">
+              <a
+                className="btn btn-dark"
+                href={post.metadata.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit live product ↗
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
@@ -44,7 +63,7 @@ export function PremiumWorkDetail({ post }: { post: ProjectPost }) {
       )}
 
       <section>
-        <div className="wrap">
+        <div className="wrap detail-body">
           <article className="premium-prose">
             <PremiumMDX source={post.content} />
           </article>

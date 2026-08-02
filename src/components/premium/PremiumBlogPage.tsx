@@ -36,7 +36,9 @@ export function PremiumBlogPage({ posts }: { posts: BlogPost[] }) {
                 )}
                 <div className="body">
                   <p className="project-date">
-                    {formatDate(post.metadata.publishedAt)}
+                    {formatDate(post.metadata.publishedAt, false, {
+                      style: "monthYear",
+                    })}
                   </p>
                   <h3>{post.metadata.title}</h3>
                   <p>{post.metadata.summary}</p>

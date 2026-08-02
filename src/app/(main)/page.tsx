@@ -7,7 +7,9 @@ export function generateMetadata() {
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
     openGraph: {
       title,

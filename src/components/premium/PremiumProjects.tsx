@@ -3,12 +3,16 @@ import { PremiumImage } from "./PremiumImage";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 import { getPosts } from "@/app/utils";
-import { home } from "@/resources";
+import { home, work } from "@/resources";
 
 function shortTitle(title: string) {
-  // Prefer the distinctive product name before the long colon subtitle
   const cut = title.split(":")[0]?.trim();
   return cut && cut.length < title.length ? cut : title;
+}
+
+function useCaseLabel(slug: string) {
+  const collection = work.collections?.find((c) => c.slugs.includes(slug));
+  return collection?.eyebrow ?? null;
 }
 
 export function PremiumProjects() {
@@ -21,15 +25,21 @@ export function PremiumProjects() {
   if (featured.length === 0) return null;
 
   const [primary, ...rest] = featured;
+  const copy = home.featuredWork ?? {
+    eyebrow: "Selected work",
+    title: "Proof under constraint.",
+    intro:
+      "Institutional platforms first — then product systems that show the same end-to-end ownership.",
+  };
 
   return (
     <section id="work">
       <div className="wrap">
         <Reveal>
           <SectionHead
-            eyebrow="Selected work"
-            title="Case studies that shipped."
-            intro="Institutional portals and library companions from the knowledge-platform years — plus product systems built since."
+            eyebrow={copy.eyebrow}
+            title={copy.title}
+            intro={copy.intro}
           />
         </Reveal>
 
@@ -47,10 +57,16 @@ export function PremiumProjects() {
                   />
                 )}
                 <div className="work-feature-copy">
-                  <p className="eyebrow">Featured</p>
+                  <p className="eyebrow">
+                    {useCaseLabel(primary.slug) ?? "Featured"}
+                  </p>
                   <h3>{shortTitle(primary.metadata.title)}</h3>
                   <p>{primary.metadata.summary}</p>
-                  <span className="link">Read case study →</span>
+                  <span className="link">
+                    {primary.metadata.link
+                      ? "View case study →"
+                      : "Read case study →"}
+                  </span>
                 </div>
               </Link>
             </Reveal>
@@ -69,6 +85,11 @@ export function PremiumProjects() {
                       />
                     )}
                     <div className="body">
+                      {useCaseLabel(project.slug) && (
+                        <p className="project-lane">
+                          {useCaseLabel(project.slug)}
+                        </p>
+                      )}
                       <h3>{shortTitle(project.metadata.title)}</h3>
                       <p>{project.metadata.summary}</p>
                       <span className="link">Read case study →</span>
@@ -83,7 +104,7 @@ export function PremiumProjects() {
         <Reveal>
           <div className="view-all">
             <Link className="btn btn-dark" href="/work">
-              View all projects
+              Browse by use case
             </Link>
           </div>
         </Reveal>

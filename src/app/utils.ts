@@ -17,6 +17,8 @@ type Metadata = {
     images: string[];
     team: Team[];
     tags?: string[];
+    link?: string;
+    organization?: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -42,6 +44,8 @@ function readMDXFile(filePath: string) {
         images: data.images || [],
         team: data.team || [],
         tags: data.tags || [],
+        link: data.link || undefined,
+        organization: data.organization || undefined,
     };
 
     return { metadata, content };
@@ -66,39 +70,71 @@ export function getPosts(customPath = ['', '', '', '']) {
     return getMDXData(postsDir);
 }
 
-export function formatDate(date: string, includeRelative = false) {
-    const currentDate = new Date();
+/** Parse YYYY-MM-DD (or YYYY-MM) as a calendar date — no timezone shift. */
+export function parseCalendarDate(date: string) {
+    const [year, month, day] = date
+        .split('T')[0]
+        .split('-')
+        .map((part) => Number(part));
 
-    if (!date.includes('T')) {
-        date = `${date}T00:00:00`;
-    }
+    return {
+        year,
+        month: month || 1,
+        day: day || 1,
+        hasDay: Boolean(day),
+    };
+}
 
-    const targetDate = new Date(date);
-    const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-    const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-    const daysAgo = currentDate.getDate() - targetDate.getDate();
+export function formatDate(
+    date: string,
+    includeRelative = false,
+    options?: { style?: 'full' | 'monthYear' }
+) {
+    const { year, month, day, hasDay } = parseCalendarDate(date);
+    const targetDate = new Date(year, month - 1, day);
+    const style = options?.style ?? (hasDay ? 'full' : 'monthYear');
 
-    let formattedDate = '';
-
-    if (yearsAgo > 0) {
-        formattedDate = `${yearsAgo}y ago`;
-    } else if (monthsAgo > 0) {
-        formattedDate = `${monthsAgo}mo ago`;
-    } else if (daysAgo > 0) {
-        formattedDate = `${daysAgo}d ago`;
-    } else {
-        formattedDate = 'Today';
-    }
-
-    const fullDate = targetDate.toLocaleString('en-us', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-    });
+    const fullDate =
+        style === 'monthYear' || !hasDay
+            ? targetDate.toLocaleString('en-US', {
+                  month: 'long',
+                  year: 'numeric',
+              })
+            : targetDate.toLocaleString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+              });
 
     if (!includeRelative) {
         return fullDate;
     }
 
+    const currentDate = new Date();
+    const yearsAgo = currentDate.getFullYear() - year;
+    const monthsAgo =
+        currentDate.getFullYear() * 12 +
+        currentDate.getMonth() -
+        (year * 12 + (month - 1));
+
+    let formattedDate = '';
+    if (yearsAgo > 0) {
+        formattedDate = `${yearsAgo}y ago`;
+    } else if (monthsAgo > 0) {
+        formattedDate = `${monthsAgo}mo ago`;
+    } else {
+        const daysAgo = currentDate.getDate() - day;
+        formattedDate = daysAgo > 0 ? `${daysAgo}d ago` : 'Today';
+    }
+
     return `${fullDate} (${formattedDate})`;
+}
+
+/** Work/project date line: "August 2018 · InMédia / BiblioMondo" when org is set. */
+export function formatProjectDate(
+    date: string,
+    organization?: string
+) {
+    const label = formatDate(date, false, { style: 'monthYear' });
+    return organization ? `${label} · ${organization}` : label;
 }

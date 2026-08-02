@@ -22,7 +22,9 @@ export function PremiumBlogDetail({ post }: { post: BlogPost }) {
           <Link className="back-link" href="/blog">
             ← All posts
           </Link>
-          <p className="eyebrow">{formatDate(post.metadata.publishedAt)}</p>
+          <p className="eyebrow">
+            {formatDate(post.metadata.publishedAt, false, { style: "monthYear" })}
+          </p>
           <h1>{post.metadata.title}</h1>
           <p className="page-lede">{post.metadata.summary}</p>
         </div>
@@ -37,7 +39,7 @@ export function PremiumBlogDetail({ post }: { post: BlogPost }) {
       )}
 
       <section>
-        <div className="wrap">
+        <div className="wrap detail-body">
           <article className="premium-prose">
             <PremiumMDX source={post.content} />
           </article>

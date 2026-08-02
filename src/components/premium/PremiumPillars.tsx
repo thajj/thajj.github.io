@@ -5,17 +5,17 @@ const pillars = [
   {
     num: "01",
     title: "Platforms",
-    body: "From knowledge platforms to cloud-native systems — architecture that federates content, respects rights and compliance, and runs on-prem, cloud, or hybrid.",
+    body: "From knowledge platforms to privacy-first products — architecture that federates content, respects rights and compliance, and runs where the user actually lives.",
   },
   {
     num: "02",
     title: "Deployment",
-    body: "Ideation to mass rollout for public and private organizations: cities, institutions, and enterprises that need uptime, accessibility, and multilingual reach.",
+    body: "Ideation to mass rollout for public and private organizations: cities, institutions, and operators who need early warning — not another dashboard demo.",
   },
   {
     num: "03",
     title: "Leadership",
-    body: "Hands-on technical direction for teams of 10+. R&D roadmaps, tenders, and delivery — without leaving the craft behind.",
+    body: "Hands-on technical direction for teams of 10+. R&D roadmaps, tenders, and product shipping — without leaving the craft behind.",
   },
 ];
 

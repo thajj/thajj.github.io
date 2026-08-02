@@ -5,7 +5,7 @@ import { Figtree, Source_Serif_4 } from "next/font/google";
 import { Metadata } from "next";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { baseURL, home, person } from "@/resources";
+import { baseURL, home } from "@/resources";
 
 const figtree = Figtree({
   weight: ["400", "500", "600", "700"],
@@ -23,13 +23,16 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://" + baseURL),
-  title: home.title,
+  title: {
+    default: home.title,
+    template: `%s · Toufic Hajj`,
+  },
   description: home.description,
   openGraph: {
-    title: `${person.firstName}'s Portfolio`,
-    description: "Portfolio website showcasing my work.",
+    title: home.title,
+    description: home.description,
     url: `https://${baseURL}`,
-    siteName: `${person.firstName}'s Portfolio`,
+    siteName: "Toufic Hajj",
     locale: "en_CA",
     type: "website",
   },

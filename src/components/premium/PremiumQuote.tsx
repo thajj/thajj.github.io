@@ -8,11 +8,10 @@ export function PremiumQuote() {
           <div className="quote-band">
             <p className="eyebrow">Principle</p>
             <blockquote>
-              Ideation is cheap. Mass deployment across on-prem, cloud, and
-              hybrid — for cities and institutions that cannot go down — is the
-              real craft.
+              Calculate what you can prove. Name what you will not pretend to
+              know. Ship the early-warning system — not the theatre.
             </blockquote>
-            <cite>Not demos that impress. Platforms that endure.</cite>
+            <p className="quote-cite">Honest limits are a product feature.</p>
           </div>
         </Reveal>
       </div>

@@ -12,8 +12,8 @@ export function PremiumCTA() {
               <h2>Let&apos;s build something lasting.</h2>
               <p>
                 Open to full-stack, cloud platform, and technical leadership
-                roles — especially where public or private organizations need
-                architecture that survives ideation through mass deployment.
+                roles — and conversations about products that need privacy,
+                bilingual delivery, and honest operational limits.
               </p>
             </div>
             <div className="cta-actions">
