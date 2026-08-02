@@ -1,6 +1,6 @@
 const containSlugs = new Set(["open-trivia", "chalons", "banq"]);
 /** Portrait mobile screenshots — need phone aspect, not 16:9 letterbox */
-const portraitSlugs = new Set(["open-trivia"]);
+const portraitSlugs = new Set(["open-trivia", "chalons"]);
 
 interface PremiumImageProps {
   src: string;

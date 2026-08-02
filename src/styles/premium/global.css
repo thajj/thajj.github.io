@@ -1556,20 +1556,35 @@
   width: 100%;
 }
 
-/* Phone screenshots: fill the wrap as a row of devices, not tiny 16:9 letterboxes */
+/* Phone screenshots: device lineup across the wrap, not tiny 16:9 letterboxes */
 .premium-page .detail-gallery-portrait {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px 18px;
   align-items: start;
+  justify-items: center;
 }
 
-.premium-page .premium-media.portrait {
+.premium-page .detail-gallery-portrait .premium-media.portrait {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  background: var(--mist);
+  border-radius: 18px;
+}
+
+/* Short portrait sets (e.g. Châlons ×3): fill the wrap edge-to-edge */
+.premium-page .detail-gallery-portrait-row {
+  justify-items: stretch;
+}
+
+.premium-page .detail-gallery-portrait-row .premium-media.portrait {
   max-width: none;
 }
 
 .premium-page .premium-media.portrait.contain img {
-  padding: 10px;
+  padding: 0;
   object-fit: contain;
+  background: transparent;
 }
 
 .premium-page .experience-list {
@@ -1746,8 +1761,17 @@
   }
 
   .premium-page .detail-gallery-portrait {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
+    justify-items: stretch;
+  }
+
+  .premium-page .detail-gallery-portrait .premium-media.portrait {
+    max-width: none;
+  }
+
+  .premium-page .detail-gallery-portrait-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .premium-page .page-hero-grid {
@@ -1836,6 +1860,29 @@
   .premium-page .education-layout {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  /* Portrait screenshots: horizontal snap strip so phones stay readable */
+  .premium-page .detail-gallery-portrait,
+  .premium-page .detail-gallery-portrait-row {
+    display: flex;
+    grid-template-columns: none !important;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-items: stretch;
+  }
+
+  .premium-page .detail-gallery-portrait .premium-media.portrait,
+  .premium-page .detail-gallery-portrait-row .premium-media.portrait {
+    flex: 0 0 min(72vw, 280px);
+    max-width: min(72vw, 280px);
+    scroll-snap-align: start;
   }
 
   .premium-page .panel,

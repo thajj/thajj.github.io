@@ -80,8 +80,19 @@ export function PremiumWorkDetail({ post }: { post: ProjectPost }) {
             <div
               className={
                 isPortrait
-                  ? "detail-gallery detail-gallery-portrait"
+                  ? `detail-gallery detail-gallery-portrait${
+                      galleryImages.length <= 3
+                        ? " detail-gallery-portrait-row"
+                        : ""
+                    }`
                   : "detail-gallery"
+              }
+              style={
+                isPortrait && galleryImages.length <= 3
+                  ? {
+                      gridTemplateColumns: `repeat(${galleryImages.length}, minmax(0, 1fr))`,
+                    }
+                  : undefined
               }
             >
               {galleryImages.map((image, index) => (
