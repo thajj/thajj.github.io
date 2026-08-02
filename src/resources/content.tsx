@@ -79,9 +79,12 @@ type About = {
   technical: {
     display: boolean;
     title: string;
+    intro?: string;
     skills: {
       title: string;
       description?: string;
+      /** tags = compact chips; list = longer lines (certs, publications) */
+      format?: "tags" | "list";
       items: string[];
       images: {
         src: string;
@@ -357,87 +360,171 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
   },
   technical: {
     display: true,
-    title: "Technical skills",
+    title: "Architecture & technical range",
+    intro:
+      "Framed the way I work: systems decisions first — platforms, pipelines, reliability, cost, and compliance — then the stacks that make them real.",
     skills: [
       {
-        title: "Front-End Technologies",
+        title: "Platform architecture",
+        description:
+          "End-to-end platform shape across on-prem, cloud, and hybrid — designed to survive real operators and real scale.",
+        format: "tags",
         items: [
-          "React",
-          "TypeScript",
-          "Angular",
-          "Next.js",
-          "Redux",
-          "Tailwind CSS",
-          "Vue.js",
-        ],
-        images: [],
-      },
-      {
-        title: "Back-End & API Development",
-        items: [
-          "Node.js",
-          "Express.js",
-          "Spring Boot",
-          "REST / RESTful APIs",
+          "Cloud-native platforms",
+          "Hybrid / on-prem topologies",
           "Microservices",
-          "Serverless architecture",
+          "Event-driven design",
+          "API strategy (REST)",
+          "Serverless where it fits",
+          "AWS · GCP · Azure",
         ],
         images: [],
       },
       {
-        title: "Cloud & DevOps",
+        title: "Application systems",
+        description:
+          "Full-stack product surfaces with durable component and service boundaries — not throwaway frontends.",
+        format: "tags",
         items: [
-          "AWS",
-          "GCP (GKE)",
-          "Azure",
-          "Docker",
-          "Kubernetes",
-          "Jenkins",
-          "Git",
-          "CI/CD",
-          "DevSecOps",
+          "TypeScript / React / Next.js",
+          "Node.js · Express",
+          "Spring Boot",
+          "Angular · Vue",
+          "Electron · Flutter",
+          "Redux & state architecture",
+          "Component systems",
         ],
         images: [],
       },
       {
-        title: "Data Management",
+        title: "Data platforms & pipelines",
+        description:
+          "Operational and analytical paths: stores, streams, and processing that stay trustworthy under load.",
+        format: "tags",
         items: [
-          "SQL (MySQL, PostgreSQL)",
-          "NoSQL (MongoDB, Elasticsearch)",
+          "Pipeline design",
           "Apache Kafka",
           "Apache Spark",
+          "Real-time processing",
+          "PostgreSQL · MySQL",
+          "MongoDB · Elasticsearch",
+          "Analytics-ready models",
+        ],
+        images: [],
+      },
+      {
+        title: "SRE & reliability",
+        description:
+          "Architecture that can be operated — uptime, failure modes, and day-2 reality baked into delivery.",
+        format: "tags",
+        items: [
+          "Reliability engineering",
+          "Observability-minded design",
+          "Resilient deploy patterns",
+          "Operational readiness",
+          "Incident-aware delivery",
+          "Institutional uptime track record",
+        ],
+        images: [],
+      },
+      {
+        title: "GitOps & delivery",
+        description:
+          "Release as a controlled system: containers, clusters, and pipelines with Git as the source of truth.",
+        format: "tags",
+        items: [
+          "GitOps practices",
+          "CI/CD pipelines",
+          "Kubernetes · GKE",
+          "Docker",
+          "Jenkins & modern CI",
+          "Environment promotion",
+          "Infrastructure-aware delivery",
+        ],
+        images: [],
+      },
+      {
+        title: "Security & compliance",
+        description:
+          "Trust constraints treated as product requirements — especially for public and regulated contexts.",
+        format: "tags",
+        items: [
+          "DevSecOps",
+          "Secure SDLC",
+          "WCAG accessibility",
+          "GDPR-conscious design",
+          "Privacy by design",
+          "Public-sector governance",
+          "Policy & audit readiness",
+        ],
+        images: [],
+      },
+      {
+        title: "FinOps & cloud economics",
+        description:
+          "Cost as an architectural signal — right-sizing, tradeoffs, and spend that tracks real value.",
+        format: "tags",
+        items: [
+          "Cost-aware architecture",
+          "Right-sizing & efficiency",
+          "Cloud spend tradeoffs",
+          "Infra cost reduction",
+          "Vendor & tender evaluation",
+          "Build-vs-buy judgment",
+        ],
+        images: [],
+      },
+      {
+        title: "Visual systems & UX",
+        description:
+          "Interfaces people can operate under pressure — product UI, data visualization, and bilingual delivery.",
+        format: "tags",
+        items: [
+          "Product UI / UX",
+          "Data visualization",
+          "Operator dashboards",
+          "Information design",
+          "Bilingual / multilingual UX",
+          "Citizen-facing portals",
+          "Design systems",
+        ],
+        images: [],
+      },
+      {
+        title: "Leadership & delivery practice",
+        description:
+          "Hands-on technical leadership across R&D, tenders, and cross-functional delivery.",
+        format: "tags",
+        items: [
+          "R&D leadership",
+          "Architecture ownership",
+          "Team leadership (10+)",
+          "Public-sector tenders",
+          "Agile (Scrum · Kanban)",
+          "Technical documentation",
+          "Stakeholder alignment",
         ],
         images: [],
       },
       {
         title: "Certifications",
+        format: "list",
         items: [
           "Google Cloud Certified — Associate Cloud Engineer",
-          "Python for Data Science, AI & Development (IBM)",
-          "Introduction to Cloud Computing (IBM)",
           "Architecting with Google Kubernetes Engine Specialization (Google Cloud)",
           "Cloud Application Development Foundations Specialization (IBM)",
+          "Python for Data Science, AI & Development (IBM)",
+          "Introduction to Cloud Computing (IBM)",
         ],
         images: [],
       },
       {
         title: "Research & publications",
+        format: "list",
         items: [
           "Trusted smart harvesting algorithm based on semantic relationship and social networks (SMESE-TSHA) — co-author, InMédia Technologies",
           "Traceable and Trusted Smart Harvesting Algorithm from Unstructured and Structured Web (SMESE-TTSHA) — co-author, InMédia Technologies",
           "MLM-based learning and boosting model – part 1: multi-sources/rights of digital resources to build universal knowledge repositories — co-author, InMédia Technologies",
-        ],
-        images: [],
-      },
-      {
-        title: "Other skills",
-        items: [
-          "UI/UX design",
-          "Team leadership & R&D management",
-          "Public-sector tenders & technical evaluations",
-          "Project management",
-          "Agile (Scrum, Kanban)",
-          "Technical documentation",
         ],
         images: [],
       },

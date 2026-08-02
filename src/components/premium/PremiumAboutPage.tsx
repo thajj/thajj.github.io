@@ -144,24 +144,47 @@ export function PremiumAboutPage() {
           <div className="wrap">
             <Reveal>
               <SectionHead
-                eyebrow="Technical range"
+                eyebrow="Capability map"
                 title={about.technical.title}
+                intro={about.technical.intro}
               />
             </Reveal>
             <div className="skills-grid">
-              {about.technical.skills.map((skill, index) => (
-                <Reveal key={skill.title} delay={(index % 2) * 70}>
-                  <article className="skill-card">
-                    <h3>{skill.title}</h3>
-                    {skill.description && <p>{skill.description}</p>}
-                    <ul className="skill-list">
-                      {skill.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </article>
-                </Reveal>
-              ))}
+              {about.technical.skills.map((skill, index) => {
+                const format = skill.format ?? "tags";
+                const wide = format === "list";
+                return (
+                  <Reveal
+                    key={skill.title}
+                    delay={(index % 3) * 60}
+                  >
+                    <article
+                      className={`skill-card${wide ? " skill-card-wide" : ""}`}
+                    >
+                      <div className="skill-card-head">
+                        <span className="skill-index">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <h3>{skill.title}</h3>
+                      </div>
+                      {skill.description && <p>{skill.description}</p>}
+                      {format === "tags" ? (
+                        <ul className="skill-tags">
+                          {skill.items.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <ul className="skill-list">
+                          {skill.items.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </article>
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>
