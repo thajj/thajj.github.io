@@ -1,6 +1,8 @@
-# Toufic Hajj's Portfolio
+# toufichajj.dev
 
-Welcome to the repository of my personal portfolio website. This project showcases my skills, experiences, and projects in the field of AI, Blockchain, and Cloud Technologies.
+Source for my personal site — a portfolio and writing space for a senior full-stack and cloud platform engineer. It presents selected work as case studies, a full career history, and essays on platform engineering, public-sector delivery, and building software that has to survive real constraints.
+
+Live at [toufichajj.dev](https://toufichajj.dev).
 
 ## 🌐 Current Product
 
@@ -33,41 +35,66 @@ Welcome to the repository of my personal portfolio website. This project showcas
   - [Guide québécois TPS/TVQ en français](https://thirtynorthgst.ca/fr/guides/travailleur-autonome-quebec-seuil-30000-tps-tvq)
   - [Outils gratuits en français](https://thirtynorthgst.ca/fr/outils/)
 
-## 🚀 Features
+## 🗺 What's on the site
 
-- Responsive design for optimal viewing on all devices
-- Dark/Light mode toggle for user preference
-- Smooth scrolling and animations using Framer Motion
-- Dynamic content rendering from JSON data
-- Sections for About, Experience, Projects, Skills, and Contact
-- Integration with social media profiles
+- **Home** — positioning, capability pillars, featured case studies, and a condensed career timeline.
+- **Work** — case studies for BAnQ, Châlons-en-Champagne, Thirty North, Stonkify, Open Trivia, and this site, each framed by problem, approach, and outcome.
+- **About** — full career history, an architect-level capability map, education, and certifications.
+- **Blog** — essays on platform engineering, hybrid deployment, accessibility and privacy, and leading R&D without leaving the craft.
 
-## 🛠 Technologies Used
+## 🛠 Stack
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Typed
+- **Next.js 14** (App Router) with a fully static export — no server runtime in production
+- **TypeScript** and **React 18**
+- **MDX** for case studies and blog posts, rendered through a custom component set
+- A hand-authored **CSS design system** in `src/styles/premium/global.css` — no utility framework in the render path
+- **Framer Motion** for page transitions and scroll reveals
+- Self-hosted Google Fonts via `next/font` (Figtree and Source Serif 4)
+- **GitHub Actions → GitHub Pages** for build and deploy
 
-## 🏗 Project Structure
+## 🏗 Project structure
 
-- `components/`: Reusable React components
-- `data/`: JSON files containing portfolio data
-- `pages/`: Next.js pages
-- `public/`: Static assets
-- `styles/`: Global styles and Tailwind configuration
+```
+src/
+  app/
+    (main)/           Route group carrying the site chrome and design system
+      page.tsx        Home
+      about/          About page
+      work/           Work index, [slug] detail, and projects/*.mdx
+      blog/           Blog index, [slug] detail, and posts/*.mdx
+    layout.tsx        Root layout: fonts, metadata, analytics
+    sitemap.ts        Generated sitemap and robots rules
+  components/
+    premium/          The component library the site is built from
+  resources/
+    content.tsx       Structured content: bio, experience, skills, education
+    config.js         Base URL, routes, and site-level flags
+  styles/premium/     The design system stylesheet
+public/               Images, OG image, CNAME
+```
 
-## 🚀 Getting Started
+Content lives in two places by design: prose-heavy pages are MDX files next to their route, while structured data that several pages share (work experience, skills, education) lives in `src/resources/content.tsx`.
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Run the development server: `npm run dev`
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+## 🚀 Getting started
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+```
+
+Other scripts:
+
+```bash
+npm run build    # static export to ./out
+npm run lint
+```
+
+Analytics are opt-in through `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Without it the tracker is a no-op, so local development stays clean.
+
+## 📦 Deployment
+
+Pushing to `main` triggers `.github/workflows/nextjs.yml`, which builds the static export and publishes `./out` to GitHub Pages. The custom domain is held in `public/CNAME` so it survives every export.
 
 ## 📞 Contact
 
-Toufic Hajj - [LinkedIn](https://www.linkedin.com/in/toufic-hajj)
-
-Project Link: [https://toufichajj.dev](https://toufichajj.dev)
+Toufic Hajj — [LinkedIn](https://www.linkedin.com/in/toufic-hajj) · [toufichajj.dev](https://toufichajj.dev)
