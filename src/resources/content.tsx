@@ -228,8 +228,6 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
           `Build and evolve an internal workflow-orchestration platform — Argo Workflows on private GKE — so engineering and data teams can run large pipelines without owning the infrastructure underneath.`,
           `Ship platform infrastructure as code with Terraform and GitOps: GitLab CI/CD, Argo CD ApplicationSets, and ephemeral per-merge-request environments that provision and tear themselves down.`,
           `Implement the platform's identity and compliance controls — OIDC SSO personas, Kyverno admission policies, Workload Identity for keyless cloud access, and export-control (EAR) data boundaries.`,
-          `Wire observability through the stack: correlation IDs propagated from submission to pod logs and artifacts, Prometheus metrics, and Terraform-managed dashboards, alerts, and triage runbooks.`,
-          `Load-test and tune the workflow control plane — controller parallelism, API rate limits, and Postgres archiving — and document where native queuing stops scaling.`,
         ],
         images: [],
       },
@@ -253,7 +251,7 @@ I’ve led teams of 10+ while remaining highly hands-on. I’m especially intere
         achievements: [
           `Built high-throughput applications to process real-time data for internal and external users.`,
           `Designed data visualization tools and trading interfaces for executing transactions across electricity markets.`,
-          `Created a client portal to automate billing and analytical reporting.`,
+          `Built the data pipeline the trading desk ran on — electricity market feeds ingested through Pub/Sub and Dataflow into GCS and BigQuery, with streaming and batch paths landing in one queryable model.`,
         ],
         images: [],
       },
